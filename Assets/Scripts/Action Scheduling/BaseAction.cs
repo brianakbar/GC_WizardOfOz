@@ -2,7 +2,7 @@ namespace Creazen.Wizard.ActionScheduling {
     using UnityEngine;
     
     public abstract class BaseAction : ScriptableObject {
-        public abstract void StartAction(ActionLink actionLink);
-        public abstract void Cancel();
+        public abstract bool StartAction(ActionLink actionLink);
+        public abstract bool Cancel(ActionLink actionLink);
     }
 }

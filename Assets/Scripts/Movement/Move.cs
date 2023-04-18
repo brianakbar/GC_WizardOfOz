@@ -10,11 +10,7 @@ namespace Creazen.Wizard.Movement {
             MoveLink link = actionLink as MoveLink;
             if(link == null) return false;
 
-            link.Body.velocity = link.Direction * speed;
-
-            if(link.Direction.x != 0) {
-                link.Transform.localScale = new Vector2(Mathf.Sign(link.Direction.x), link.Transform.localScale.y);
-            }
+            link.Body.velocity = link.MoveDirection * speed;
 
             return true;
         }

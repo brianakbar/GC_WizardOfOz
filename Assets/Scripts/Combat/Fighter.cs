@@ -3,7 +3,6 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
     
     public class Fighter : MonoBehaviour {
-        [SerializeField] Animator handAnimator;
         [SerializeField] Weapon currentWeapon;
         [SerializeField] ActionScheduler combatScheduler;
         [SerializeField] Hand rightHand;
@@ -11,9 +10,12 @@ namespace Creazen.Wizard.Combat {
 
         bool canAttack = true;
 
+        Animator animator;
+
         AttackLink attackLink;
 
         void Awake() {
+            animator = GetComponent<Animator>();
             attackLink = Attack.GetLink();
         }
 
@@ -31,8 +33,8 @@ namespace Creazen.Wizard.Combat {
 
             Attack attack = currentWeapon.GetCombo(attackLink.Combo);
             combatScheduler.StartAction(attack, attackLink);
-            handAnimator.runtimeAnimatorController = attackLink.Animator;
-            handAnimator.SetTrigger("attack");
+            animator.runtimeAnimatorController = attackLink.Animator;
+            animator.SetTrigger("attack");
             canAttack = false;
         }
 

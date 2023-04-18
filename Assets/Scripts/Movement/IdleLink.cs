@@ -2,7 +2,7 @@ namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
-    public class IdleActionLink : ActionLink {
+    public class IdleLink : ActionLink {
         GameObject performer;
         Rigidbody2D body;
         

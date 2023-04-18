@@ -2,7 +2,7 @@ namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
-    public class MoveActionLink : ActionLink {
+    public class MoveLink : ActionLink {
         GameObject performer;
         Rigidbody2D body;
         Vector2 direction = new Vector2();

@@ -3,11 +3,11 @@ namespace Creazen.Wizard.Movement {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Move Action", menuName = "Action/Move")]
-    public class MoveAction : BaseAction {
+    public class Move : BaseAction {
         [SerializeField] [Min(0)] Vector2 speed = new Vector2(2f, 1f);
 
         public override bool StartAction(ActionLink actionLink) {
-            MoveActionLink link = actionLink as MoveActionLink;
+            MoveLink link = actionLink as MoveLink;
             if(link == null) return false;
 
             link.Body.velocity = link.Direction * speed;
@@ -20,16 +20,16 @@ namespace Creazen.Wizard.Movement {
         }
 
         public override bool Cancel(ActionLink actionLink) {
-            MoveActionLink moveActionLink = actionLink as MoveActionLink;
-            if(moveActionLink == null) return false;
+            MoveLink moveLink = actionLink as MoveLink;
+            if(moveLink == null) return false;
 
-            moveActionLink.Body.velocity = new Vector2(0, 0);
+            moveLink.Body.velocity = new Vector2(0, 0);
 
             return true;
         }
 
-        public static MoveActionLink GetLink() {
-            return new MoveActionLink();
+        public static MoveLink GetLink() {
+            return new MoveLink();
         }
     }
 }

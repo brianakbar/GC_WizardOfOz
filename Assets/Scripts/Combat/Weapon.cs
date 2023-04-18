@@ -8,7 +8,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] string weaponName;
         [SerializeField] Sprite sprite;
         [SerializeField] bool isRightHand = true;
-        [SerializeField] List<BaseAction> actions = new List<BaseAction>();
+        [SerializeField] List<Attack> combos = new List<Attack>();
 
         public Sprite GetSprite() {
             return sprite;
@@ -16,6 +16,12 @@ namespace Creazen.Wizard.Combat {
 
         public bool IsRightHand() {
             return isRightHand;
+        }
+
+        public Attack GetCombo(int index) {
+            if(index < 0) return combos[0];
+            if(index >= combos.Count) return combos[combos.Count - 1];
+            return combos[index];
         }
     }
 }

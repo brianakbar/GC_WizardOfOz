@@ -14,6 +14,11 @@ namespace Creazen.Wizard.ActionScheduling {
             return true;
         }
 
+        public void Finish() {
+            currentAction = null;
+            currentActionLink = null;
+        }
+
         public void Cancel() {
             if(currentAction == null) return;
 

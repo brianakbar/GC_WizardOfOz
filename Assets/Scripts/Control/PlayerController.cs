@@ -1,14 +1,16 @@
 namespace Creazen.Wizard.Control {
-    using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Combat;
     using Creazen.Wizard.Movement;
     using UnityEngine;
     using UnityEngine.InputSystem;
     
     public class PlayerController : MonoBehaviour {
         Mover mover;
+        Fighter fighter;
 
         void Awake() {
             mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
         }
 
         void OnMove(InputValue value) {
@@ -19,6 +21,10 @@ namespace Creazen.Wizard.Control {
             else {
                 mover.Stop();
             }
+        }
+
+        void OnAttack(InputValue value) {
+            fighter.StartAttack();
         }
     }
 }

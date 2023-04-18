@@ -4,13 +4,22 @@ namespace Creazen.Wizard.Combat {
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
     public class Attack : BaseAction {
-        [SerializeField] Animation attackAnimation;
+        [SerializeField] RuntimeAnimatorController attackAnimator;
 
         public override bool StartAction(ActionLink actionLink) {
+            AttackLink link = actionLink as AttackLink;
+            if(link == null) return false;
+            link.AddCombo();
+            link.Animator = attackAnimator;
+
             return true;
         }
 
         public override bool Cancel(ActionLink actionLink) {
+            AttackLink link = actionLink as AttackLink;
+            if(link == null) return false;
+            link.ResetCombo();
+
             return true;
         }
 

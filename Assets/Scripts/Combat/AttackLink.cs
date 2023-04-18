@@ -4,12 +4,21 @@ namespace Creazen.Wizard.Combat {
 
     public class AttackLink : ActionLink {
         GameObject performer;
-        Rigidbody2D body;
+        int combo;
+        RuntimeAnimatorController animator;
         
         public override GameObject Performer { get => performer; set {
             performer = value;
-            body = performer.GetComponent<Rigidbody2D>();
         }}
-        public Rigidbody2D Body { get => body; }
+        public int Combo { get => combo; }
+        public RuntimeAnimatorController Animator { get => animator; set => animator = value; }
+
+        public void AddCombo() {
+            combo++;
+        }
+
+        public void ResetCombo() {
+            combo = 0;
+        }
     }
 }

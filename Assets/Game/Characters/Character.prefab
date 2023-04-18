@@ -115,6 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3304550994985739562}
+  - component: {fileID: 2446825860915163466}
   m_Layer: 0
   m_Name: Right Hand
   m_TagString: Untagged
@@ -139,6 +140,22 @@ Transform:
   m_Father: {fileID: 2170658475541072383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2446825860915163466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623943025165295769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d106e138564f047b4a033eba0a3512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyHand: {fileID: -1638042388, guid: 3695c09aab48668498d005df5de9548d, type: 3}
+  holdingWeaponHand: {fileID: 416793950, guid: 3695c09aab48668498d005df5de9548d, type: 3}
+  weaponHolder: {fileID: 7553863090752919982}
+  hand: {fileID: 9001797907242034812}
 --- !u!1 &2196184494718689828
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2687389971908195029}
   - component: {fileID: 8659607898427815915}
+  - component: {fileID: 1172505904195603974}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -193,6 +211,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1172505904195603974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196184494718689828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76a2290d3c0a894487786bb9f2f8289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementScheduler: {fileID: 0}
+  idle: {fileID: 11400000, guid: 5d4a589f1df410047a8e0aa572d93fdd, type: 2}
+  move: {fileID: 11400000, guid: 0f32bf5ee9674d94a8ac427afbe17f65, type: 2}
 --- !u!1 &3824694239604365164
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2170658475541072383}
+  - component: {fileID: 945036082451770001}
   m_Layer: 0
   m_Name: Hands
   m_TagString: Untagged
@@ -226,6 +260,18 @@ Transform:
   m_Father: {fileID: 2433961834926776184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945036082451770001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824694239604365164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927325d809910fe44b8f5eb58f61367b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6861009284954925841
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8426069504092571317}
+  - component: {fileID: 7167102957801538436}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -258,6 +305,22 @@ Transform:
   m_Father: {fileID: 2170658475541072383}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7167102957801538436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861009284954925841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d106e138564f047b4a033eba0a3512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyHand: {fileID: -142876350, guid: 3695c09aab48668498d005df5de9548d, type: 3}
+  holdingWeaponHand: {fileID: -1317219081, guid: 3695c09aab48668498d005df5de9548d, type: 3}
+  weaponHolder: {fileID: 0}
+  hand: {fileID: 4428666205805533883}
 --- !u!1 &8111665154134242281
 GameObject:
   m_ObjectHideFlags: 0

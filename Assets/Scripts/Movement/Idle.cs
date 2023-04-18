@@ -2,7 +2,7 @@ namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "New Idle Action", menuName = "Action/Idle")]
+    [CreateAssetMenu(fileName = "New Idle Action", menuName = "Action/Movement/Idle")]
     public class Idle : BaseAction {
         public override bool StartAction(ActionLink actionLink) {
             IdleLink idleLink = actionLink as IdleLink;

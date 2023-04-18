@@ -5,24 +5,19 @@ namespace Creazen.Wizard.Control {
     using UnityEngine.InputSystem;
     
     public class PlayerController : MonoBehaviour {
-        ActionScheduler actionScheduler;
-        MoveLink moveActionLink;
-        IdleLink idleActionLink;
+        Mover mover;
 
         void Awake() {
-            actionScheduler = GetComponent<ActionScheduler>();
-            moveActionLink = Move.GetLink();
-            idleActionLink = Idle.GetLink();
+            mover = GetComponent<Mover>();
         }
 
         void OnMove(InputValue value) {
             Vector2 direction = value.Get<Vector2>();
             if(direction != Vector2.zero) {
-                moveActionLink.Direction = direction;
-                actionScheduler.StartAction<Move>(moveActionLink);
+                mover.StartMoving(direction);
             }
             else {
-                actionScheduler.StartAction<Idle>(idleActionLink);
+                mover.Stop();
             }
         }
     }

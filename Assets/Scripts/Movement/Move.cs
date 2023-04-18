@@ -2,7 +2,7 @@ namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "New Move Action", menuName = "Action/Move")]
+    [CreateAssetMenu(fileName = "New Move Action", menuName = "Action/Movement/Move")]
     public class Move : BaseAction {
         [SerializeField] [Min(0)] Vector2 speed = new Vector2(2f, 1f);
 

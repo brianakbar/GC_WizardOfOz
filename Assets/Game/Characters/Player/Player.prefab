@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927325d809910fe44b8f5eb58f61367b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  performer: {fileID: 0}
 --- !u!114 &2147996360058933185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd198b27154a0146a8cfe95871bfca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handAnimator: {fileID: 4835448197272319661}
   currentWeapon: {fileID: 11400000, guid: 9c88ace987d01454f8859800e1132b43, type: 2}
   combatScheduler: {fileID: 4008425752340056495}
   rightHand: {fileID: 1966216635083739764}

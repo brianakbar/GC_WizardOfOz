@@ -1,7 +1,8 @@
 namespace Creazen.Wizard.Combat {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
-    
+    using UnityEngine.InputSystem;
+
     public class Fighter : MonoBehaviour {
         [SerializeField] Weapon currentWeapon;
         [SerializeField] ActionScheduler combatScheduler;
@@ -12,15 +13,22 @@ namespace Creazen.Wizard.Combat {
 
         Animator animator;
 
+        AimLink aimLink;
         AttackLink attackLink;
 
         void Awake() {
             animator = GetComponent<Animator>();
             attackLink = Attack.GetLink();
+            aimLink = Aim.GetLink();
         }
 
         void Start() {
             EquipWeapon(currentWeapon);
+            combatScheduler.SetDefaultAction(currentWeapon.GetAim(), aimLink);
+        }
+
+        void Update() {
+            aimLink.MouseScreenPosition = Mouse.current.position.ReadValue();
         }
 
         void OnFinishAttack() {

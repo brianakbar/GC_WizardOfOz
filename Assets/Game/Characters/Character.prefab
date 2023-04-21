@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76a2290d3c0a894487786bb9f2f8289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
   movementScheduler: {fileID: 0}
   idle: {fileID: 11400000, guid: 5d4a589f1df410047a8e0aa572d93fdd, type: 2}
   move: {fileID: 11400000, guid: 0f32bf5ee9674d94a8ac427afbe17f65, type: 2}
@@ -273,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927325d809910fe44b8f5eb58f61367b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  performer: {fileID: 2196184494718689828}
 --- !u!1 &6861009284954925841
 GameObject:
   m_ObjectHideFlags: 0

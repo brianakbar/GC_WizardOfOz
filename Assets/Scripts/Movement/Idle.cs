@@ -3,22 +3,15 @@ namespace Creazen.Wizard.Movement {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Idle Action", menuName = "Action/Movement/Idle")]
-    public class Idle : BaseAction {
-        public override bool StartAction(ActionLink actionLink) {
-            IdleLink idleLink = actionLink as IdleLink;
-            if(idleLink == null) return false;
-
-            idleLink.Body.velocity = new Vector2(0f, 0f);
+    public class Idle : BaseAction<IdleLink> {
+        public override bool StartAction(IdleLink actionLink) {
+            actionLink.Body.velocity = new Vector2(0f, 0f);
 
             return true;
         }
 
-        public override bool Cancel(ActionLink actionLink) {
+        public override bool Cancel(IdleLink actionLink) {
             return true;
-        }
-
-        public static IdleLink GetLink() {
-            return new IdleLink();
         }
     }
 }

@@ -3,28 +3,20 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
-    public class Attack : BaseAction {
+    public class Attack : BaseAction<AttackLink> {
         [SerializeField] RuntimeAnimatorController attackAnimator;
 
-        public override bool StartAction(ActionLink actionLink) {
-            AttackLink link = actionLink as AttackLink;
-            if(link == null) return false;
-            link.AddCombo();
-            link.Animator = attackAnimator;
+        public override bool StartAction(AttackLink actionLink) {
+            actionLink.AddCombo();
+            actionLink.Animator = attackAnimator;
 
             return true;
         }
 
-        public override bool Cancel(ActionLink actionLink) {
-            AttackLink link = actionLink as AttackLink;
-            if(link == null) return false;
-            link.ResetCombo();
+        public override bool Cancel(AttackLink actionLink) {
+            actionLink.ResetCombo();
 
             return true;
-        }
-
-        public static AttackLink GetLink() {
-            return new AttackLink();
         }
     }
 }

@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.ActionScheduling {
+    using System;
     using UnityEngine;
 
     public class ActionScheduler : MonoBehaviour {
@@ -21,7 +22,7 @@ namespace Creazen.Wizard.ActionScheduling {
             }
         }
 
-        public void SetDefaultAction(BaseAction action, ActionLink actionLink) {
+        public void SetDefaultAction<T>(BaseAction<T> action, T actionLink) where T : ActionLink {
             defaultAction = action;
             defaultActionLink = actionLink;
 
@@ -30,13 +31,8 @@ namespace Creazen.Wizard.ActionScheduling {
             }
         }
 
-        public bool StartAction(BaseAction action, ActionLink actionLink) {
-            Cancel();
-            if(actionLink.Performer == null) actionLink.Performer = performer;
-            if(!action.StartAction(actionLink)) return false;
-            this.currentAction = action;
-            this.currentActionLink = actionLink;
-            return true;
+        public bool StartAction<T>(BaseAction<T> action, T actionLink) where T : ActionLink {
+            return StartAction(action as BaseAction, actionLink);
         }
 
         public void Finish() {
@@ -55,6 +51,16 @@ namespace Creazen.Wizard.ActionScheduling {
             currentAction.Cancel(currentActionLink);
             currentAction = null;
             currentActionLink = null;
+        }
+
+        bool StartAction(BaseAction action, ActionLink actionLink) {
+            Cancel();
+            if(actionLink.Performer == null) actionLink.Performer = performer;
+            if(!action.StartAction(actionLink)) return false;
+            this.currentAction = action;
+            this.currentActionLink = actionLink;
+
+            return true;
         }
     }
 }

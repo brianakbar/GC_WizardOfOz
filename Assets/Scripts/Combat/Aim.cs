@@ -4,23 +4,13 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Aim Action", menuName = "Action/Combat/Aim")]
-    public class Aim : BaseAction, IUpdate {
-        public override bool StartAction(ActionLink actionLink) {
-            AimLink link = actionLink as AimLink;
-            if(link == null) return false;
-
+    public class Aim : BaseAction<AimLink>, IUpdate {
+        public override bool StartAction(AimLink actionLink) {
             return true;
         }
 
-        public override bool Cancel(ActionLink actionLink) {
-            AimLink link = actionLink as AimLink;
-            if(link == null) return false;
-
+        public override bool Cancel(AimLink actionLink) {
             return true;
-        }
-
-        public static AimLink GetLink() {
-            return new AimLink();
         }
 
         void IUpdate.Update(ActionLink actionLink) {

@@ -1,23 +1,11 @@
 namespace Creazen.Wizard.Combat {
-    using System.Collections;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Aim Action", menuName = "Action/Combat/Aim")]
-    public class Aim : BaseAction<AimLink>, IUpdate {
-        public override bool StartAction(AimLink actionLink) {
-            return true;
-        }
-
-        public override bool Cancel(AimLink actionLink) {
-            return true;
-        }
-
-        void IUpdate.Update(ActionLink actionLink) {
-            AimLink link = actionLink as AimLink;
-            if(link == null) return;
-
-            SetLookDirection(link);
+    public class Aim : BaseAction<AimLink> {
+        public override void OnUpdate(AimLink actionLink) {
+            SetLookDirection(actionLink);
         }
 
         void SetLookDirection(AimLink link) {

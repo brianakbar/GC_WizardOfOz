@@ -9,9 +9,5 @@ namespace Creazen.Wizard.Movement {
 
             return true;
         }
-
-        public override bool Cancel(IdleLink actionLink) {
-            return true;
-        }
     }
 }

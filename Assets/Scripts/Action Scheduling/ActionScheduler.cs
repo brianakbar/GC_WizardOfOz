@@ -1,5 +1,4 @@
 namespace Creazen.Wizard.ActionScheduling {
-    using System;
     using UnityEngine;
 
     public class ActionScheduler : MonoBehaviour {
@@ -16,10 +15,7 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         void Update() {
-            IUpdate actionUpdate = currentAction as IUpdate;
-            if(actionUpdate != null) {
-                actionUpdate.Update(currentActionLink);
-            }
+            currentAction.OnUpdate(currentActionLink);
         }
 
         public void SetDefaultAction<T>(BaseAction<T> action, T actionLink) where T : ActionLink {

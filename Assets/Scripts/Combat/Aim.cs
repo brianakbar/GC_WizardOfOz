@@ -4,8 +4,8 @@ namespace Creazen.Wizard.Combat {
 
     [CreateAssetMenu(fileName = "New Aim Action", menuName = "Action/Combat/Aim")]
     public class Aim : BaseAction<AimLink> {
-        public override void OnUpdate(AimLink actionLink) {
-            SetLookDirection(actionLink);
+        public override void Step(AimLink link) {
+            SetLookDirection(link);
         }
 
         void SetLookDirection(AimLink link) {

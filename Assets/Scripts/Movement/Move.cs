@@ -6,14 +6,14 @@ namespace Creazen.Wizard.Movement {
     public class Move : BaseAction<MoveLink> {
         [SerializeField] [Min(0)] Vector2 speed = new Vector2(2f, 1f);
 
-        public override bool StartAction(MoveLink actionLink) {
-            actionLink.Body.velocity = actionLink.MoveDirection * speed;
+        public override bool StartAction(MoveLink link) {
+            link.Body.velocity = link.MoveDirection * speed;
 
             return true;
         }
 
-        public override bool Cancel(MoveLink actionLink) {
-            actionLink.Body.velocity = new Vector2(0, 0);
+        public override bool Cancel(MoveLink link) {
+            link.Body.velocity = new Vector2(0, 0);
 
             return true;
         }

@@ -4,8 +4,8 @@ namespace Creazen.Wizard.Movement {
 
     [CreateAssetMenu(fileName = "New Idle Action", menuName = "Action/Movement/Idle")]
     public class Idle : BaseAction<IdleLink> {
-        public override bool StartAction(IdleLink actionLink) {
-            actionLink.Body.velocity = new Vector2(0f, 0f);
+        public override bool StartAction(IdleLink link) {
+            link.Body.velocity = new Vector2(0f, 0f);
 
             return true;
         }

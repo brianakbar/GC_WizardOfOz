@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.ActionScheduling {
+    using System;
     using UnityEngine;
 
     public class ActionScheduler : MonoBehaviour {
@@ -10,25 +11,36 @@ namespace Creazen.Wizard.ActionScheduling {
         BaseAction currentAction;
         ActionLink currentActionLink;
 
+        Action onFinish;
+
         void Awake() {
             if(performer == null) performer = gameObject;
         }
 
         void Update() {
-            currentAction.OnUpdate(currentActionLink);
+            currentAction.Step(currentActionLink);
         }
 
-        public void SetDefaultAction<T>(BaseAction<T> action, T actionLink) where T : ActionLink {
+        public void OnTriggerEnter2D(Collider2D other) {
+            currentAction.TriggerEnter2D(currentActionLink, other);
+        }
+
+        public void SetDefaultAction<T>(BaseAction<T> action, T link) where T : ActionLink {
             defaultAction = action;
-            defaultActionLink = actionLink;
+            defaultActionLink = link;
 
             if(currentAction == null) {
                 StartAction(defaultAction, defaultActionLink);
             }
         }
 
-        public bool StartAction<T>(BaseAction<T> action, T actionLink) where T : ActionLink {
-            return StartAction(action as BaseAction, actionLink);
+        public bool StartAction<T>(BaseAction<T> action, T link, Action onFinish) where T : ActionLink {
+            this.onFinish = onFinish;
+            return StartAction(action as BaseAction, link);
+        }
+
+        public bool StartAction<T>(BaseAction<T> action, T link) where T : ActionLink {
+            return StartAction(action as BaseAction, link);
         }
 
         public void Finish() {
@@ -39,6 +51,7 @@ namespace Creazen.Wizard.ActionScheduling {
                 currentAction = null;
                 currentActionLink = null;
             }
+            if(onFinish != null) onFinish();
         }
 
         public void Cancel() {
@@ -49,12 +62,13 @@ namespace Creazen.Wizard.ActionScheduling {
             currentActionLink = null;
         }
 
-        bool StartAction(BaseAction action, ActionLink actionLink) {
+        bool StartAction(BaseAction action, ActionLink link) {
             Cancel();
-            if(actionLink.Performer == null) actionLink.Performer = performer;
-            if(!action.StartAction(actionLink)) return false;
+            if(link.Performer == null) link.Performer = performer;
+            if(link.Scheduler == null) link.Scheduler = this;
+            if(!action.StartAction(link)) return false;
             this.currentAction = action;
-            this.currentActionLink = actionLink;
+            this.currentActionLink = link;
 
             return true;
         }

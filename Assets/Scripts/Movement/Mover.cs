@@ -1,7 +1,6 @@
 namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
-    using UnityEngine.InputSystem;
 
     public class Mover : MonoBehaviour {
         [SerializeField] ActionScheduler movementScheduler;

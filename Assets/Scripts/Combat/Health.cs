@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.Combat {
+    using System.Collections;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
     
@@ -6,6 +7,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] int startingHealth = 5;
         [SerializeField] ActionScheduler scheduler;
         [SerializeField] Damage damage;
+        [SerializeField] ParticleSystem deathParticle;
 
         int currentHealth;
 
@@ -27,10 +29,21 @@ namespace Creazen.Wizard.Combat {
             damageLink.KnockbackTime = knockbackTime;
             scheduler.StartAction(damage, damageLink, StopDamageAnimation);
             animator.SetBool("isDamaged", true);
+            if(currentHealth <= 0) {
+                animator.SetTrigger("dead");
+                StartCoroutine(ProcessDeath());
+            }
         }
 
         void StopDamageAnimation() {
             animator.SetBool("isDamaged", false);
+        }
+
+        IEnumerator ProcessDeath() {
+            yield return new WaitUntil(() => deathParticle.isPlaying);
+            yield return new WaitWhile(() => deathParticle.isPlaying);
+
+            Destroy(gameObject);
         }
     }
 }

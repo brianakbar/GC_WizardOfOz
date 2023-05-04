@@ -2,14 +2,16 @@ namespace Creazen.Wizard.Combat {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
-    
+    using UnityEngine.Events;
+
     public class Health : MonoBehaviour {
-        [SerializeField] int startingHealth = 5;
+        [SerializeField] float startingHealth = 5;
         [SerializeField] ActionScheduler scheduler;
         [SerializeField] Damage damage;
         [SerializeField] ParticleSystem deathParticle;
+        [SerializeField] UnityEvent<float> onHit;
 
-        int currentHealth;
+        float currentHealth;
 
         Animator animator;
 
@@ -22,13 +24,26 @@ namespace Creazen.Wizard.Combat {
             damageLink = Damage.GetLink();
         }
 
-        public void DealDamage(int damageDealt, Vector3 knockback, float knockbackTime) {
+        public float GetMaxHealth() {
+            return startingHealth;
+        }
+
+        public float GetCurrentHealth() {
+            return currentHealth;
+        }
+
+        public float GetFraction() {
+            return GetCurrentHealth() / GetMaxHealth();
+        }
+
+        public void DealDamage(float damageDealt, Vector3 knockback, float knockbackTime) {
             damageDealt = Mathf.Max(0, damageDealt);
             currentHealth = Mathf.Clamp(currentHealth - damageDealt, 0, currentHealth);
             damageLink.Knockback = knockback;
             damageLink.KnockbackTime = knockbackTime;
             scheduler.StartAction(damage, damageLink, StopDamageAnimation);
             animator.SetBool("isDamaged", true);
+            onHit?.Invoke(GetFraction());
             if(currentHealth <= 0) {
                 animator.SetTrigger("dead");
                 StartCoroutine(ProcessDeath());

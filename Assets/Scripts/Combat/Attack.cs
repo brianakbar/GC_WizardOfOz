@@ -5,7 +5,7 @@ namespace Creazen.Wizard.Combat {
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
     public class Attack : BaseAction<AttackLink> {
         [SerializeField] RuntimeAnimatorController attackAnimator;
-        [SerializeField] int damage = 1;
+        [SerializeField] float damage = 1f;
         [SerializeField] float knockbackSpeed = 0.5f;
         [SerializeField] float knockbackTime = 0.1f;
 

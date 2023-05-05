@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Character
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 2743898591
+    locked: 0
+  - name: Roof
+    uniqueID: 3511589485
     locked: 0

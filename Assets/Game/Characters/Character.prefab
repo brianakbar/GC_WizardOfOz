@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2433961834926776184}
   - component: {fileID: 4354298078196162125}
+  - component: {fileID: 4337940899499775847}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -85,6 +86,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &4337940899499775847
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140532706311135994}
+  m_Enabled: 1
+  m_SortingLayerID: -1551068705
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &1623943025165295769
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,8 +163,6 @@ GameObject:
   - component: {fileID: 6839258316602761171}
   - component: {fileID: 7622422134455301769}
   - component: {fileID: 6203418963266543113}
-  - component: {fileID: 1525231200045131549}
-  - component: {fileID: 2677371777979832089}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -196,7 +206,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2695875dedebf8b4d853106646ddea3c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -310,30 +320,6 @@ MonoBehaviour:
   onHit:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1525231200045131549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2196184494718689828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe51c55f21f9784e9ec2a4966507f24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderFactor: 100
---- !u!210 &2677371777979832089
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2196184494718689828}
-  m_Enabled: 1
-  m_SortingLayerID: -1551068705
-  m_SortingLayer: 1
-  m_SortingOrder: 0
 --- !u!1 &3009485947822698106
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +953,14 @@ PrefabInstance:
     - target: {fileID: 4650272289121019672, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693372855371671270, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693372855371671270, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1961932449
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}

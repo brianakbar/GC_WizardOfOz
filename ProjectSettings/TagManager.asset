@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Character
+  - name: TopDown Object
     uniqueID: 2743898591
     locked: 0
   - name: Roof

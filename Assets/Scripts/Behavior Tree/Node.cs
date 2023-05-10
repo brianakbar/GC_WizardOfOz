@@ -4,6 +4,8 @@ namespace Creazen.Wizard.BehaviorTree {
     public abstract class Node : ScriptableObject {
         public State state;
         public bool started = false;
+        public string guid;
+        public Vector2 position;
 
         public State Update() {
             if(!started) {

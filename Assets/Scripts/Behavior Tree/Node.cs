@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.BehaviorTree {
+    using System.Collections.Generic;
     using UnityEngine;
     
     public abstract class Node : ScriptableObject {
@@ -23,6 +24,10 @@ namespace Creazen.Wizard.BehaviorTree {
             return state;
         }
 
+        public abstract bool AddChild(Node child);
+        public abstract bool RemoveChild(Node child);
+        public abstract IEnumerable<Node> GetChildren();
+        
         protected virtual void OnStart() {}
         protected virtual void OnStop() {}
         protected virtual State OnUpdate() {return State.Success;}

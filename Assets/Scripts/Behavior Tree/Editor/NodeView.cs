@@ -3,6 +3,9 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
     using UnityEngine;
 
     public class NodeView : Node {
+        public Port input;
+        public Port output;
+
         Creazen.Wizard.BehaviorTree.Node node;
 
         public NodeView(Creazen.Wizard.BehaviorTree.Node node) {
@@ -12,6 +15,9 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
             style.left = node.position.x;
             style.top = node.position.y;
+
+            CreateInputPort();
+            CreateOutputPort();
         }
 
         public Creazen.Wizard.BehaviorTree.Node GetNode() {
@@ -22,6 +28,29 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             base.SetPosition(newPos);
             node.position.x = newPos.xMin;
             node.position.y = newPos.yMin;
+        }
+
+        void CreateInputPort() {
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+
+            if(input != null) {
+                input.portName = "Input";
+                inputContainer.Add(input);
+            }
+        }
+
+        void CreateOutputPort() {
+            if(node is CompositeNode) {
+                output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
+            }
+            else if(node is DecoratorNode) {
+                output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
+            }
+
+            if(output != null) {
+                output.portName = "Output";
+                outputContainer.Add(output);
+            }
         }
     }
 }

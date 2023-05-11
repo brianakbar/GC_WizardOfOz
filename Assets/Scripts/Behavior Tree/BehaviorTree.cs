@@ -41,5 +41,17 @@ namespace Creazen.Wizard.BehaviorTree {
             AssetDatabase.RemoveObjectFromAsset(nodeToDelete);
             AssetDatabase.SaveAssets();
         }
+
+        public bool AddChild(Node parent, Node child) {
+            return parent.AddChild(child);
+        }
+
+        public bool RemoveChild(Node parent, Node child) {
+            return parent.RemoveChild(child);
+        }
+
+        public IEnumerable<Node> GetChildren(Node parent) {
+            return parent.GetChildren();
+        }
     }
 }

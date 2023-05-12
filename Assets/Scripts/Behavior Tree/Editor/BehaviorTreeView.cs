@@ -58,6 +58,12 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
             graphViewChanged -= OnGraphViewChanged;
             DeleteElements(graphElements);
+
+            if(currentTree.rootNode == null) {
+                currentTree.rootNode = currentTree.CreateNode(typeof(RootNode)) as RootNode;
+                EditorUtility.SetDirty(currentTree);
+                AssetDatabase.SaveAssets();
+            }
             
             foreach(var node in currentTree.GetNodes()) {
                 CreateNodeView(node);

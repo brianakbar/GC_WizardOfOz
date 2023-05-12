@@ -44,6 +44,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
         void OnSelectionChange() {
             BehaviorTree tree = Selection.activeObject as BehaviorTree;
             if(tree == null) return;
+            if(!AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID())) return;
 
             treeView.PopulateView(tree);
         }

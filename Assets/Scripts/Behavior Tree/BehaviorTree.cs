@@ -6,7 +6,7 @@ namespace Creazen.Wizard.BehaviorTree {
     
     [CreateAssetMenu(fileName = "New Behavior Tree", menuName = "Behavior Tree/Behavior Tree", order = 0)]
     public class BehaviorTree : ScriptableObject {
-        public Node rootNode;
+        public RootNode rootNode;
         public State state = State.Running;
         
         public List<Node> nodes = new List<Node>();
@@ -36,6 +36,7 @@ namespace Creazen.Wizard.BehaviorTree {
 
         public void DeleteNode(Node nodeToDelete) {
             if(!nodes.Contains(nodeToDelete)) return;
+            if(nodeToDelete is RootNode) return;
 
             nodes.Remove(nodeToDelete);
             AssetDatabase.RemoveObjectFromAsset(nodeToDelete);

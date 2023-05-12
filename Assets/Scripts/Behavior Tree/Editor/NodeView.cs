@@ -34,7 +34,9 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
         }
 
         void CreateInputPort() {
-            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+            if(node as RootNode == null) {
+                input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+            }
 
             if(input != null) {
                 input.portName = "Input";
@@ -47,6 +49,9 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
                 output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
             }
             else if(node is DecoratorNode) {
+                output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
+            }
+            else if(node is RootNode) {
                 output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
             }
 

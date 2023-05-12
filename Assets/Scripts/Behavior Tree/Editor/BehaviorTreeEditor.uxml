@@ -3,7 +3,7 @@
     <uie:Toolbar>
         <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets" />
     </uie:Toolbar>
-    <Creazen.Wizard.BehaviorTree.Editor.SplitView fixed-pane-initial-dimension="200">
+    <Creazen.Wizard.BehaviorTree.Editor.SplitView fixed-pane-initial-dimension="250">
         <ui:VisualElement name="left-panel">
             <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
             <Creazen.Wizard.BehaviorTree.Editor.InspectorView />

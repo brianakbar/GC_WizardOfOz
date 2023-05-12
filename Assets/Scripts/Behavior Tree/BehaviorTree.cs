@@ -54,5 +54,11 @@ namespace Creazen.Wizard.BehaviorTree {
         public IEnumerable<Node> GetChildren(Node parent) {
             return parent.GetChildren();
         }
+
+        public BehaviorTree Clone() {
+            BehaviorTree clonedTree = Instantiate(this);
+            clonedTree.rootNode = rootNode.Clone() as RootNode;
+            return clonedTree;
+        }
     }
 }

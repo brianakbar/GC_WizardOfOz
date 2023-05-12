@@ -5,6 +5,12 @@ namespace Creazen.Wizard.BehaviorTree {
     public abstract class DecoratorNode : Node {
         [HideInInspector] public Node child;
 
+        public override Node Clone() {
+            DecoratorNode instance = Instantiate(this);
+            instance.child = child.Clone();
+            return instance;
+        }
+
         public override bool AddChild(Node child) {
             this.child = child;
 

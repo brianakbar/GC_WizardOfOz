@@ -28,6 +28,10 @@ namespace Creazen.Wizard.BehaviorTree {
         public abstract bool RemoveChild(Node child);
         public abstract IEnumerable<Node> GetChildren();
         
+        public virtual Node Clone() {
+            return Instantiate(this);
+        }
+
         protected virtual void OnStart() {}
         protected virtual void OnStop() {}
         protected virtual State OnUpdate() {return State.Success;}

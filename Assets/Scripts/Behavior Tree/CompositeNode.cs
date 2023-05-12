@@ -1,8 +1,9 @@
 namespace Creazen.Wizard.BehaviorTree {
     using System.Collections.Generic;
+    using UnityEngine;
 
     public abstract class CompositeNode : Node {
-        public List<Node> children = new List<Node>();
+        [HideInInspector] public List<Node> children = new List<Node>();
 
         public override bool AddChild(Node child) {
             if(child == null) return false;

@@ -1,8 +1,9 @@
 namespace Creazen.Wizard.BehaviorTree {
     using System.Collections.Generic;
+    using UnityEngine;
 
     public abstract class DecoratorNode : Node {
-        public Node child;
+        [HideInInspector] public Node child;
 
         public override bool AddChild(Node child) {
             this.child = child;

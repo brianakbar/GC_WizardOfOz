@@ -36,6 +36,8 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             treeView = root.Q<BehaviorTreeView>();
             inspectorView = root.Q<InspectorView>();
 
+            treeView.onNodeSelected = OnNodeSelectionChange;
+
             OnSelectionChange();
         }
 
@@ -44,6 +46,10 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             if(tree == null) return;
 
             treeView.PopulateView(tree);
+        }
+
+        void OnNodeSelectionChange(NodeView node) {
+            inspectorView?.UpdateSelection(node);
         }
     }
 }

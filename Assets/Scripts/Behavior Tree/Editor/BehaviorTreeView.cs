@@ -7,6 +7,8 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
     using System.Collections.Generic;
 
     public class BehaviorTreeView : GraphView {
+        public Action<NodeView> onNodeSelected;
+
         BehaviorTree currentTree;
 
         public new class UxmlFactory : UxmlFactory<BehaviorTreeView, GraphView.UxmlTraits> {}
@@ -111,6 +113,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
         void CreateNodeView(Creazen.Wizard.BehaviorTree.Node node) {
             NodeView nodeView = new NodeView(node);
+            nodeView.onNodeSelected = onNodeSelected;
             AddElement(nodeView);
         }
 

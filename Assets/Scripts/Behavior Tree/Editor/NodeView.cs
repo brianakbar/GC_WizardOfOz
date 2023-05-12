@@ -1,10 +1,13 @@
 namespace Creazen.Wizard.BehaviorTree.Editor {
+    using System;
     using UnityEditor.Experimental.GraphView;
     using UnityEngine;
 
     public class NodeView : Node {
         public Port input;
         public Port output;
+
+        public Action<NodeView> onNodeSelected;
 
         Creazen.Wizard.BehaviorTree.Node node;
 
@@ -51,6 +54,11 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
                 output.portName = "Output";
                 outputContainer.Add(output);
             }
+        }
+
+        public override void OnSelected() {
+            base.OnSelected();
+            onNodeSelected?.Invoke(this);
         }
     }
 }

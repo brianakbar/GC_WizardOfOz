@@ -3,10 +3,10 @@ namespace Creazen.Wizard.BehaviorTree {
     using UnityEngine;
     
     public abstract class Node : ScriptableObject {
-        public State state;
-        public bool started = false;
-        public string guid;
-        public Vector2 position;
+        [HideInInspector] public State state;
+        [HideInInspector] public bool started = false;
+        [HideInInspector] public string guid;
+        [HideInInspector] public Vector2 position;
 
         public State Update() {
             if(!started) {

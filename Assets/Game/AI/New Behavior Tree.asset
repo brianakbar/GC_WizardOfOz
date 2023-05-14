@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 686e2d05-5fee-46cc-94c2-7d5dfd1f2ab7
-  position: {x: 581.0485, y: 250.8768}
+  position: {x: 0.000061035156, y: 241.91649}
   message: 
 --- !u!114 &-4596031655953896837
 MonoBehaviour:
@@ -32,11 +32,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ba9f066e-6b1c-424c-bf4f-5c2bdebfffc2
-  position: {x: -0.000024795532, y: -99.493965}
+  position: {x: -0.00000333786, y: -71.00006}
   children:
-  - {fileID: -4377464940944330889}
   - {fileID: 8266131338007052945}
   - {fileID: 1664508164479841002}
+  - {fileID: -4377464940944330889}
   - {fileID: -4317052969375001405}
 --- !u!114 &-4377464940944330889
 MonoBehaviour:
@@ -53,7 +53,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bd329796-8622-4a39-b0f4-aa0483c7b0ec
-  position: {x: 186.23665, y: 0.0000076293945}
+  position: {x: 202.35385, y: 87.99998}
   duration: 0
 --- !u!114 &-4317052969375001405
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4a2a4363-ac88-426d-8d64-a331906edbd9
-  position: {x: 335.27042, y: 0.000015258789}
+  position: {x: 412.32135, y: 87.99998}
   duration: 0
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
@@ -87,8 +87,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
-  position: {x: 32.99992, y: -214.71138}
-  child: {fileID: 0}
+  position: {x: 0.000022888184, y: -217.67325}
+  child: {fileID: -4596031655953896837}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 49ce40ba-504a-4c99-8062-1ad6cb730ddf
-  position: {x: -149.04575, y: 0.000008583069}
+  position: {x: -188.11687, y: 87.99998}
   message: 
 --- !u!114 &8266131338007052945
 MonoBehaviour:
@@ -143,5 +143,5 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fc1b1c4c-4d71-4179-a620-e4539cf46058
-  position: {x: 19.811104, y: 0.000015258789}
-  child: {fileID: 0}
+  position: {x: -0.000120162964, y: 87.99998}
+  child: {fileID: -6131089543455919029}

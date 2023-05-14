@@ -16,7 +16,11 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             Clear();
             Object.DestroyImmediate(editor);
             editor = Editor.CreateEditor(nodeView.GetNode());
-            IMGUIContainer container = new IMGUIContainer(() => { editor.OnInspectorGUI(); } );
+            IMGUIContainer container = new IMGUIContainer(() => { 
+                if(editor.target) {
+                    editor.OnInspectorGUI(); 
+                }
+            });
             Add(container);
         }
     }

@@ -3,6 +3,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
     using UnityEditor.Experimental.GraphView;
     using UnityEngine;
     using UnityEngine.UIElements;
+    using UnityEditor;
 
     public class NodeView : Node {
         public Port input;
@@ -17,8 +18,8 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             this.title = node.name;
             this.viewDataKey = node.guid;
 
-            style.left = node.position.x;
-            style.top = node.position.y;
+            style.left = node.GetPosition().x;
+            style.top = node.GetPosition().y;
 
             CreateInputPort();
             CreateOutputPort();
@@ -31,8 +32,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
         public override void SetPosition(Rect newPos) {
             base.SetPosition(newPos);
-            node.position.x = newPos.xMin;
-            node.position.y = newPos.yMin;
+            node.SetPosition(newPos);
         }
 
         void CreateInputPort() {

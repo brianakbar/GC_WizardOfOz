@@ -9,7 +9,7 @@ namespace Creazen.Wizard.BehaviorTree {
         public RootNode rootNode;
         public State state = State.Running;
         
-        public List<Node> nodes = new List<Node>();
+        [SerializeField] List<Node> nodes = new List<Node>();
 
         public State Update() {
             if(rootNode.state == State.Running) {
@@ -22,11 +22,26 @@ namespace Creazen.Wizard.BehaviorTree {
             return nodes;
         }
 
+        public IEnumerable<Node> GetChildren(Node parent) {
+            return parent.GetChildren();
+        }
+
+        public BehaviorTree Clone() {
+            BehaviorTree clonedTree = Instantiate(this);
+            clonedTree.rootNode = rootNode.Clone() as RootNode;
+            return clonedTree;
+        }
+
+#if UNITY_EDITOR
         public Node CreateNode(System.Type type) {
             Node node = ScriptableObject.CreateInstance(type) as Node;
             node.name = type.Name;
             node.guid = Guid.NewGuid().ToString();
+            Undo.RegisterCreatedObjectUndo(node, "Create Node");
+
+            Undo.RecordObject(this, "Add Node");
             nodes.Add(node);
+            EditorUtility.SetDirty(this);
 
             AssetDatabase.AddObjectToAsset(node, this);
             AssetDatabase.SaveAssets();
@@ -38,8 +53,12 @@ namespace Creazen.Wizard.BehaviorTree {
             if(!nodes.Contains(nodeToDelete)) return;
             if(nodeToDelete is RootNode) return;
 
+            Undo.RecordObject(this, "Delete Node");
             nodes.Remove(nodeToDelete);
-            AssetDatabase.RemoveObjectFromAsset(nodeToDelete);
+            EditorUtility.SetDirty(this);
+
+            //AssetDatabase.RemoveObjectFromAsset(nodeToDelete);
+            Undo.DestroyObjectImmediate(nodeToDelete);
             AssetDatabase.SaveAssets();
         }
 
@@ -50,15 +69,7 @@ namespace Creazen.Wizard.BehaviorTree {
         public bool RemoveChild(Node parent, Node child) {
             return parent.RemoveChild(child);
         }
+#endif
 
-        public IEnumerable<Node> GetChildren(Node parent) {
-            return parent.GetChildren();
-        }
-
-        public BehaviorTree Clone() {
-            BehaviorTree clonedTree = Instantiate(this);
-            clonedTree.rootNode = rootNode.Clone() as RootNode;
-            return clonedTree;
-        }
     }
 }

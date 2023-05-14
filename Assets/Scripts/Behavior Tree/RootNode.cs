@@ -1,9 +1,10 @@
 namespace Creazen.Wizard.BehaviorTree {
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEditor;
 
     public class RootNode : Node {
-        [HideInInspector] public Node child;
+        [SerializeField] [HideInInspector] protected Node child;
 
         protected override State OnUpdate() {
             return child.Update();
@@ -15,8 +16,17 @@ namespace Creazen.Wizard.BehaviorTree {
             return instance;
         }
 
+        public override IEnumerable<Node> GetChildren() {
+            if(this.child == null) yield break;
+
+            yield return this.child;
+        }
+
+#if UNITY_EDITOR
         public override bool AddChild(Node child) {
+            Undo.RecordObject(this, "Add Node Child");
             this.child = child;
+            EditorUtility.SetDirty(this);
 
             return true;
         }
@@ -24,15 +34,13 @@ namespace Creazen.Wizard.BehaviorTree {
         public override bool RemoveChild(Node child) {
             if(this.child != child) return false;
             
+            Undo.RecordObject(this, "Remove Node Child");
             this.child = null;
+            EditorUtility.SetDirty(this);
 
             return true;
         }
+#endif
 
-        public override IEnumerable<Node> GetChildren() {
-            if(this.child == null) yield break;
-
-            yield return this.child;
-        }
     }
 }

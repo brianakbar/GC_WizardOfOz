@@ -23,6 +23,8 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Behavior Tree/Editor/BehaviorTreeEditor.uss");
             styleSheets.Add(styleSheet);
+
+            Undo.undoRedoPerformed += OnUndo;
         }
 
         public override void BuildContextualMenu(ContextualMenuPopulateEvent evt) {
@@ -131,6 +133,11 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
                 Edge edge = parentView.output.ConnectTo(childView.input);
                 AddElement(edge);
             }
+        }
+
+        void OnUndo() {
+            PopulateView(currentTree);
+            AssetDatabase.SaveAssets();
         }
 
         NodeView FindNodeView(Creazen.Wizard.BehaviorTree.Node node) {

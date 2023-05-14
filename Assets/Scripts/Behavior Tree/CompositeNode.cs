@@ -4,7 +4,7 @@ namespace Creazen.Wizard.BehaviorTree {
     using UnityEditor;
 
     public abstract class CompositeNode : Node {
-        [SerializeField] [HideInInspector] protected List<Node> children = new List<Node>();
+        [SerializeField] protected List<Node> children = new List<Node>();
 
         public override Node Clone() {
             CompositeNode instance = Instantiate(this);
@@ -37,6 +37,14 @@ namespace Creazen.Wizard.BehaviorTree {
             EditorUtility.SetDirty(this);
 
             return true;
+        }
+
+        public void SortChildren() {
+            children.Sort(SortByHorizontalPosition);
+        }
+
+        int SortByHorizontalPosition(Node left, Node right) {
+            return left.GetPosition().x < right.GetPosition().x ? -1 : 1;
         }
 #endif
 

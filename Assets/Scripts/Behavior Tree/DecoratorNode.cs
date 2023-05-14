@@ -4,7 +4,7 @@ namespace Creazen.Wizard.BehaviorTree {
     using UnityEditor;
 
     public abstract class DecoratorNode : Node {
-        [SerializeField] [HideInInspector] protected Node child;
+        [SerializeField] protected Node child;
 
         public override Node Clone() {
             DecoratorNode instance = Instantiate(this);

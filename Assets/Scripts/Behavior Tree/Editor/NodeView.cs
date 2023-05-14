@@ -84,5 +84,11 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             base.OnSelected();
             onNodeSelected?.Invoke(this);
         }
+
+        public void SortChildren() {
+            if(node is CompositeNode composite) {
+                composite.SortChildren();
+            }
+        }
     }
 }

@@ -112,6 +112,14 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
                 }
             }
 
+            if(graphViewChange.movedElements != null) {
+                foreach(Node node in nodes) {
+                    if(node is NodeView nodeView) {
+                        nodeView.SortChildren();
+                    }
+                }
+            }
+
             return graphViewChange;
         }
 

@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.BehaviorTree.Editor {
+    using System;
     using UnityEditor;
     using UnityEditor.Callbacks;
     using UnityEngine;
@@ -24,6 +25,15 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             return false;
         }
 
+        void OnEnable() {
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+        }
+
+        void OnDisable() {
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
+        }
+
         public void CreateGUI() {
             VisualElement root = rootVisualElement;
 
@@ -43,10 +53,28 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
         void OnSelectionChange() {
             BehaviorTree tree = Selection.activeObject as BehaviorTree;
-            if(tree == null) return;
-            if(!AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID())) return;
+            if(tree == null) {
+                if(!Selection.activeGameObject) return;
+                if(Selection.activeGameObject.TryGetComponent<BehaviorTreeAgent>(out var agent)) {
+                    tree = agent.GetBehaviorTree();
+                }
+                else return;
+            }
 
-            treeView.PopulateView(tree);
+            if(!Application.isPlaying) {
+                if(!AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID())) return;
+            }
+
+            treeView?.PopulateView(tree);
+        }
+
+        void OnPlayModeStateChanged(PlayModeStateChange change) {
+            if(change == PlayModeStateChange.EnteredEditMode) {
+                OnSelectionChange();
+            }
+            else if(change == PlayModeStateChange.EnteredPlayMode) {
+                OnSelectionChange();
+            }
         }
 
         void OnNodeSelectionChange(NodeView node) {

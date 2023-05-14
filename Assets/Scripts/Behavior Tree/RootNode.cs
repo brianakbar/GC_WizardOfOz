@@ -4,7 +4,7 @@ namespace Creazen.Wizard.BehaviorTree {
     using UnityEditor;
 
     public class RootNode : Node {
-        [SerializeField] [HideInInspector] protected Node child;
+        [SerializeField] protected Node child;
 
         protected override State OnUpdate() {
             return child.Update();

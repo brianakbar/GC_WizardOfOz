@@ -1,23 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6131089543455919029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daed50e52e3872145894479f2c8e786c, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 686e2d05-5fee-46cc-94c2-7d5dfd1f2ab7
-  position: {x: 0.000061035156, y: 241.91649}
-  message: 
---- !u!114 &-4596031655953896837
+--- !u!114 &-5647331294061943169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: ba9f066e-6b1c-424c-bf4f-5c2bdebfffc2
-  position: {x: -0.00000333786, y: -71.00006}
+  guid: 4788fd26-56f9-4f34-80c2-b625dc637910
+  position: {x: -0.000065612796, y: 65.499985}
   children:
-  - {fileID: 8266131338007052945}
-  - {fileID: 1664508164479841002}
-  - {fileID: -4377464940944330889}
-  - {fileID: -4317052969375001405}
---- !u!114 &-4377464940944330889
+  - {fileID: 5119736379892490623}
+  - {fileID: 6978667639663746416}
+--- !u!114 &-5198981211028692928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,31 +28,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
+  m_Name: RepeaterNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: bd329796-8622-4a39-b0f4-aa0483c7b0ec
-  position: {x: 202.35385, y: 87.99998}
-  duration: 0
---- !u!114 &-4317052969375001405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
-  m_Name: WaitNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 4a2a4363-ac88-426d-8d64-a331906edbd9
-  position: {x: 412.32135, y: 87.99998}
-  duration: 0
+  guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
+  position: {x: 0.0000038146973, y: -83.99992}
+  child: {fileID: -5647331294061943169}
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +52,7 @@ MonoBehaviour:
   started: 0
   guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
   position: {x: 0.000022888184, y: -217.67325}
-  child: {fileID: -4596031655953896837}
+  child: {fileID: -5198981211028692928}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,14 +68,12 @@ MonoBehaviour:
   rootNode: {fileID: -3004838220682929487}
   state: 0
   nodes:
-  - {fileID: -6131089543455919029}
-  - {fileID: -4317052969375001405}
-  - {fileID: -4377464940944330889}
-  - {fileID: 8266131338007052945}
-  - {fileID: -4596031655953896837}
-  - {fileID: 1664508164479841002}
   - {fileID: -3004838220682929487}
---- !u!114 &1664508164479841002
+  - {fileID: -5198981211028692928}
+  - {fileID: -5647331294061943169}
+  - {fileID: 5119736379892490623}
+  - {fileID: 6978667639663746416}
+--- !u!114 &5119736379892490623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +87,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 49ce40ba-504a-4c99-8062-1ad6cb730ddf
-  position: {x: -188.11687, y: 87.99998}
-  message: 
---- !u!114 &8266131338007052945
+  guid: 097b46a7-c54d-47f4-9b90-7f9cb88f651f
+  position: {x: -149.99998, y: 227.00002}
+  message: Bob
+--- !u!114 &6978667639663746416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,11 +99,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
-  m_Name: RepeaterNode
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: fc1b1c4c-4d71-4179-a620-e4539cf46058
-  position: {x: -0.000120162964, y: 87.99998}
-  child: {fileID: -6131089543455919029}
+  guid: 32db9ec9-37f8-4545-8965-06248a328892
+  position: {x: 150.00003, y: 227.00002}
+  duration: 1

@@ -22,13 +22,31 @@ namespace Creazen.Wizard.BehaviorTree {
             return nodes;
         }
 
+        public IEnumerable<Node> GetChildren() {
+            return GetChildren(rootNode);
+        }
+
         public IEnumerable<Node> GetChildren(Node parent) {
             return parent.GetChildren();
+        }
+
+        public void Traverse(Node node, Action<Node> visiter) {
+            if(!node) return;
+
+            visiter.Invoke(node);
+            foreach(Node child in node.GetChildren()) {
+                Traverse(child, visiter);
+            }
         }
 
         public BehaviorTree Clone() {
             BehaviorTree clonedTree = Instantiate(this);
             clonedTree.rootNode = rootNode.Clone() as RootNode;
+            clonedTree.nodes = new List<Node>();
+            Traverse(clonedTree.rootNode, (node) => {
+                clonedTree.nodes.Add(node);
+            });
+
             return clonedTree;
         }
 
@@ -43,7 +61,10 @@ namespace Creazen.Wizard.BehaviorTree {
             nodes.Add(node);
             EditorUtility.SetDirty(this);
 
-            AssetDatabase.AddObjectToAsset(node, this);
+            if(!Application.isPlaying) {
+                AssetDatabase.AddObjectToAsset(node, this);
+            }
+            
             AssetDatabase.SaveAssets();
 
             return node;

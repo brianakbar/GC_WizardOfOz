@@ -10,11 +10,11 @@ namespace Creazen.Wizard.BehaviorTree.Composite {
         }
 
         protected override State OnUpdate() {
-            Node child = children[current++];
+            Node child = children[current];
             if(child.Update() != State.Success) {
                 return child.state;
             }
-            return current >= children.Count? State.Success : State.Running;
+            return ++current >= children.Count? State.Success : State.Running;
         }
     }
 }

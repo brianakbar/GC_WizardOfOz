@@ -23,11 +23,31 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
             CreateInputPort();
             CreateOutputPort();
-            SetupClasses();
+            SetupClassesNodeType();
         }
 
         public Creazen.Wizard.BehaviorTree.Node GetNode() {
             return node;
+        }
+
+        public void SetupClassesNodeState() {
+            if(!Application.isPlaying) return;
+
+            RemoveFromClassList("running");
+            RemoveFromClassList("success");
+            RemoveFromClassList("failure");
+
+            if(node.state == State.Running) {
+                if(node.started) {
+                    AddToClassList("running");
+                }
+            }
+            else if(node.state == State.Success) {
+                AddToClassList("success");
+            }
+            else if(node.state == State.Failure) {
+                AddToClassList("failure");
+            }
         }
 
         public override void SetPosition(Rect newPos) {
@@ -65,7 +85,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             }
         }
 
-        void SetupClasses() {
+        void SetupClassesNodeType() {
             if(node is CompositeNode) {
                 AddToClassList("composite");
             }

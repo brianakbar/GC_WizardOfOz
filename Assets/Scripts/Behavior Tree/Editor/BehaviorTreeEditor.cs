@@ -34,6 +34,10 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
         }
 
+        void OnInspectorUpdate() {
+            treeView?.SetupClassesNodeStates();    
+        }
+
         public void CreateGUI() {
             VisualElement root = rootVisualElement;
 

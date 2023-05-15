@@ -78,6 +78,14 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             graphViewChanged += OnGraphViewChanged;
         }
 
+        public void SetupClassesNodeStates() {
+            foreach(Node node in nodes) {
+                if(node is NodeView nodeView) {
+                    nodeView.SetupClassesNodeState();
+                }
+            }
+        }
+
         GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange) {
             if(graphViewChange.elementsToRemove != null) {
                 foreach(var elem in graphViewChange.elementsToRemove) {

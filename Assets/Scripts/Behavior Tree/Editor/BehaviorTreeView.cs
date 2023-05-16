@@ -5,6 +5,7 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
     using System.Linq;
     using System;
     using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     public class BehaviorTreeView : GraphView {
         public Action<NodeView> onNodeSelected;
@@ -31,19 +32,19 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             {
                 var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
                 foreach(Type type in types) {
-                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                    evt.menu.AppendAction($"Action/{GetContextualMenuNodeName(type)}", (a) => CreateNode(type));
                 }
             }
             {
                 var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
                 foreach(Type type in types) {
-                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                    evt.menu.AppendAction($"Composite/{GetContextualMenuNodeName(type)}", (a) => CreateNode(type));
                 }
             }
             {
                 var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
                 foreach(Type type in types) {
-                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                    evt.menu.AppendAction($"Decorator/{GetContextualMenuNodeName(type)}", (a) => CreateNode(type));
                 }
             }
         }
@@ -84,6 +85,14 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
                     nodeView.SetupClassesNodeState();
                 }
             }
+        }
+
+        string GetContextualMenuNodeName(Type type) {
+            string nodeNameInEditor = type.Name;
+            if(nodeNameInEditor.Contains("Node")) {
+                nodeNameInEditor = nodeNameInEditor.Replace("Node", "");
+            }
+            return Regex.Replace(nodeNameInEditor, @"(\p{Lu})", " $1").Trim();
         }
 
         GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange) {

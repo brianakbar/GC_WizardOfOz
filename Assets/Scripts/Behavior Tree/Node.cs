@@ -4,6 +4,7 @@ namespace Creazen.Wizard.BehaviorTree {
     using UnityEditor;
     
     public abstract class Node : ScriptableObject {
+        [HideInInspector] public GameObject gameObject;
         [HideInInspector] public State state;
         [HideInInspector] public bool started = false;
         [HideInInspector] public string guid;

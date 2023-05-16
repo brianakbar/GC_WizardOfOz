@@ -6,6 +6,7 @@ namespace Creazen.Wizard.BehaviorTree {
     
     [CreateAssetMenu(fileName = "New Behavior Tree", menuName = "Behavior Tree/Behavior Tree", order = 0)]
     public class BehaviorTree : ScriptableObject {
+        public GameObject gameObject;
         public RootNode rootNode;
         public State state = State.Running;
         
@@ -48,6 +49,12 @@ namespace Creazen.Wizard.BehaviorTree {
             });
 
             return clonedTree;
+        }
+
+        public void Bind(GameObject gameObject) {
+            Traverse(rootNode, (node) => {
+                node.gameObject = gameObject;
+            });
         }
 
 #if UNITY_EDITOR

@@ -6,6 +6,7 @@ namespace Creazen.Wizard.BehaviorTree {
 
         void Awake() {
             behaviorTree = behaviorTree.Clone();
+            behaviorTree.Bind(gameObject);
         }
 
         void Update() {

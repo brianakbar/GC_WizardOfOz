@@ -1,8 +1,10 @@
 namespace Creazen.Wizard.BehaviorTree.Editor {
     using System;
+    using System.Text.RegularExpressions;
     using UnityEditor.Experimental.GraphView;
     using UnityEngine;
     using UnityEngine.UIElements;
+    using UnityEditor.UIElements;
     using UnityEditor;
 
     public class NodeView : Node {
@@ -15,7 +17,14 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
 
         public NodeView(Creazen.Wizard.BehaviorTree.Node node) : base("Assets/Scripts/Behavior Tree/Editor/NodeView.uxml") {
             this.node = node;
-            this.title = node.name;
+
+            string nodeNameInEditor = node.name;
+            if(nodeNameInEditor.Contains("Node")) {
+                nodeNameInEditor = nodeNameInEditor.Replace("Node", "");
+            }
+            nodeNameInEditor = Regex.Replace(nodeNameInEditor, @"(\p{Lu})", " $1").Trim();
+
+            this.title = nodeNameInEditor;
             this.viewDataKey = node.guid;
 
             style.left = node.GetPosition().x;
@@ -24,6 +33,10 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             CreateInputPort();
             CreateOutputPort();
             SetupClassesNodeType();
+
+            Label description = this.Q<Label>("description");
+            description.bindingPath = "description";
+            description.Bind(new SerializedObject(node));
         }
 
         public Creazen.Wizard.BehaviorTree.Node GetNode() {

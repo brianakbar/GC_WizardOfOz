@@ -9,6 +9,7 @@ namespace Creazen.Wizard.BehaviorTree {
         [HideInInspector] public bool started = false;
         [HideInInspector] public string guid;
         [SerializeField] [HideInInspector] Vector2 position;
+        [TextArea] public string description;
 
         public State Update() {
             if(!started) {

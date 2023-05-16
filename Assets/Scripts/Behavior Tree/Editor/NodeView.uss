@@ -62,10 +62,16 @@
 #title {
     -unity-font-style: bold;
     font-size: 14px;
+    -unity-text-align: upper-center;
+    padding-top: 12px;
 }
 
 #description {
     font-size: 10px;
+    max-width: 140px;
+    -unity-text-align: upper-center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #divider {
@@ -103,7 +109,7 @@
 }
 
 .running #node-state {
-    background-color: rgba(238, 207, 17, 255);
+    background-color: rgb(238, 207, 17);
 }
 
 .success #node-state {
@@ -112,4 +118,8 @@
 
 .failure #node-state {
     background-color: rgba(229, 25, 25, 0.8);
+}
+
+#description {
+    white-space: normal;
 }

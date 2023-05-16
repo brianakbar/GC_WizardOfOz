@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
   m_Name: SequencerNode
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   state: 0
   started: 0
   guid: 4788fd26-56f9-4f34-80c2-b625dc637910
-  position: {x: -0.000065612796, y: 65.499985}
+  position: {x: 0, y: 46}
+  description: 
   children:
   - {fileID: 5119736379892490623}
   - {fileID: 6978667639663746416}
@@ -31,10 +33,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
   m_Name: RepeaterNode
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   state: 0
   started: 0
   guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
   position: {x: 0.0000038146973, y: -83.99992}
+  description: 
   child: {fileID: -5647331294061943169}
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
@@ -48,10 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8fcd611a6c8414496bacaf76ab253a, type: 3}
   m_Name: RootNode
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   state: 0
   started: 0
   guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
   position: {x: 0.000022888184, y: -217.67325}
+  description: 
   child: {fileID: -5198981211028692928}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -65,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
   m_Name: New Behavior Tree
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   rootNode: {fileID: -3004838220682929487}
   state: 0
   nodes:
@@ -85,10 +92,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daed50e52e3872145894479f2c8e786c, type: 3}
   m_Name: DebugLogNode
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   state: 0
   started: 0
   guid: 097b46a7-c54d-47f4-9b90-7f9cb88f651f
   position: {x: -149.99998, y: 227.00002}
+  description: 
   message: Bob
 --- !u!114 &6978667639663746416
 MonoBehaviour:
@@ -102,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
   m_Name: WaitNode
   m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
   state: 0
   started: 0
   guid: 32db9ec9-37f8-4545-8965-06248a328892
   position: {x: 150.00003, y: 227.00002}
+  description: 
   duration: 1

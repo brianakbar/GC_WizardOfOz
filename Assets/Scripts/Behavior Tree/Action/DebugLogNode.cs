@@ -1,7 +1,6 @@
 namespace Creazen.Wizard.BehaviorTree.Action {
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "New Debug Log Node", menuName = "Behavior Tree/Action/Debug Log")]
     public class DebugLogNode : ActionNode {
         [SerializeField] string message;
 

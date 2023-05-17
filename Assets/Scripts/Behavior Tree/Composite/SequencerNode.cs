@@ -1,7 +1,6 @@
 namespace Creazen.Wizard.BehaviorTree.Composite {
     using UnityEngine;
     
-    [CreateAssetMenu(fileName = "New Sequencer Node", menuName = "Behavior Tree/Composite/Sequencer")]
     public class SequencerNode : CompositeNode {
         int current = 0;
 

@@ -4,19 +4,29 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Damage Action", menuName = "Action/Combat/Damage")]
-    public class Damage : BaseAction<DamageLink> {
-        public override bool StartAction(DamageLink link) {
-            link.Scheduler.StartCoroutine(ProcessDamage(link));
+    public class Damage : BaseAction {
+        public class Input {
+            public Vector3 knockback = Vector3.zero;
+            public float knockbackTime = 0f;
+        }
+
+        public override void Initialize(ActionCache cache) {
+            cache.Add(cache.GameObject.GetComponent<Rigidbody2D>());
+            cache.Add(new Input());
+        }
+
+        public override bool StartAction(ActionCache cache) {
+            cache.Scheduler.StartCoroutine(ProcessDamage(cache));
 
             return true;
         }
 
-        IEnumerator ProcessDamage(DamageLink link) {
-            link.Body.velocity = link.Knockback;
-            yield return new WaitForSeconds(link.KnockbackTime);
+        IEnumerator ProcessDamage(ActionCache cache) {
+            cache.Get<Rigidbody2D>().velocity = cache.Get<Input>().knockback;
+            yield return new WaitForSeconds(cache.Get<Input>().knockbackTime);
 
-            link.Body.velocity = Vector3.zero;
-            link.Scheduler.Finish();
+            cache.Get<Rigidbody2D>().velocity = Vector3.zero;
+            cache.Scheduler.Finish();
         }
     }
 }

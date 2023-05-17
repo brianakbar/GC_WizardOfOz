@@ -21406,6 +21406,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1856532083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7347448086758890772, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
+  m_PrefabInstance: {fileID: 1865087963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856532089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8577030347113943529, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
+  m_PrefabInstance: {fileID: 1865087963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856532083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927325d809910fe44b8f5eb58f61367b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1856532094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856532083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8726e713fc9fe94bb27c499af058aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementScheduler: {fileID: 1856532089}
 --- !u!1001 &1865087963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21461,7 +21490,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8577030347113943529, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
+      propertyPath: actions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: faebf8618edb52a4bab5f8776944dbea, type: 2}
+    - target: {fileID: 8577030347113943529, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
+      propertyPath: actions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d4a589f1df410047a8e0aa572d93fdd, type: 2}
+    m_RemovedComponents:
+    - {fileID: 7766625621092741430, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2a3eb296d4fd43a4bb1180483798c33a, type: 3}
 --- !u!1 &1870579960
 GameObject:
@@ -23968,6 +24006,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650318481011671322, guid: 3c9d6310c962fca4f8dba00b030e735f, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650318481011671322, guid: 3c9d6310c962fca4f8dba00b030e735f, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2913359239621859184, guid: 3c9d6310c962fca4f8dba00b030e735f, type: 3}

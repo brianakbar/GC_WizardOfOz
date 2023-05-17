@@ -1,55 +1,60 @@
 namespace Creazen.Wizard.ActionScheduling {
     using System;
+    using System.Collections.Generic;
     using UnityEngine;
 
     public class ActionScheduler : MonoBehaviour {
         [SerializeField] GameObject performer;
-
-        BaseAction defaultAction;
-        ActionLink defaultActionLink;
+        [SerializeField] List<BaseAction> actions;
 
         BaseAction currentAction;
-        ActionLink currentActionLink;
+
+        Dictionary<BaseAction, ActionCache> cache = new Dictionary<BaseAction, ActionCache>();
 
         Action onFinish;
 
         void Awake() {
             if(performer == null) performer = gameObject;
+            foreach(BaseAction action in actions) {
+                ActionCache actionCache = new ActionCache();
+                actionCache.GameObject = performer;
+                actionCache.Transform = performer.transform;
+                actionCache.Scheduler = this;
+                actionCache.onFinish += Finish;
+                cache.Add(action, actionCache);
+                action.Initialize(actionCache);
+            }
+        }
+
+        void Start() {
+            StartDefaultAction();
         }
 
         void Update() {
-            currentAction.Step(currentActionLink);
+            currentAction.Step(cache[currentAction]);
         }
 
         public void OnTriggerEnter2D(Collider2D other) {
-            currentAction.TriggerEnter2D(currentActionLink, other);
+            currentAction.TriggerEnter2D(cache[currentAction], other);
         }
 
-        public void SetDefaultAction<T>(BaseAction<T> action, T link) where T : ActionLink {
-            defaultAction = action;
-            defaultActionLink = link;
-
-            if(currentAction == null) {
-                StartAction(defaultAction, defaultActionLink);
-            }
-        }
-
-        public bool StartAction<T>(BaseAction<T> action, T link, Action onFinish) where T : ActionLink {
+        public bool StartAction<T>(Action onFinish) where T : BaseAction {
             this.onFinish = onFinish;
-            return StartAction(action as BaseAction, link);
+            return StartAction<T>();
         }
 
-        public bool StartAction<T>(BaseAction<T> action, T link) where T : ActionLink {
-            return StartAction(action as BaseAction, link);
+        public bool StartAction<T>() where T : BaseAction {
+            foreach(BaseAction action in actions) {
+                if(!(action is T)) continue;
+
+                StartAction(action);
+            }
+            return false;
         }
 
         public void Finish() {
-            if(defaultAction != null && defaultActionLink != null) {
-                StartAction(defaultAction, defaultActionLink);
-            }
-            else {
+            if(!StartDefaultAction()) {
                 currentAction = null;
-                currentActionLink = null;
             }
             if(onFinish != null) onFinish();
         }
@@ -57,20 +62,30 @@ namespace Creazen.Wizard.ActionScheduling {
         public void Cancel() {
             if(currentAction == null) return;
 
-            currentAction.Cancel(currentActionLink);
+            currentAction.Cancel(cache[currentAction]);
             currentAction = null;
-            currentActionLink = null;
         }
 
-        bool StartAction(BaseAction action, ActionLink link) {
-            Cancel();
-            if(link.Performer == null) link.Performer = performer;
-            if(link.Scheduler == null) link.Scheduler = this;
-            if(!action.StartAction(link)) return false;
-            this.currentAction = action;
-            this.currentActionLink = link;
+        public ActionCache GetCache<T>() where T : BaseAction {
+            foreach(BaseAction action in actions) {
+                if(!(action is T)) continue;
 
-            return true;
+                return cache[action];
+            }
+            return null;
+        }
+
+        bool StartDefaultAction() {
+            if(actions.Count > 0) {
+                return StartAction(actions[0]);
+            }
+            return false;
+        }
+
+        bool StartAction<T>(T action) where T : BaseAction {
+            Cancel();
+            currentAction = action;
+            return action.StartAction(cache[action]);
         }
     }
 }

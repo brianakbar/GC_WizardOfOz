@@ -247,6 +247,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   performer: {fileID: 0}
+  actions:
+  - {fileID: 11400000, guid: 5d4a589f1df410047a8e0aa572d93fdd, type: 2}
+  - {fileID: 11400000, guid: 0f32bf5ee9674d94a8ac427afbe17f65, type: 2}
+  - {fileID: 11400000, guid: 2c5f5ff6e539ffd4bbea3ddb254d035c, type: 2}
 --- !u!114 &6839258316602761171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   performer: {fileID: 2196184494718689828}
+  actions:
+  - {fileID: 11400000, guid: 423b482dde68c4c428abf14dc0a8dc52, type: 2}
+  - {fileID: 11400000, guid: 44209d3f3f32af54b94643b5aa89fe84, type: 2}
 --- !u!61 &5987806820647485572
 BoxCollider2D:
   m_ObjectHideFlags: 0

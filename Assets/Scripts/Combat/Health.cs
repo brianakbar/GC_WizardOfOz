@@ -7,7 +7,6 @@ namespace Creazen.Wizard.Combat {
     public class Health : MonoBehaviour {
         [SerializeField] float startingHealth = 5;
         [SerializeField] ActionScheduler scheduler;
-        [SerializeField] Damage damage;
         [SerializeField] ParticleSystem deathParticle;
         [SerializeField] UnityEvent<float> onHit;
 
@@ -15,13 +14,9 @@ namespace Creazen.Wizard.Combat {
 
         Animator animator;
 
-        DamageLink damageLink;
-
         void Awake() {
             animator = GetComponent<Animator>();
             currentHealth = startingHealth;
-
-            damageLink = Damage.GetLink();
         }
 
         public float GetMaxHealth() {
@@ -39,9 +34,10 @@ namespace Creazen.Wizard.Combat {
         public void DealDamage(float damageDealt, Vector3 knockback, float knockbackTime) {
             damageDealt = Mathf.Max(0, damageDealt);
             currentHealth = Mathf.Clamp(currentHealth - damageDealt, 0, currentHealth);
-            damageLink.Knockback = knockback;
-            damageLink.KnockbackTime = knockbackTime;
-            scheduler.StartAction(damage, damageLink, StopDamageAnimation);
+            var input = scheduler.GetCache<Damage>().Get<Damage.Input>();
+            input.knockback = knockback;
+            input.knockbackTime = knockbackTime;
+            scheduler.StartAction<Damage>(StopDamageAnimation);
             animator.SetBool("isDamaged", true);
             onHit?.Invoke(GetFraction());
             if(currentHealth <= 0) {

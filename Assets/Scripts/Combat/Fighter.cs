@@ -13,22 +13,16 @@ namespace Creazen.Wizard.Combat {
 
         Animator animator;
 
-        AimLink aimLink;
-        AttackLink attackLink;
-
         void Awake() {
             animator = GetComponent<Animator>();
-            attackLink = Attack.GetLink();
-            aimLink = Aim.GetLink();
         }
 
         void Start() {
             EquipWeapon(currentWeapon);
-            combatScheduler.SetDefaultAction(currentWeapon.GetAim(), aimLink);
         }
 
         void Update() {
-            aimLink.MouseScreenPosition = Mouse.current.position.ReadValue();
+            combatScheduler.GetCache<Aim>().Get<Aim.Input>().mouseScreenPosition = Mouse.current.position.ReadValue();
         }
 
         void OnFinishAttack() {
@@ -39,9 +33,9 @@ namespace Creazen.Wizard.Combat {
         public void StartAttack() {
             if(!canAttack) return;
 
-            Attack attack = currentWeapon.GetCombo(attackLink.Combo);
-            combatScheduler.StartAction(attack, attackLink);
-            animator.runtimeAnimatorController = attackLink.Animator;
+            //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
+            combatScheduler.StartAction<Attack>();
+            animator.runtimeAnimatorController =  combatScheduler.GetCache<Attack>().Get<Attack.Link>().animator;
             animator.SetTrigger("attack");
             canAttack = false;
         }

@@ -3,15 +3,23 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Aim Action", menuName = "Action/Combat/Aim")]
-    public class Aim : BaseAction<AimLink> {
-        public override void Step(AimLink link) {
-            SetLookDirection(link);
+    public class Aim : BaseAction {
+        public class Input {
+            public Vector3 mouseScreenPosition;
         }
 
-        void SetLookDirection(AimLink link) {
-            Vector3 mouseWorldPoint = Camera.main.ScreenToWorldPoint(link.MouseScreenPosition);
-            float localScaleX = link.Transform.position.x < mouseWorldPoint.x ? 1 : -1;
-            link.Transform.localScale = new Vector2(localScaleX, link.Transform.localScale.y);
+        public override void Initialize(ActionCache cache) {
+            cache.Add(new Input());
+        }
+
+        public override void Step(ActionCache cache) {
+            SetLookDirection(cache);
+        }
+
+        void SetLookDirection(ActionCache cache) {
+            Vector3 mouseWorldPoint = Camera.main.ScreenToWorldPoint(cache.Get<Input>().mouseScreenPosition);
+            float localScaleX = cache.Transform.position.x < mouseWorldPoint.x ? 1 : -1;
+            cache.Transform.localScale = new Vector2(localScaleX, cache.Transform.localScale.y);
         }
     }
 }

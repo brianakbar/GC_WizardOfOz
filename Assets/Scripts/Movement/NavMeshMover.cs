@@ -1,26 +1,29 @@
 namespace Creazen.Wizard.Movement {
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
+    using UnityEngine.AI;
 
-    public class Mover : MonoBehaviour {
+    public class NavMeshMover : MonoBehaviour {
         [SerializeField] ActionScheduler movementScheduler;
 
         Animator animator;
-        Rigidbody2D rb2D;
+        NavMeshAgent agent;
 
         void Awake() {
             animator = GetComponent<Animator>();
-            rb2D = GetComponent<Rigidbody2D>();
+            agent = GetComponent<NavMeshAgent>();
+        }
+
+        void Start() {
+            StartMoving();
         }
 
         void Update() {
-            animator.SetBool("hasSpeed", rb2D.velocity != Vector2.zero);
+            animator.SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }
 
-        public void StartMoving(Vector2 direction) {
-            var input = movementScheduler.GetCache<Move>().Get<Move.Input>();
-            input.moveDirection = direction;
-            movementScheduler.StartAction<Move>();
+        public void StartMoving() {
+            movementScheduler.StartAction<NavMeshMove>();
         }
 
         public void Stop() {

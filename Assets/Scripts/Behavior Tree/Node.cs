@@ -2,7 +2,8 @@ namespace Creazen.Wizard.BehaviorTree {
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEditor;
-    
+    using System;
+
     public abstract class Node : ScriptableObject {
         [HideInInspector] public GameObject gameObject;
         [HideInInspector] public State state;
@@ -27,6 +28,21 @@ namespace Creazen.Wizard.BehaviorTree {
             return state;
         }
 
+        public void Abort(State state) {
+            Traverse((node) => {
+                node.started = false;
+                node.state = state;
+                node.OnStop();
+            });
+        }
+
+        public void Traverse(Action<Node> visiter) {
+            visiter.Invoke(this);
+            foreach(Node child in GetChildren()) {
+                child.Traverse(visiter);
+            }
+        }
+
         public Vector2 GetPosition() {
             return position;
         }
@@ -41,7 +57,7 @@ namespace Creazen.Wizard.BehaviorTree {
 
         protected virtual void OnStart() {}
         protected virtual void OnStop() {}
-        protected virtual State OnUpdate() {return State.Success;}
+        protected virtual State OnUpdate() {return State.Running;}
 
 #if UNITY_EDITOR
         public void SetPosition(Rect newPos) {

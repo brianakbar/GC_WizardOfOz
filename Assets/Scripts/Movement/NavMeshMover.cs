@@ -14,21 +14,17 @@ namespace Creazen.Wizard.Movement {
             agent = GetComponent<NavMeshAgent>();
         }
 
-        void Start() {
-            StartMoving();
-        }
-
         void Update() {
             animator.SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }
 
-        public void StartMoving() {
+        public void StartMoving(string target) {
+            movementScheduler.GetCache<NavMeshMove>().Get<NavMeshMove.Input>().target = target;
             movementScheduler.StartAction<NavMeshMove>();
         }
 
         public void Stop() {
             movementScheduler.StartAction<Idle>();
-
         }
     }
 }

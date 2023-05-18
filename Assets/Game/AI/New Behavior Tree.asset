@@ -1,26 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5647331294061943169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  state: 0
-  started: 0
-  guid: 4788fd26-56f9-4f34-80c2-b625dc637910
-  position: {x: 0, y: 46}
-  description: 
-  children:
-  - {fileID: 5119736379892490623}
-  - {fileID: 6978667639663746416}
 --- !u!114 &-5198981211028692928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,9 +16,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
-  position: {x: 0.0000038146973, y: -83.99992}
+  position: {x: 0.000020980835, y: -85.68787}
   description: 
-  child: {fileID: -5647331294061943169}
+  child: {fileID: 3206312269770637818}
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,10 +56,9 @@ MonoBehaviour:
   nodes:
   - {fileID: -3004838220682929487}
   - {fileID: -5198981211028692928}
-  - {fileID: -5647331294061943169}
-  - {fileID: 5119736379892490623}
-  - {fileID: 6978667639663746416}
---- !u!114 &5119736379892490623
+  - {fileID: 7690724589553104312}
+  - {fileID: 3206312269770637818}
+--- !u!114 &3206312269770637818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,17 +67,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daed50e52e3872145894479f2c8e786c, type: 3}
-  m_Name: DebugLogNode
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
   state: 0
   started: 0
-  guid: 097b46a7-c54d-47f4-9b90-7f9cb88f651f
-  position: {x: -149.99998, y: 227.00002}
+  guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
+  position: {x: 0.000020980835, y: 34.145153}
   description: 
-  message: Bob
---- !u!114 &6978667639663746416
+  child: {fileID: 0}
+  targetTag: Player
+  distance: 5
+  comparison: 0
+--- !u!114 &7690724589553104312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,13 +89,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: 79118b90f14238444ab2658fc8acf124, type: 3}
+  m_Name: ChaseTargetNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
   state: 0
   started: 0
-  guid: 32db9ec9-37f8-4545-8965-06248a328892
-  position: {x: 150.00003, y: 227.00002}
+  guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
+  position: {x: 0.000020980835, y: 159.98215}
   description: 
-  duration: 1
+  target: Player

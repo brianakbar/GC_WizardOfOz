@@ -74,9 +74,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: 0.000020980835, y: 34.145153}
+  position: {x: 0, y: 37.839996}
   description: 
-  child: {fileID: 0}
+  child: {fileID: 7690724589553104312}
   targetTag: Player
   distance: 5
   comparison: 0

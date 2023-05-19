@@ -1,5 +1,4 @@
 namespace Creazen.Wizard.BehaviorTree.Editor {
-    using System;
     using UnityEditor;
     using UnityEditor.Callbacks;
     using UnityEngine;
@@ -79,6 +78,10 @@ namespace Creazen.Wizard.BehaviorTree.Editor {
             else if(change == PlayModeStateChange.EnteredPlayMode) {
                 OnSelectionChange();
             }
+        }
+
+        void OnFocus() {
+            OnSelectionChange();
         }
 
         void OnNodeSelectionChange(NodeView node) {

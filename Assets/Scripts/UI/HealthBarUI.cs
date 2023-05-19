@@ -3,17 +3,12 @@ namespace Creazen.Wizard.UI {
     using UnityEngine.UI;
 
     public class HealthBarUI : MonoBehaviour {
+        [SerializeField] RectTransform container;
         [SerializeField] RectMask2D fillAreaMask;
-
-        Canvas canvas;
-
-        void Awake() {
-            canvas = GetComponentInChildren<Canvas>();
-        }
 
         public void UpdateHealthBar(float healthFraction) {
             gameObject.SetActive(true);
-            float canvasWidth = canvas.GetComponent<RectTransform>()?.rect.width ?? 0;
+            float canvasWidth = container.rect.width;
 
             fillAreaMask.padding = new Vector4(0, 0, canvasWidth * (1 - healthFraction), 0);
         }

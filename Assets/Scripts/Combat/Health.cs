@@ -1,6 +1,7 @@
 namespace Creazen.Wizard.Combat {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Event.Combat;
     using UnityEngine;
     using UnityEngine.Events;
 
@@ -9,6 +10,9 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] ActionScheduler scheduler;
         [SerializeField] ParticleSystem deathParticle;
         [SerializeField] UnityEvent<float> onHit;
+
+        [Header("Channels")]
+        [SerializeField] HealthChangeEventChannel healthChangeChannel;
 
         float currentHealth;
 
@@ -39,7 +43,11 @@ namespace Creazen.Wizard.Combat {
             input.knockbackTime = knockbackTime;
             scheduler.StartAction<Damage>(StopDamageAnimation);
             animator.SetBool("isDamaged", true);
-            onHit?.Invoke(GetFraction());
+
+            float healthFraction = GetFraction();
+            onHit?.Invoke(healthFraction);
+            healthChangeChannel?.RaiseEvent(healthFraction);
+
             if(currentHealth <= 0) {
                 animator.SetTrigger("dead");
                 StartCoroutine(ProcessDeath());

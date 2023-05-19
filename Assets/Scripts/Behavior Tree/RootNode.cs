@@ -12,7 +12,7 @@ namespace Creazen.Wizard.BehaviorTree {
 
         public override Node Clone() {
             RootNode instance = Instantiate(this);
-            instance.child = child.Clone();
+            if(child != null) instance.child = child.Clone();
             return instance;
         }
 

@@ -271,11 +271,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8484189866372958046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0f06afb196b0c40b4148799d624bb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 23851d6f49591eb45829e6ff359d46c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 7147774717120507592}
   fillAreaMask: {fileID: 7634740447634378664}
+  healthChangeChannel: {fileID: 0}
 --- !u!1 &9204398053859181584
 GameObject:
   m_ObjectHideFlags: 0

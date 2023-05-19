@@ -1,10 +1,18 @@
-namespace Creazen.Wizard.UI {
+namespace Creazen.Wizard.UI.Combat {
+    using Creazen.Wizard.Event.Combat;
     using UnityEngine;
     using UnityEngine.UI;
 
     public class HealthBarUI : MonoBehaviour {
         [SerializeField] RectTransform container;
         [SerializeField] RectMask2D fillAreaMask;
+
+        [Header("Listening on channels")]
+        [SerializeField] HealthChangeEventChannel healthChangeChannel;
+
+        void Awake() {
+            if(healthChangeChannel != null) healthChangeChannel.onEventRaised += UpdateHealthBar;
+        }
 
         public void UpdateHealthBar(float healthFraction) {
             gameObject.SetActive(true);

@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8496607934703201347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed50e52e3872145894479f2c8e786c, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 619a511c-45a2-4623-952b-4bb71f3a7313
+  position: {x: -149.99997, y: 345.00003}
+  description: 
+  message: 
 --- !u!114 &-5198981211028692928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,7 +37,7 @@ MonoBehaviour:
   guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
   position: {x: 0.000020980835, y: -85.68787}
   description: 
-  child: {fileID: 3206312269770637818}
+  child: {fileID: 1369732611227314730}
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,6 +57,28 @@ MonoBehaviour:
   position: {x: 0.000022888184, y: -217.67325}
   description: 
   child: {fileID: -5198981211028692928}
+--- !u!114 &-2273663169326157973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 4ef2be8a-79ca-49bd-aeb3-b3070892eac9
+  position: {x: -150.00002, y: 198}
+  description: 
+  child: {fileID: -8496607934703201347}
+  targetTag: Player
+  distance: 2
+  comparison: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +99,30 @@ MonoBehaviour:
   - {fileID: -5198981211028692928}
   - {fileID: 7690724589553104312}
   - {fileID: 3206312269770637818}
+  - {fileID: 1369732611227314730}
+  - {fileID: -2273663169326157973}
+  - {fileID: -8496607934703201347}
+--- !u!114 &1369732611227314730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b0ff1357-ad0d-4ca6-b6a9-711ea0985fac
+  position: {x: -0.000015258789, y: 56.189663}
+  description: 
+  children:
+  - {fileID: -2273663169326157973}
+  - {fileID: 3206312269770637818}
 --- !u!114 &3206312269770637818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,11 +139,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: 0, y: 37.839996}
+  position: {x: 150.00003, y: 197.67914}
   description: 
   child: {fileID: 7690724589553104312}
   targetTag: Player
-  distance: 5
+  distance: 6
   comparison: 0
 --- !u!114 &7690724589553104312
 MonoBehaviour:
@@ -96,6 +161,6 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
-  position: {x: 0.000020980835, y: 159.98215}
+  position: {x: 150.00003, y: 344.80402}
   description: 
   target: Player

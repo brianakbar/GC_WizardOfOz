@@ -21,7 +21,7 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Decorator {
 
         protected override State OnUpdate() {
             if(IsInRange()) {
-                child.Update();
+                if(child != null) child.Update();
                 return State.Running;
             }
             Abort(State.Failure);

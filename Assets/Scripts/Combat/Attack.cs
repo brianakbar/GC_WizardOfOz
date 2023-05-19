@@ -4,7 +4,7 @@ namespace Creazen.Wizard.Combat {
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
     public class Attack : BaseAction {
-        [SerializeField] RuntimeAnimatorController attackAnimator;
+        [SerializeField] AnimationClip animation;
         [SerializeField] float damage = 1f;
         [SerializeField] float knockbackSpeed = 0.5f;
         [SerializeField] float knockbackTime = 0.1f;
@@ -14,7 +14,7 @@ namespace Creazen.Wizard.Combat {
         }
 
         public class Link {
-            public RuntimeAnimatorController animator;
+            public AnimationClip animation;
         }
 
         public override void Initialize(ActionCache cache) {
@@ -29,7 +29,7 @@ namespace Creazen.Wizard.Combat {
             Link link = cache.Get<Link>();
 
             record.combo++;
-            link.animator = attackAnimator;
+            link.animation = animation;
 
             return true;
         }

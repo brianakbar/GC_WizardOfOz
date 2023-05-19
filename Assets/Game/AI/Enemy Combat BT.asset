@@ -1,6 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5198981211028692928
+--- !u!114 &-6416616177738205357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afe4e223d075cc43b0c5238b0d09a61, type: 3}
+  m_Name: AttackNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b5fbd02a-aa3f-4054-96c0-a916acbac43b
+  position: {x: 12.000027, y: 270.7321}
+  description: 
+--- !u!114 &-5852081567598214142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,11 +33,31 @@ MonoBehaviour:
   gameObject: {fileID: 0}
   state: 0
   started: 0
-  guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
-  position: {x: 0.000020980835, y: -85.68787}
+  guid: 3afaf57f-a432-4b70-8288-9d7b334e78ce
+  position: {x: 12.000004, y: 9.353823}
   description: 
-  child: {fileID: 3206312269770637818}
---- !u!114 &-3004838220682929487
+  child: {fileID: 7304683154646998741}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
+  m_Name: Enemy Combat BT
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  rootNode: {fileID: 4101628192398183491}
+  state: 0
+  nodes:
+  - {fileID: 4101628192398183491}
+  - {fileID: -5852081567598214142}
+  - {fileID: 7304683154646998741}
+  - {fileID: -6416616177738205357}
+--- !u!114 &4101628192398183491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,31 +72,11 @@ MonoBehaviour:
   gameObject: {fileID: 0}
   state: 0
   started: 0
-  guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
-  position: {x: 0.000022888184, y: -217.67325}
+  guid: 07d29e74-9bda-4880-b878-eea16e870540
+  position: {x: 12.068146, y: -118.1069}
   description: 
-  child: {fileID: -5198981211028692928}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
-  m_Name: New Behavior Tree
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  rootNode: {fileID: -3004838220682929487}
-  state: 0
-  nodes:
-  - {fileID: -3004838220682929487}
-  - {fileID: -5198981211028692928}
-  - {fileID: 7690724589553104312}
-  - {fileID: 3206312269770637818}
---- !u!114 &3206312269770637818
+  child: {fileID: -5852081567598214142}
+--- !u!114 &7304683154646998741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,29 +91,10 @@ MonoBehaviour:
   gameObject: {fileID: 0}
   state: 0
   started: 0
-  guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: 0, y: 37.839996}
+  guid: 632513bc-6a86-47f6-98be-7b6050ac0320
+  position: {x: 12.000004, y: 139.19044}
   description: 
-  child: {fileID: 7690724589553104312}
+  child: {fileID: -6416616177738205357}
   targetTag: Player
-  distance: 5
+  distance: 2
   comparison: 0
---- !u!114 &7690724589553104312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79118b90f14238444ab2658fc8acf124, type: 3}
-  m_Name: ChaseTargetNode
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  state: 0
-  started: 0
-  guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
-  position: {x: 0.000020980835, y: 159.98215}
-  description: 
-  target: Player

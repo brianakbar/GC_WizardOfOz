@@ -1,5 +1,7 @@
 namespace Creazen.Wizard.Combat {
+    using System;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Animation;
     using UnityEngine;
     using UnityEngine.InputSystem;
 
@@ -10,6 +12,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] Hand leftHand;
 
         bool canAttack = true;
+        Action onFinishAttack = null;
 
         Animator animator;
 
@@ -25,19 +28,25 @@ namespace Creazen.Wizard.Combat {
             combatScheduler.GetCache<Aim>().Get<Aim.Input>().mouseScreenPosition = Mouse.current.position.ReadValue();
         }
 
-        void OnFinishAttack() {
-            combatScheduler.Finish();
-            canAttack = true;
+        public bool StartAttack(Action onFinish) {
+            if(!StartAttack()) return false;
+
+            onFinishAttack = onFinish;
+            return true;
         }
 
-        public void StartAttack() {
-            if(!canAttack) return;
+        public bool StartAttack() {
+            if(!canAttack) return false;
 
             //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
             combatScheduler.StartAction<Attack>();
-            animator.runtimeAnimatorController =  combatScheduler.GetCache<Attack>().Get<Attack.Link>().animator;
+            
+            var overrideAttackAnimation = combatScheduler.GetCache<Attack>().Get<Attack.Link>().animation;
+            animator.runtimeAnimatorController = CreateAnimatorOverride("Attack", overrideAttackAnimation);
+            
             animator.SetTrigger("attack");
             canAttack = false;
+            return true;
         }
 
         void EquipWeapon(Weapon toEquip) {
@@ -47,6 +56,29 @@ namespace Creazen.Wizard.Combat {
             else {
                 leftHand.EquipWeapon(toEquip.GetSprite());
             }
+        }
+
+        AnimatorOverrideController CreateAnimatorOverride(string originalClipName, AnimationClip newClip) {
+            if(animator == null) return null;
+
+            AnimatorOverrideController animatorOverride = new AnimatorOverrideController(animator.runtimeAnimatorController);
+            AnimationClipOverrides clipOverrides = AnimationClipOverrides.GetOverrides(animator);
+            if(clipOverrides == null) {
+                animatorOverride[originalClipName] = newClip;
+            }
+            else {
+                clipOverrides[originalClipName] = newClip;
+                animatorOverride.ApplyOverrides(clipOverrides);
+            }
+            
+            return animatorOverride;
+        }
+
+        //Animation Event
+        void OnFinishAttack() {
+            combatScheduler.Finish();
+            canAttack = true;
+            if(onFinishAttack != null) onFinishAttack();
         }
     }
 }

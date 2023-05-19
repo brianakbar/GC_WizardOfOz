@@ -9,5 +9,5 @@ AnimatorOverrideController:
   m_Name: Attack Swing
   m_Controller: {fileID: 9100000, guid: 15279c7e91eb660418cc5d64eaa9c676, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 8805f6e3ed66d404b9131d37f4366911, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 38fa50db4a0842d438583fd965768109, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 8805f6e3ed66d404b9131d37f4366911, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1782e6e69070c4bb3ac92fced7eec4, type: 3}
   m_Name: Combo1
   m_EditorClassIdentifier: 
-  attackAnimator: {fileID: 22100000, guid: c0ac5481a3f1f994e930518cb4c41427, type: 2}
+  animation: {fileID: 7400000, guid: 8805f6e3ed66d404b9131d37f4366911, type: 2}
   damage: 1
   knockbackSpeed: 2
   knockbackTime: 0.1

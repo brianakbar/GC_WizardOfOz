@@ -16,8 +16,27 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b5fbd02a-aa3f-4054-96c0-a916acbac43b
-  position: {x: 12.000027, y: 270.7321}
+  position: {x: -137.99995, y: 403.99997}
   description: 
+--- !u!114 &-6046125539641894319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 27b46dea-15cc-4480-b496-3d2483c0fb84
+  position: {x: 162, y: 403.99994}
+  description: 
+  duration: 0.5
 --- !u!114 &-5852081567598214142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +76,8 @@ MonoBehaviour:
   - {fileID: -5852081567598214142}
   - {fileID: 7304683154646998741}
   - {fileID: -6416616177738205357}
+  - {fileID: 6347762995304078736}
+  - {fileID: -6046125539641894319}
 --- !u!114 &4101628192398183491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +97,27 @@ MonoBehaviour:
   position: {x: 12.068146, y: -118.1069}
   description: 
   child: {fileID: -5852081567598214142}
+--- !u!114 &6347762995304078736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 85cf29ec-04ae-428d-9727-1ad501c8d890
+  position: {x: 12.000019, y: 264.95453}
+  description: 
+  children:
+  - {fileID: -6046125539641894319}
+  - {fileID: -6416616177738205357}
 --- !u!114 &7304683154646998741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,9 +134,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 632513bc-6a86-47f6-98be-7b6050ac0320
-  position: {x: 12.000004, y: 139.19044}
+  position: {x: 12.000022, y: 133.12329}
   description: 
-  child: {fileID: -6416616177738205357}
+  child: {fileID: 6347762995304078736}
   targetTag: Player
   distance: 2
   comparison: 0

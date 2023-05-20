@@ -1,5 +1,7 @@
 namespace Creazen.Wizard.Combat {
+    using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Animation;
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
@@ -8,28 +10,32 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] float damage = 1f;
         [SerializeField] float knockbackSpeed = 0.5f;
         [SerializeField] float knockbackTime = 0.1f;
+        [SerializeField] float cooldownAfterFinish = 0f;
+        [SerializeField] float cooldownAfterCancelled = 0.2f;
 
         class Record {
             public int combo = 0;
-        }
-
-        public class Link {
-            public AnimationClip animation;
+            public bool canAttack = true;
         }
 
         public override void Initialize(ActionCache cache) {
             Record record = new Record();
             cache.Add(record);
-            Link link = new Link();
-            cache.Add(link);
+            cache.Add(cache.GameObject.GetComponent<Animator>());
         }
 
         public override bool StartAction(ActionCache cache) {
             Record record = cache.Get<Record>();
-            Link link = cache.Get<Link>();
+
+            if(!record.canAttack) return false;
 
             record.combo++;
-            link.animation = animation;
+
+            Animator animator = cache.Get<Animator>();
+            animator.runtimeAnimatorController = CreateAnimatorOverride(animator, "Attack", animation);
+            animator.SetTrigger("attack");
+
+            record.canAttack = false;
 
             return true;
         }
@@ -41,8 +47,39 @@ namespace Creazen.Wizard.Combat {
             }
         }
 
+        public override void EndAction(ActionCache cache) {
+            Record record = cache.Get<Record>();
+
+            cache.Scheduler.StartCoroutine(SetCanAttack(cache, cooldownAfterFinish, true));
+        }
+
         public override void Cancel(ActionCache cache) {
             cache.Get<Record>().combo = 0;
+
+            cache.Scheduler.StartCoroutine(SetCanAttack(cache, cooldownAfterCancelled, true));
+        }
+
+        IEnumerator SetCanAttack(ActionCache cache, float time, bool value) {
+            yield return new WaitForSeconds(time);
+
+            Record record = cache.Get<Record>();
+            record.canAttack = value;
+        }
+
+        AnimatorOverrideController CreateAnimatorOverride(Animator animator, string originalClipName, AnimationClip newClip) {
+            if(animator == null) return null;
+
+            AnimatorOverrideController animatorOverride = new AnimatorOverrideController(animator.runtimeAnimatorController);
+            AnimationClipOverrides clipOverrides = AnimationClipOverrides.GetOverrides(animator);
+            if(clipOverrides == null) {
+                animatorOverride[originalClipName] = newClip;
+            }
+            else {
+                clipOverrides[originalClipName] = newClip;
+                animatorOverride.ApplyOverrides(clipOverrides);
+            }
+            
+            return animatorOverride;
         }
     }
 }

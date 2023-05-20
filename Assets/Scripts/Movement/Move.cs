@@ -12,6 +12,7 @@ namespace Creazen.Wizard.Movement {
 
         public override void Initialize(ActionCache cache) {
             cache.Add(cache.GameObject.GetComponent<Rigidbody2D>());
+            cache.Add(cache.GameObject.GetComponent<Animator>());
             cache.Add(new Input());
         }
 
@@ -21,8 +22,13 @@ namespace Creazen.Wizard.Movement {
             return true;
         }
 
+        public override void Step(ActionCache cache) {
+            cache.Get<Animator>().SetBool("hasSpeed", cache.Get<Rigidbody2D>().velocity != Vector2.zero);
+        }
+
         public override void Cancel(ActionCache cache) {
             cache.Get<Rigidbody2D>().velocity = new Vector2(0, 0);
+            cache.Get<Animator>().SetBool("hasSpeed", false);
         }
     }
 }

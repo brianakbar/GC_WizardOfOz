@@ -20,6 +20,7 @@ namespace Creazen.Wizard.Movement {
             agent.updateRotation = false;
             agent.updateUpAxis = false;
             cache.Add(agent);
+            cache.Add(cache.GameObject.GetComponent<Animator>());
             cache.Add(new Input());
             cache.Add(new Record());
         }
@@ -38,11 +39,15 @@ namespace Creazen.Wizard.Movement {
             Transform target = cache.Get<Record>().target;
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
             agent.SetDestination(target.transform.position);
+
+            cache.Get<Animator>().SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }
 
         public override void Cancel(ActionCache cache) {
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
             agent.isStopped = true;
+            agent.SetDestination(cache.GameObject.transform.position);
+            cache.Get<Animator>().SetBool("hasSpeed", false);
         }
     }
 }

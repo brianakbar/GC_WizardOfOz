@@ -12,6 +12,7 @@ namespace Creazen.Wizard.ActionScheduling {
         Dictionary<BaseAction, ActionCache> cache = new Dictionary<BaseAction, ActionCache>();
 
         Action onFinish;
+        Action onCancel;
 
         void Awake() {
             if(performer == null) performer = gameObject;
@@ -38,8 +39,9 @@ namespace Creazen.Wizard.ActionScheduling {
             currentAction.TriggerEnter2D(cache[currentAction], other);
         }
 
-        public bool StartAction<T>(Action onFinish) where T : BaseAction {
+        public bool StartAction<T>(Action onFinish = null, Action onCancel = null) where T : BaseAction {
             this.onFinish = onFinish;
+            this.onCancel = onCancel;
             return StartAction<T>();
         }
 
@@ -47,12 +49,13 @@ namespace Creazen.Wizard.ActionScheduling {
             foreach(BaseAction action in actions) {
                 if(!(action is T)) continue;
 
-                StartAction(action);
+                return StartAction(action);
             }
             return false;
         }
 
         public void Finish() {
+            currentAction?.EndAction(cache[currentAction]);
             if(!StartDefaultAction()) {
                 currentAction = null;
             }
@@ -64,6 +67,7 @@ namespace Creazen.Wizard.ActionScheduling {
 
             currentAction.Cancel(cache[currentAction]);
             currentAction = null;
+            if(onCancel != null) onCancel();
         }
 
         public ActionCache GetCache<T>() where T : BaseAction {

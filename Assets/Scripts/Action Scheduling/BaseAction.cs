@@ -3,6 +3,10 @@ namespace Creazen.Wizard.ActionScheduling {
     using UnityEngine;
 
     public abstract class BaseAction : ScriptableObject {
+        [SerializeField] bool canBeCancelled = true;
+
+        public bool CanBeCancelled { get => canBeCancelled; }
+
         public Coroutine StartCoroutine(ActionCache cache, IEnumerator routine) {
             if(cache.Scheduler?.enabled ?? false) {
                 return cache.Scheduler.StartCoroutine(routine);

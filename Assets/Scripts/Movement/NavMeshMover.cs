@@ -5,9 +5,9 @@ namespace Creazen.Wizard.Movement {
     public class NavMeshMover : MonoBehaviour {
         [SerializeField] ActionScheduler movementScheduler;
 
-        public void StartMoving(string target) {
+        public bool StartMoving(string target) {
             movementScheduler.GetCache<NavMeshMove>().Get<NavMeshMove.Input>().target = target;
-            movementScheduler.StartAction<NavMeshMove>();
+            return movementScheduler.StartAction<NavMeshMove>();
         }
 
         public void Stop() {

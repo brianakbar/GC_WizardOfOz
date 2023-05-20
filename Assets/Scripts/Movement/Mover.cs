@@ -5,10 +5,10 @@ namespace Creazen.Wizard.Movement {
     public class Mover : MonoBehaviour {
         [SerializeField] ActionScheduler movementScheduler;
 
-        public void StartMoving(Vector2 direction) {
+        public bool StartMoving(Vector2 direction) {
             var input = movementScheduler.GetCache<Move>().Get<Move.Input>();
             input.moveDirection = direction;
-            movementScheduler.StartAction<Move>();
+            return movementScheduler.StartAction<Move>();
         }
 
         public void Stop() {

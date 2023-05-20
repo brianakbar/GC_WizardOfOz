@@ -64,12 +64,14 @@ namespace Creazen.Wizard.ActionScheduling {
             if(onFinish != null) onFinish();
         }
 
-        public void Cancel() {
-            if(currentAction == null) return;
+        public bool? Cancel() {
+            if(currentAction == null) return null;
+            if(!currentAction.CanBeCancelled) return false;
 
             currentAction.Cancel(cache[currentAction]);
             currentAction = null;
             if(onCancel != null) onCancel();
+            return true;
         }
 
         public ActionCache GetCache<T>() where T : BaseAction {
@@ -89,7 +91,8 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         bool StartAction<T>(T action) where T : BaseAction {
-            Cancel();
+            if(Cancel() == false) return false;
+
             currentAction = action;
             return action.StartAction(cache[action]);
         }

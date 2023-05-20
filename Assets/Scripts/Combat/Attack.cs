@@ -50,13 +50,13 @@ namespace Creazen.Wizard.Combat {
         public override void EndAction(ActionCache cache) {
             Record record = cache.Get<Record>();
 
-            cache.Scheduler.StartCoroutine(SetCanAttack(cache, cooldownAfterFinish, true));
+            StartCoroutine(cache, SetCanAttack(cache, cooldownAfterFinish, true));
         }
 
         public override void Cancel(ActionCache cache) {
             cache.Get<Record>().combo = 0;
 
-            cache.Scheduler.StartCoroutine(SetCanAttack(cache, cooldownAfterCancelled, true));
+            StartCoroutine(cache, SetCanAttack(cache, cooldownAfterCancelled, true));
         }
 
         IEnumerator SetCanAttack(ActionCache cache, float time, bool value) {

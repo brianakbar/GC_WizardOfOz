@@ -32,6 +32,8 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         void Update() {
+            if(currentAction == null) return;
+
             currentAction.Step(cache[currentAction]);
         }
 

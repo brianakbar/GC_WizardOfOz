@@ -18,6 +18,12 @@ namespace Creazen.Wizard.Combat {
         public override bool StartAction(ActionCache cache) {
             cache.Scheduler.StartCoroutine(ProcessDamage(cache));
 
+            foreach(var scheduler in cache.GameObject.GetComponentsInChildren<ActionScheduler>()) {
+                if(scheduler == cache.Scheduler) continue;
+
+                scheduler.Cancel();
+            }
+
             return true;
         }
 

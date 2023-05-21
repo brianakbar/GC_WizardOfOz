@@ -27,10 +27,6 @@ namespace Creazen.Wizard.ActionScheduling {
             }
         }
 
-        void Start() {
-            StartDefaultAction();
-        }
-
         void Update() {
             if(currentAction == null) {
                 StartDefaultAction();
@@ -40,6 +36,10 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         public void OnTriggerEnter2D(Collider2D other) {
+            if(currentAction == null) {
+                return;
+            }
+
             currentAction.TriggerEnter2D(cache[currentAction], other);
         }
 

@@ -7,14 +7,21 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] SpriteRenderer weaponHolder;
         [SerializeField] SpriteRenderer hand;
 
-        public void EquipWeapon(Sprite sprite) {
+        public void EquipWeapon(Sprite sprite, bool isFlipped, bool isHolding) {
             if(sprite == null) {
                 hand.sprite = emptyHand;
             }
             else {
                 hand.sprite = holdingWeaponHand;
             }
-            weaponHolder.sprite = sprite;
+            if(isHolding) {
+                weaponHolder.sprite = sprite;
+                weaponHolder.transform.localScale = new Vector3(
+                    isFlipped? -1 : 1,
+                    weaponHolder.transform.localScale.y,
+                    weaponHolder.transform.localScale.z
+                );
+            }
         }
     }
 }

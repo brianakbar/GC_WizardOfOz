@@ -32,7 +32,7 @@ namespace Creazen.Wizard.Combat {
             record.combo++;
 
             Animator animator = cache.Get<Animator>();
-            animator.runtimeAnimatorController = CreateAnimatorOverride(animator, "Attack", animation);
+            animator.runtimeAnimatorController = animator.CreateOverrides("Attack", animation);
             animator.SetTrigger("attack");
 
             record.canAttack = false;
@@ -64,22 +64,6 @@ namespace Creazen.Wizard.Combat {
 
             Record record = cache.Get<Record>();
             record.canAttack = value;
-        }
-
-        AnimatorOverrideController CreateAnimatorOverride(Animator animator, string originalClipName, AnimationClip newClip) {
-            if(animator == null) return null;
-
-            AnimatorOverrideController animatorOverride = new AnimatorOverrideController(animator.runtimeAnimatorController);
-            AnimationClipOverrides clipOverrides = AnimationClipOverrides.GetOverrides(animator);
-            if(clipOverrides == null) {
-                animatorOverride[originalClipName] = newClip;
-            }
-            else {
-                clipOverrides[originalClipName] = newClip;
-                animatorOverride.ApplyOverrides(clipOverrides);
-            }
-            
-            return animatorOverride;
         }
     }
 }

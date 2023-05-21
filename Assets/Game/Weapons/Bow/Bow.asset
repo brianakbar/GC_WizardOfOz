@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 971d5655f5d5b67488e39f6c2cf68376, type: 3}
-  m_Name: Sword
+  m_Name: Bow
   m_EditorClassIdentifier: 
-  weaponName: Sword
-  sprite: {fileID: -1074318285, guid: 7fd3f6d2ea143b546866f0ba3bc4dcf4, type: 3}
+  weaponName: Bow
+  sprite: {fileID: -729043741, guid: 7fd3f6d2ea143b546866f0ba3bc4dcf4, type: 3}
   isRightHand: 1
-  isFlipped: 1
-  combos:
-  - {fileID: 11400000, guid: 44209d3f3f32af54b94643b5aa89fe84, type: 2}
+  isTwoHanded: 1
+  isFlipped: 0
+  isAimingTarget: 1
+  aimAnimation: {fileID: 7400000, guid: 4fa8a4b3a2a74204886f3a108aae0908, type: 2}
+  combos: []

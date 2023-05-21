@@ -7,17 +7,25 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] Weapon currentWeapon;
         [SerializeField] AimTarget target;
         [SerializeField] ActionScheduler combatScheduler;
+        [SerializeField] Transform rotateableHand;
         [SerializeField] Hand rightHand;
         [SerializeField] Hand leftHand;
 
         Action onFinishAttack = null;
+
+        Aim.Input aimInput;
+
+        void Awake() {
+            aimInput = combatScheduler.GetCache<Aim>().Get<Aim.Input>();
+            aimInput.rotateableHand = rotateableHand;
+        }
 
         void Start() {
             EquipWeapon(currentWeapon);
         }
 
         void Update() {
-            combatScheduler.GetCache<Aim>().Get<Aim.Input>().targetPosition = target.GetTargetPosition();
+            aimInput.targetPosition = target.GetTargetPosition();
         }
 
         public bool StartAttack(Action onFinish) {
@@ -34,11 +42,19 @@ namespace Creazen.Wizard.Combat {
 
         void EquipWeapon(Weapon toEquip) {
             if(toEquip.IsRightHand()) {
-                rightHand.EquipWeapon(toEquip.GetSprite());
+                rightHand.EquipWeapon(toEquip.GetSprite(), toEquip.IsFlipped(), true);
+                if(toEquip.IsTwoHanded) {
+                    leftHand.EquipWeapon(toEquip.GetSprite(), toEquip.IsFlipped(), false);
+                }
             }
             else {
-                leftHand.EquipWeapon(toEquip.GetSprite());
+                leftHand.EquipWeapon(toEquip.GetSprite(), toEquip.IsFlipped(), true);
+                if(toEquip.IsTwoHanded) {
+                    rightHand.EquipWeapon(toEquip.GetSprite(), toEquip.IsFlipped(), false);
+                }
             }
+            aimInput.animation = toEquip.AimAnimation;
+            aimInput.rotateWeaponToTarget = toEquip.IsAimingTarget;
         }
 
         //Animation Event

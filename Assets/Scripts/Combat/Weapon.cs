@@ -1,6 +1,5 @@
 namespace Creazen.Wizard.Combat {
     using System.Collections.Generic;
-    using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
     
     [CreateAssetMenu(fileName = "New Weapon", menuName = "Combat/Weapon", order = 0)]
@@ -8,8 +7,15 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] string weaponName;
         [SerializeField] Sprite sprite;
         [SerializeField] bool isRightHand = true;
-        [SerializeField] Aim aim;
+        [SerializeField] bool isTwoHanded = false;
+        [SerializeField] bool isFlipped = false;
+        [SerializeField] bool isAimingTarget = false;
+        [SerializeField] AnimationClip aimAnimation;
         [SerializeField] List<Attack> combos = new List<Attack>();
+
+        public AnimationClip AimAnimation { get => aimAnimation; }
+        public bool IsTwoHanded { get => isTwoHanded; }
+        public bool IsAimingTarget { get => isAimingTarget; }
 
         public Sprite GetSprite() {
             return sprite;
@@ -19,8 +25,8 @@ namespace Creazen.Wizard.Combat {
             return isRightHand;
         }
 
-        public Aim GetAim() {
-            return aim;
+        public bool IsFlipped() {
+            return isFlipped;
         }
 
         public Attack GetCombo(int index) {

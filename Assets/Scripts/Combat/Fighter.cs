@@ -2,10 +2,10 @@ namespace Creazen.Wizard.Combat {
     using System;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
-    using UnityEngine.InputSystem;
 
     public class Fighter : MonoBehaviour {
         [SerializeField] Weapon currentWeapon;
+        [SerializeField] AimTarget target;
         [SerializeField] ActionScheduler combatScheduler;
         [SerializeField] Hand rightHand;
         [SerializeField] Hand leftHand;
@@ -17,7 +17,7 @@ namespace Creazen.Wizard.Combat {
         }
 
         void Update() {
-            combatScheduler.GetCache<Aim>().Get<Aim.Input>().mouseScreenPosition = Mouse.current.position.ReadValue();
+            combatScheduler.GetCache<Aim>().Get<Aim.Input>().targetPosition = target.GetTargetPosition();
         }
 
         public bool StartAttack(Action onFinish) {

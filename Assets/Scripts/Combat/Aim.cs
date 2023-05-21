@@ -5,7 +5,7 @@ namespace Creazen.Wizard.Combat {
     [CreateAssetMenu(fileName = "New Aim Action", menuName = "Action/Combat/Aim")]
     public class Aim : BaseAction {
         public class Input {
-            public Vector3 mouseScreenPosition;
+            public Vector3 targetPosition;
         }
 
         public override void Initialize(ActionCache cache) {
@@ -17,7 +17,7 @@ namespace Creazen.Wizard.Combat {
         }
 
         void SetLookDirection(ActionCache cache) {
-            Vector3 mouseWorldPoint = Camera.main.ScreenToWorldPoint(cache.Get<Input>().mouseScreenPosition);
+            Vector3 mouseWorldPoint = cache.Get<Input>().targetPosition;
             float localScaleX = cache.Transform.position.x < mouseWorldPoint.x ? 1 : -1;
             cache.Transform.localScale = new Vector2(localScaleX, cache.Transform.localScale.y);
         }

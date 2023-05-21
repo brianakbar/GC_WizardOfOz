@@ -32,7 +32,9 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         void Update() {
-            if(currentAction == null) return;
+            if(currentAction == null) {
+                StartDefaultAction();
+            }
 
             currentAction.Step(cache[currentAction]);
         }

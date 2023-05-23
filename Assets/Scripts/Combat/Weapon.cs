@@ -11,7 +11,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] bool isFlipped = false;
         [SerializeField] bool isAimingTarget = false;
         [SerializeField] AnimationClip aimAnimation;
-        [SerializeField] List<Attack> combos = new List<Attack>();
+        [SerializeField] List<AttackType> combos = new List<AttackType>();
 
         public AnimationClip AimAnimation { get => aimAnimation; }
         public bool IsTwoHanded { get => isTwoHanded; }
@@ -29,7 +29,7 @@ namespace Creazen.Wizard.Combat {
             return isFlipped;
         }
 
-        public Attack GetCombo(int index) {
+        public AttackType GetCombo(int index) {
             if(index < 0) return combos[0];
             if(index >= combos.Count) return combos[combos.Count - 1];
             return combos[index];

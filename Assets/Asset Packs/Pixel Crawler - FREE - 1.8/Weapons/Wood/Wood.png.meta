@@ -479,10 +479,10 @@ TextureImporter:
         serializedVersion: 2
         x: 67
         y: 34
-        width: 29
+        width: 13
         height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.7863687, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,6 +490,27 @@ TextureImporter:
       bones: []
       spriteID: 2d237ad718502134bbbab320205a07be
       internalID: 195077894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 34
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.8311143, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b692f7ab144324190567198ae49640
+      internalID: -798243026
       vertices: []
       indices: 
       edges: []
@@ -516,6 +537,7 @@ TextureImporter:
       Wood_13: -2006827402
       Wood_16: -729043741
       Wood_17: 195077894
+      Wood_18: -798243026
       Wood_10: 1844375776
       Wood_11: -1976072001
       Wood_0: -911393550

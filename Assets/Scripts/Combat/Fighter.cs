@@ -14,13 +14,12 @@ namespace Creazen.Wizard.Combat {
         Action onFinishAttack = null;
 
         Aim.Input aimInput;
-
-        void Awake() {
-            aimInput = combatScheduler.GetCache<Aim>().Get<Aim.Input>();
-            aimInput.rotateableHand = rotateableHand;
-        }
+        Attack.Input attackInput;
 
         void Start() {
+            aimInput = combatScheduler.GetCache<Aim>().Get<Aim.Input>();
+            aimInput.rotateableHand = rotateableHand;
+            attackInput = combatScheduler.GetCache<Attack>().Get<Attack.Input>();
             EquipWeapon(currentWeapon);
         }
 
@@ -37,6 +36,7 @@ namespace Creazen.Wizard.Combat {
 
         public bool StartAttack() {
             //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
+            attackInput.attackType = currentWeapon.GetCombo(0);
             return combatScheduler.StartAction<Attack>();
         }
 

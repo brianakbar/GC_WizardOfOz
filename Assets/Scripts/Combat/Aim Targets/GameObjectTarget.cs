@@ -1,4 +1,4 @@
-namespace Creazen.Wizard.Combat.AimTargeting {
+namespace Creazen.Wizard.Combat.AimTargets {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Game Object Target", menuName = "Combat/Aim/Target/Game Object", order = 0)]

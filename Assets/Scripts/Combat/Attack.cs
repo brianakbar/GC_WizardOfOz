@@ -7,11 +7,10 @@ namespace Creazen.Wizard.Combat {
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
     public class Attack : BaseAction {
         [SerializeField] AnimationClip animation;
-        [SerializeField] float damage = 1f;
-        [SerializeField] float knockbackSpeed = 0.5f;
-        [SerializeField] float knockbackTime = 0.1f;
-        [SerializeField] float cooldownAfterFinish = 0f;
-        [SerializeField] float cooldownAfterCancelled = 0.2f;
+
+        public class Input {
+            public AttackType attackType;
+        }
 
         class Record {
             public int combo = 0;
@@ -20,43 +19,48 @@ namespace Creazen.Wizard.Combat {
 
         public override void Initialize(ActionCache cache) {
             Record record = new Record();
+            cache.Add(new Input());
             cache.Add(record);
             cache.Add(cache.GameObject.GetComponent<Animator>());
         }
 
         public override bool StartAction(ActionCache cache) {
             Record record = cache.Get<Record>();
+            Input input = cache.Get<Input>();
 
             if(!record.canAttack) return false;
 
             record.combo++;
 
             Animator animator = cache.Get<Animator>();
-            animator.runtimeAnimatorController = animator.CreateOverrides("Attack", animation);
+            animator.runtimeAnimatorController = animator.CreateOverrides("Attack", input.attackType.Animation);
             animator.SetTrigger("attack");
 
             record.canAttack = false;
+
+            input.attackType.OnStart(cache);
 
             return true;
         }
 
         public override void TriggerEnter2D(ActionCache cache, Collider2D other) {
-            if(other.TryGetComponent<Health>(out Health health)) {
-                Vector3 direction = (health.transform.position - cache.Transform.position).normalized;
-                health.DealDamage(damage, direction * knockbackSpeed, knockbackTime);
-            }
+            Input input = cache.Get<Input>();
+
+            input.attackType.HandleTrigger(cache, other);
         }
 
         public override void EndAction(ActionCache cache) {
             Record record = cache.Get<Record>();
+            Input input = cache.Get<Input>();
 
-            StartCoroutine(cache, SetCanAttack(cache, cooldownAfterFinish, true));
+            StartCoroutine(cache, SetCanAttack(cache, input.attackType.CooldownAfterFinish, true));
         }
 
         public override void Cancel(ActionCache cache) {
             cache.Get<Record>().combo = 0;
+            Input input = cache.Get<Input>();
 
-            StartCoroutine(cache, SetCanAttack(cache, cooldownAfterCancelled, true));
+            StartCoroutine(cache, SetCanAttack(cache, input.attackType.CooldownAfterCancelled, true));
         }
 
         IEnumerator SetCanAttack(ActionCache cache, float time, bool value) {

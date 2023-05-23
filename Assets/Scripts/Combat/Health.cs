@@ -35,12 +35,12 @@ namespace Creazen.Wizard.Combat {
             return GetCurrentHealth() / GetMaxHealth();
         }
 
-        public void DealDamage(float damageDealt, Vector3 knockback, float knockbackTime) {
-            damageDealt = Mathf.Max(0, damageDealt);
+        public void DealDamage(GameObject attacker, DamageType type) {
+            float damageDealt = Mathf.Max(0, type.Damage);
             currentHealth = Mathf.Clamp(currentHealth - damageDealt, 0, currentHealth);
             var input = scheduler.GetCache<Damage>().Get<Damage.Input>();
-            input.knockback = knockback;
-            input.knockbackTime = knockbackTime;
+            input.attacker = attacker;
+            input.damageType = type;
             scheduler.StartAction<Damage>(StopDamageAnimation);
             animator.SetBool("isDamaged", true);
 

@@ -19,4 +19,5 @@ MonoBehaviour:
   isFlipped: 0
   isAimingTarget: 1
   aimAnimation: {fileID: 7400000, guid: 4fa8a4b3a2a74204886f3a108aae0908, type: 2}
-  combos: []
+  combos:
+  - {fileID: 11400000, guid: ba74c92a99b23124daf2ee52198f49c7, type: 2}

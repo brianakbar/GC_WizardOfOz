@@ -6,8 +6,8 @@ namespace Creazen.Wizard.Combat {
     [CreateAssetMenu(fileName = "New Damage Action", menuName = "Action/Combat/Damage")]
     public class Damage : BaseAction {
         public class Input {
-            public Vector3 knockback = Vector3.zero;
-            public float knockbackTime = 0f;
+            public GameObject attacker;
+            public DamageType damageType;
         }
 
         public override void Initialize(ActionCache cache) {
@@ -28,10 +28,10 @@ namespace Creazen.Wizard.Combat {
         }
 
         IEnumerator ProcessDamage(ActionCache cache) {
-            cache.Get<Rigidbody2D>().velocity = cache.Get<Input>().knockback;
-            yield return new WaitForSeconds(cache.Get<Input>().knockbackTime);
+            Input input = cache.Get<Input>();
 
-            cache.Get<Rigidbody2D>().velocity = Vector3.zero;
+            yield return input.damageType.Handle(cache, input.attacker);
+
             cache.Scheduler.Finish();
         }
     }

@@ -15,6 +15,9 @@ MonoBehaviour:
   weaponName: Sword
   sprite: {fileID: -1074318285, guid: 7fd3f6d2ea143b546866f0ba3bc4dcf4, type: 3}
   isRightHand: 1
+  isTwoHanded: 0
   isFlipped: 1
+  isAimingTarget: 0
+  aimAnimation: {fileID: 0}
   combos:
-  - {fileID: 11400000, guid: 44209d3f3f32af54b94643b5aa89fe84, type: 2}
+  - {fileID: 11400000, guid: 812918f984335354d93f944bf1bb2c4e, type: 2}

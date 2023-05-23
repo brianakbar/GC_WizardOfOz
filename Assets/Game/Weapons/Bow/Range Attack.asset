@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a0cf32247e1814e915833a577dad4e, type: 3}
+  m_Name: Range Attack
+  m_EditorClassIdentifier: 
+  animation: {fileID: 7400000, guid: 6efa6db721f19fb448d529dc144bc278, type: 2}
+  cooldownAfterFinish: 0
+  cooldownAfterCancelled: 0.2
+  projectile: {fileID: 2248777498345403002, guid: ccf5f41aa3ff1594ca0470011ed08b99, type: 3}
+  damageType: {fileID: 11400000, guid: f59e6c4213abd874483b5f52d69de312, type: 2}

@@ -5,7 +5,7 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
-    public class Attack : BaseAction {
+    public class Attack : BaseAction, ISpawnProjectile {
         [SerializeField] AnimationClip animation;
 
         public class Input {
@@ -68,6 +68,14 @@ namespace Creazen.Wizard.Combat {
 
             Record record = cache.Get<Record>();
             record.canAttack = value;
+        }
+
+        void ISpawnProjectile.OnSpawnProjectile(ActionCache cache) {
+            Input input = cache.Get<Input>();
+
+            if(input.attackType is ISpawnProjectile spawn) {
+                spawn.OnSpawnProjectile(cache);
+            }
         }
     }
 }

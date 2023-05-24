@@ -62,5 +62,9 @@ namespace Creazen.Wizard.Combat {
             combatScheduler.Finish();
             if(onFinishAttack != null) onFinishAttack();
         }
+
+        void OnSpawnProjectile() {
+            combatScheduler.OnSpawnProjectile();
+        }
     }
 }

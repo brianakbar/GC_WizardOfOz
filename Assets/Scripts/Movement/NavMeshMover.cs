@@ -10,6 +10,10 @@ namespace Creazen.Wizard.Movement {
             return movementScheduler.StartAction<NavMeshMove>();
         }
 
+        public bool IsMoving() {
+            return movementScheduler.CurrentAction?.GetType() == typeof(NavMeshMove);
+        }
+
         public void Stop() {
             movementScheduler.StartAction<Idle>();
         }

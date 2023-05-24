@@ -23,6 +23,12 @@ namespace Creazen.Wizard.Combat {
             currentHealth = startingHealth;
         }
 
+        void Update() {
+            if(currentHealth <= 0) {
+                scheduler.StartAction<Death>();
+            }
+        }
+
         public float GetMaxHealth() {
             return startingHealth;
         }
@@ -47,22 +53,10 @@ namespace Creazen.Wizard.Combat {
             float healthFraction = GetFraction();
             onHit?.Invoke(healthFraction);
             healthChangeChannel?.RaiseEvent(healthFraction);
-
-            if(currentHealth <= 0) {
-                animator.SetTrigger("dead");
-                StartCoroutine(ProcessDeath());
-            }
         }
 
         void StopDamageAnimation() {
             animator.SetBool("isDamaged", false);
-        }
-
-        IEnumerator ProcessDeath() {
-            yield return new WaitUntil(() => deathParticle.isPlaying);
-            yield return new WaitWhile(() => deathParticle.isPlaying);
-
-            Destroy(gameObject);
         }
     }
 }

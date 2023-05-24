@@ -14,6 +14,8 @@ namespace Creazen.Wizard.ActionScheduling {
         Action onFinish;
         Action onCancel;
 
+        public BaseAction CurrentAction { get => currentAction; }
+
         void Awake() {
             if(performer == null) performer = gameObject;
             foreach(BaseAction action in actions) {
@@ -41,6 +43,14 @@ namespace Creazen.Wizard.ActionScheduling {
             }
 
             currentAction.TriggerEnter2D(cache[currentAction], other);
+        }
+
+        public void OnSpawnProjectile() {
+            if(currentAction == null) return;
+
+            if(currentAction is ISpawnProjectile spawn) {
+                spawn.OnSpawnProjectile(cache[currentAction]);
+            }
         }
 
         public bool StartAction<T>(Action onFinish = null, Action onCancel = null) where T : BaseAction {

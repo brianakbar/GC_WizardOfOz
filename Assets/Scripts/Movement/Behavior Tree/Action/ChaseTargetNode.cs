@@ -10,6 +10,8 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Action {
 
         protected override State OnUpdate() {
             if(mover == null) mover = gameObject.GetComponent<NavMeshMover>();
+            if(mover.IsMoving()) return State.Running;
+
             mover.StartMoving(target);
             return State.Running;
         }

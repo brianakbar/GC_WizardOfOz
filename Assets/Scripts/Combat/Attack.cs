@@ -14,7 +14,6 @@ namespace Creazen.Wizard.Combat {
 
         class Record {
             public int combo = 0;
-            public bool canAttack = true;
         }
 
         public override void Initialize(ActionCache cache) {
@@ -28,15 +27,11 @@ namespace Creazen.Wizard.Combat {
             Record record = cache.Get<Record>();
             Input input = cache.Get<Input>();
 
-            if(!record.canAttack) return false;
-
             record.combo++;
 
             Animator animator = cache.Get<Animator>();
             animator.runtimeAnimatorController = animator.CreateOverrides("Attack", input.attackType.Animation);
             animator.SetTrigger("attack");
-
-            record.canAttack = false;
 
             input.attackType.OnStart(cache);
 
@@ -52,22 +47,11 @@ namespace Creazen.Wizard.Combat {
         public override void EndAction(ActionCache cache) {
             Record record = cache.Get<Record>();
             Input input = cache.Get<Input>();
-
-            StartCoroutine(cache, SetCanAttack(cache, input.attackType.CooldownAfterFinish, true));
         }
 
         public override void Cancel(ActionCache cache) {
             cache.Get<Record>().combo = 0;
             Input input = cache.Get<Input>();
-
-            StartCoroutine(cache, SetCanAttack(cache, input.attackType.CooldownAfterCancelled, true));
-        }
-
-        IEnumerator SetCanAttack(ActionCache cache, float time, bool value) {
-            yield return new WaitForSeconds(time);
-
-            Record record = cache.Get<Record>();
-            record.canAttack = value;
         }
 
         void ISpawnProjectile.OnSpawnProjectile(ActionCache cache) {

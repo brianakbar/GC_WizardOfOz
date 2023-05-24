@@ -11,6 +11,8 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] Hand rightHand;
         [SerializeField] Hand leftHand;
 
+        bool canAttack = true;
+
         Action onFinishAttack = null;
 
         Aim.Input aimInput;
@@ -35,9 +37,13 @@ namespace Creazen.Wizard.Combat {
         }
 
         public bool StartAttack() {
+            if(!canAttack) return false;
             //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
             attackInput.attackType = currentWeapon.GetCombo(0);
-            return combatScheduler.StartAction<Attack>();
+            bool isSuccess = combatScheduler.StartAction<Attack>();
+
+            if(isSuccess) canAttack = false;
+            return isSuccess;
         }
 
         void EquipWeapon(Weapon toEquip) {
@@ -60,6 +66,7 @@ namespace Creazen.Wizard.Combat {
         //Animation Event
         void OnFinishAttack() {
             combatScheduler.Finish();
+            canAttack = true;
             if(onFinishAttack != null) onFinishAttack();
         }
 

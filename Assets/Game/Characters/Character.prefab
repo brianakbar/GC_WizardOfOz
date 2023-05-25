@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd198b27154a0146a8cfe95871bfca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: 9c88ace987d01454f8859800e1132b43, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 9c88ace987d01454f8859800e1132b43, type: 2}
   target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
   combatScheduler: {fileID: 945036082451770001}
   rotateableHand: {fileID: 2170658475541072383}

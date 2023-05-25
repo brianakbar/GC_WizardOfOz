@@ -13,6 +13,7 @@ namespace Creazen.Wizard.Combat.AimTargets {
 
         public override Vector3 GetTargetPosition() {
             if(target == null) target = GameObject.FindGameObjectWithTag(tag);
+            if(target == null) return default;
             return target.transform.position;
         }
     }

@@ -4,12 +4,14 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     public class Fighter : MonoBehaviour {
-        [SerializeField] Weapon currentWeapon;
+        [SerializeField] Weapon defaultWeapon;
         [SerializeField] AimTarget target;
         [SerializeField] ActionScheduler combatScheduler;
         [SerializeField] Transform rotateableHand;
         [SerializeField] Hand rightHand;
         [SerializeField] Hand leftHand;
+
+        Weapon currentWeapon;
 
         bool canAttack = true;
 
@@ -18,11 +20,14 @@ namespace Creazen.Wizard.Combat {
         Aim.Input aimInput;
         Attack.Input attackInput;
 
-        void Start() {
+        void Awake() {
             aimInput = combatScheduler.GetCache<Aim>().Get<Aim.Input>();
             aimInput.rotateableHand = rotateableHand;
             attackInput = combatScheduler.GetCache<Attack>().Get<Attack.Input>();
-            EquipWeapon(currentWeapon);
+        }
+
+        void Start() {
+            if(currentWeapon == null) EquipWeapon(defaultWeapon);
         }
 
         void Update() {
@@ -46,7 +51,7 @@ namespace Creazen.Wizard.Combat {
             return isSuccess;
         }
 
-        void EquipWeapon(Weapon toEquip) {
+        public void EquipWeapon(Weapon toEquip) {
             if(toEquip.IsRightHand()) {
                 rightHand.EquipWeapon(toEquip.GetSprite(), toEquip.IsFlipped(), true);
                 if(toEquip.IsTwoHanded) {
@@ -61,6 +66,7 @@ namespace Creazen.Wizard.Combat {
             }
             aimInput.animation = toEquip.AimAnimation;
             aimInput.rotateWeaponToTarget = toEquip.IsAimingTarget;
+            currentWeapon = toEquip;
         }
 
         //Animation Event

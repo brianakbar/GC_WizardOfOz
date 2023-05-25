@@ -1,5 +1,6 @@
 namespace Creazen.Wizard.SceneManagement {
     using System.Collections;
+    using Creazen.Wizard.Preference;
     using UnityEngine;
     using UnityEngine.SceneManagement;
     
@@ -23,6 +24,7 @@ namespace Creazen.Wizard.SceneManagement {
         IEnumerator LoadScene(int buildIndex) {
             yield return fader.ProcessTransition(0);
             yield return SceneManager.LoadSceneAsync(buildIndex);
+            FindObjectOfType<PreferenceManager>()?.Handle();
             yield return fader.ProcessTransition(1);
         }
     }

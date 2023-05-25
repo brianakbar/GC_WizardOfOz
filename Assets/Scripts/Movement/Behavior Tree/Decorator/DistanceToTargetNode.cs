@@ -16,10 +16,11 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Decorator {
         }
 
         protected override void OnStart() {
-            target = GameObject.FindGameObjectWithTag(targetTag).transform;
+            target = GameObject.FindGameObjectWithTag(targetTag)?.transform;
         }
 
         protected override State OnUpdate() {
+            if(target == null) return State.Failure;
             if(IsInRange()) {
                 if(child != null) child.Update();
                 return State.Running;

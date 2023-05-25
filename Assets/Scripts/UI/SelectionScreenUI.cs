@@ -4,7 +4,7 @@ namespace Creazen.Wizard.UI {
     using Creazen.Wizard.SceneManagement;
     using System.Collections;
 
-    public class SelectionScreen : MonoBehaviour {
+    public class SelectionScreenUI : MonoBehaviour {
         [SerializeField] List<Transition> transitions;
 
         int current = 0;

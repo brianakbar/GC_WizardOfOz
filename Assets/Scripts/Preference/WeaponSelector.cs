@@ -11,7 +11,7 @@ namespace Creazen.Wizard.Preference {
 
             public override void Handle() {
                 Fighter fighter = GameObject.FindGameObjectWithTag(tag)?.GetComponent<Fighter>();
-                fighter.EquipWeapon(weapon);
+                fighter?.EquipWeapon(weapon);
             }
         }
 

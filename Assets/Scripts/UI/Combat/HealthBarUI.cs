@@ -10,8 +10,12 @@ namespace Creazen.Wizard.UI.Combat {
         [Header("Listening on channels")]
         [SerializeField] HealthChangeEventChannel healthChangeChannel;
 
-        void Awake() {
+        void OnEnable() {
             if(healthChangeChannel != null) healthChangeChannel.onEventRaised += UpdateHealthBar;
+        }
+
+        void OnDisable() {
+            if(healthChangeChannel != null) healthChangeChannel.onEventRaised -= UpdateHealthBar;
         }
 
         public void UpdateHealthBar(float healthFraction) {

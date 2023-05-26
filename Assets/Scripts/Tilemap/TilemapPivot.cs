@@ -1,6 +1,9 @@
 namespace Creazen.Wizard.Tilemap {
+    using System.Collections.Generic;
+    using System.Linq;
     using UnityEngine;
-    
+    using UnityEngine.Tilemaps;
+
     public class TilemapPivot : MonoBehaviour {
         [SerializeField] VerticalPivot verticalPivot;
         [SerializeField] HorizontalPivot horizontalPivot;
@@ -31,11 +34,16 @@ namespace Creazen.Wizard.Tilemap {
 
         void UpdatePivot() {
             if(coll2D == null) coll2D = GetComponentInChildren<CompositeCollider2D>();
-            coll2D.transform.position = Vector3.zero;
+            List<Tilemap> tilemaps = GetComponentsInChildren<Tilemap>().ToList();
+            foreach(Tilemap tilemap in tilemaps) {
+                tilemap.transform.position = Vector3.zero;
+            }
             transform.position = Vector3.zero;
 
             Vector3 pivot = GetPivot();
-            coll2D.transform.position = -pivot;
+            foreach(Tilemap tilemap in tilemaps) {
+                tilemap.transform.position = -pivot;
+            }
             transform.position = pivot;
 
 #if UNITY_EDITOR

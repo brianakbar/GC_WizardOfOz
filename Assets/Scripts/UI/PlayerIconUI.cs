@@ -6,6 +6,8 @@ namespace Creazen.Wizard.UI {
     public class PlayerIconUI : MonoBehaviour {
         void Start() {
             var preference = FindObjectOfType<PreferenceManager>().Get<CharacterSelector.CharacterPreference>();
+            if(preference == null) return;
+            
             GetComponent<Image>().sprite = preference.character.icon;
         }
     }

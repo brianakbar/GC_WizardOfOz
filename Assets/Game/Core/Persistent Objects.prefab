@@ -190,6 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faderTag: Fader
+  levels:
+  - {fileID: 6504693159179822360, guid: 83c118125177725459c799fd518dd413, type: 3}
+  - {fileID: 4591680732484250645, guid: 96c5501a1231ce142b879d23f4adfd8f, type: 3}
 --- !u!1 &6719695206592998872
 GameObject:
   m_ObjectHideFlags: 0

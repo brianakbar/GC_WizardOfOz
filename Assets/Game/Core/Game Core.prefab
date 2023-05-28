@@ -98,6 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2567280117875517068}
   - component: {fileID: 1222039421099079128}
+  - component: {fileID: 6602884485018102736}
   m_Layer: 0
   m_Name: Follow Camera
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3822897032367497828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.69, y: 0.11000012, z: -10}
+  m_LocalPosition: {x: 0, y: 0.00000011920929, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -159,6 +160,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 7710081962330202022}
+--- !u!114 &6602884485018102736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822897032367497828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1001 &728844097221734168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,11 +363,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2094736582, guid: e4eb0c09bc8738d4bb4f05a61df07e3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2094736582, guid: e4eb0c09bc8738d4bb4f05a61df07e3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11000012
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 1273481976278726845, guid: e4eb0c09bc8738d4bb4f05a61df07e3a, type: 3}
       propertyPath: m_Name

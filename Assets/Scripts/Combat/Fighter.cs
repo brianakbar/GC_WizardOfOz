@@ -7,6 +7,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] Weapon defaultWeapon;
         [SerializeField] AimTarget target;
         [SerializeField] ActionScheduler combatScheduler;
+        [SerializeField] ActionScheduler aimScheduler;
         [SerializeField] Transform rotateableHand;
         [SerializeField] Hand rightHand;
         [SerializeField] Hand leftHand;
@@ -19,15 +20,28 @@ namespace Creazen.Wizard.Combat {
 
         Aim.Input aimInput;
         Attack.Input attackInput;
+        Health health;
+
+        public AimTarget AimTarget { get => target; }
 
         void Awake() {
-            aimInput = combatScheduler.GetCache<Aim>().Get<Aim.Input>();
+            aimInput = aimScheduler.GetCache<Aim>().Get<Aim.Input>();
             aimInput.rotateableHand = rotateableHand;
             attackInput = combatScheduler.GetCache<Attack>().Get<Attack.Input>();
+            health = GetComponent<Health>();
+        }
+
+        void OnEnable() {
+            if(health != null) health.onHit.AddListener(OnHit);
+        }
+
+        void OnDisable() {
+            if(health != null) health.onHit.RemoveListener(OnHit);
         }
 
         void Start() {
             if(currentWeapon == null) EquipWeapon(defaultWeapon);
+            aimScheduler.StartAction<Aim>();
         }
 
         void Update() {
@@ -67,6 +81,10 @@ namespace Creazen.Wizard.Combat {
             aimInput.animation = toEquip.AimAnimation;
             aimInput.rotateWeaponToTarget = toEquip.IsAimingTarget;
             currentWeapon = toEquip;
+        }
+
+        void OnHit(float healthFraction) {
+            canAttack = true;
         }
 
         //Animation Event

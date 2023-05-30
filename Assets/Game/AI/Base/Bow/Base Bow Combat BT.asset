@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
-  m_Name: Enemy Combat BT
+  m_Name: Base Bow Combat BT
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
   rootNode: {fileID: 4101628192398183491}
@@ -138,5 +138,5 @@ MonoBehaviour:
   description: 
   child: {fileID: 6347762995304078736}
   targetTag: Player
-  distance: 2
+  distance: 4.5
   comparison: 0

@@ -9,7 +9,7 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] float startingHealth = 5;
         [SerializeField] ActionScheduler scheduler;
         [SerializeField] ParticleSystem deathParticle;
-        [SerializeField] UnityEvent<float> onHit;
+        public UnityEvent<float> onHit;
 
         [Header("Channels")]
         [SerializeField] HealthChangeEventChannel healthChangeChannel;

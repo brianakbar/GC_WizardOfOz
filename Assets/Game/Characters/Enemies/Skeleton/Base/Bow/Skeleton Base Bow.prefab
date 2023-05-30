@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1999531746676320092
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126521658925280585, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247055109861096888, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: m_Name
+      value: Skeleton Base Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621432274177405262, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: behaviorTree
+      value: 
+      objectReference: {fileID: 11400000, guid: 85708007207acd6439f4bf6eea64ce4f, type: 2}
+    - target: {fileID: 8818915603723370575, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 15dad46e4f24cf44bb3a7505353c2005, type: 2}
+    - target: {fileID: 9205272173256777799, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}
+      propertyPath: behaviorTree
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f06e6b43c119dc4b97b2251e22a2b4f, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10ffac04ae3433d46ab805fd76cda5d7, type: 3}

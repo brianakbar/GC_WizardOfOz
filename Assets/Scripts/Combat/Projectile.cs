@@ -2,7 +2,6 @@ namespace Creazen.Wizard.Combat {
     using UnityEngine;
 
     public class Projectile : MonoBehaviour {
-        [SerializeField] AimTarget target;
         [SerializeField] float speed;
         [SerializeField] float lifetime;
 
@@ -14,7 +13,7 @@ namespace Creazen.Wizard.Combat {
             body = GetComponent<Rigidbody2D>();
         }
 
-        public void Launch(GameObject attacker, DamageType damageType) {
+        public void Launch(GameObject attacker, AimTarget target, DamageType damageType) {
             this.damageType = damageType;
             this.attacker = attacker;
 

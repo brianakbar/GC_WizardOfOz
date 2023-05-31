@@ -16,7 +16,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b5fbd02a-aa3f-4054-96c0-a916acbac43b
-  position: {x: -137.99995, y: 403.99997}
+  position: {x: 12.0000305, y: 404}
   description: 
 --- !u!114 &-6046125539641894319
 MonoBehaviour:
@@ -34,7 +34,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 27b46dea-15cc-4480-b496-3d2483c0fb84
-  position: {x: 162, y: 403.99994}
+  position: {x: 272.86374, y: 404}
   description: 
   duration: 0.5
 --- !u!114 &-5852081567598214142
@@ -78,6 +78,26 @@ MonoBehaviour:
   - {fileID: -6416616177738205357}
   - {fileID: 6347762995304078736}
   - {fileID: -6046125539641894319}
+  - {fileID: 2140551244686124072}
+--- !u!114 &2140551244686124072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 5ad55f60-0493-4e4b-943d-803d027f195b
+  position: {x: -229.8178, y: 404}
+  description: 
+  duration: 0.5
 --- !u!114 &4101628192398183491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,11 +133,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 85cf29ec-04ae-428d-9727-1ad501c8d890
-  position: {x: 12.000019, y: 264.95453}
+  position: {x: 12.000011, y: 260.43738}
   description: 
   children:
-  - {fileID: -6046125539641894319}
+  - {fileID: 2140551244686124072}
   - {fileID: -6416616177738205357}
+  - {fileID: -6046125539641894319}
 --- !u!114 &7304683154646998741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +155,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 632513bc-6a86-47f6-98be-7b6050ac0320
-  position: {x: 12.000022, y: 133.12329}
+  position: {x: 12.000014, y: 133}
   description: 
   child: {fileID: 6347762995304078736}
   targetTag: Player
-  distance: 2
-  comparison: 0
+  conditions:
+  - distance: 2
+    comparison: 0

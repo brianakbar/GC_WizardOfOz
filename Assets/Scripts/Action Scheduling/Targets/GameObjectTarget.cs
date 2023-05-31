@@ -1,8 +1,8 @@
-namespace Creazen.Wizard.Combat.AimTargets {
+namespace Creazen.Wizard.ActionScheduling.Targets {
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Game Object Target", menuName = "Combat/Aim/Target/Game Object", order = 0)]
-    public class GameObjectTarget : AimTarget {
+    public class GameObjectTarget : Target {
         [SerializeField] string tag = "Player";
 
         GameObject target;

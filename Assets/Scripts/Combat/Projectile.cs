@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.Combat {
+    using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
     public class Projectile : MonoBehaviour {
@@ -13,7 +14,7 @@ namespace Creazen.Wizard.Combat {
             body = GetComponent<Rigidbody2D>();
         }
 
-        public void Launch(GameObject attacker, AimTarget target, DamageType damageType) {
+        public void Launch(GameObject attacker, Target target, DamageType damageType) {
             this.damageType = damageType;
             this.attacker = attacker;
 

@@ -8,7 +8,7 @@ namespace Creazen.Wizard.Combat.AttackTypes {
         [SerializeField] DamageType damageType;
 
         void ISpawnProjectile.OnSpawnProjectile(ActionCache cache) {
-            AimTarget target = cache.GameObject.GetComponent<Fighter>().AimTarget;
+            Target target = cache.GameObject.GetComponent<Fighter>().AimTarget;
             Projectile instance = Instantiate(projectile, 
                 cache.GameObject.GetComponentInChildren<Hand>().transform.position, 
                 Quaternion.identity);

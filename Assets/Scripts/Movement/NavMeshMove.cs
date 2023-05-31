@@ -7,12 +7,8 @@ namespace Creazen.Wizard.Movement {
     public class NavMeshMove : BaseAction {
         [SerializeField] [Min(0)] float speed = 2f;
 
-        class Record {
-            public Transform target;
-        }
-
         public class Input {
-            public string target = "Player";
+            public Target target;
         }
 
         public override void Initialize(ActionCache cache) {
@@ -22,21 +18,22 @@ namespace Creazen.Wizard.Movement {
             cache.Add(agent);
             cache.Add(cache.GameObject.GetComponent<Animator>());
             cache.Add(new Input());
-            cache.Add(new Record());
         }
 
         public override void OnStartAction(ActionCache cache) {
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
             agent.isStopped = false;
-            GameObject target = GameObject.FindGameObjectWithTag(cache.Get<Input>().target);
-            cache.Get<Record>().target = target.transform;
             agent.speed = speed;
         }
 
         public override void Step(ActionCache cache) {
-            Transform target = cache.Get<Record>().target;
+            Target target = cache.Get<Input>().target;
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
-            agent.SetDestination(target.transform.position);
+            if(IsApproximately(cache.Transform.position, target.GetTargetPosition())) {
+                cache.Scheduler.Finish();
+            }
+
+            agent.SetDestination(target.GetTargetPosition());
 
             cache.Get<Animator>().SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }
@@ -46,6 +43,12 @@ namespace Creazen.Wizard.Movement {
             agent.isStopped = true;
             agent.SetDestination(cache.GameObject.transform.position);
             cache.Get<Animator>().SetBool("hasSpeed", false);
+        }
+
+        bool IsApproximately(Vector2 a, Vector2 b) {
+            if(Mathf.Approximately(a.x, b.x) && Mathf.Approximately(a.y, b.y)) return true;
+
+            return false;
         }
     }
 }

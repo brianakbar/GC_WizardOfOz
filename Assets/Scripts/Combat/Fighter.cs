@@ -5,7 +5,7 @@ namespace Creazen.Wizard.Combat {
 
     public class Fighter : MonoBehaviour {
         [SerializeField] Weapon defaultWeapon;
-        [SerializeField] AimTarget target;
+        [SerializeField] Target target;
         [SerializeField] ActionScheduler combatScheduler;
         [SerializeField] ActionScheduler aimScheduler;
         [SerializeField] Transform rotateableHand;
@@ -22,7 +22,7 @@ namespace Creazen.Wizard.Combat {
         Attack.Input attackInput;
         Health health;
 
-        public AimTarget AimTarget { get => target; }
+        public Target AimTarget { get => target; }
 
         void Awake() {
             aimInput = aimScheduler.GetCache<Aim>().Get<Aim.Input>();

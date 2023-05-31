@@ -7,6 +7,7 @@ namespace Creazen.Wizard.Combat.BehaviorTree.Action {
         bool? finishedAttack = null;
 
         protected override void OnStart() {
+            finishedAttack = null;
             if(fighter == null) fighter = gameObject.GetComponent<Fighter>();
         }
 

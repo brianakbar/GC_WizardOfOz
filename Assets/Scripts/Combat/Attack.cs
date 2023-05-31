@@ -23,7 +23,7 @@ namespace Creazen.Wizard.Combat {
             cache.Add(cache.GameObject.GetComponent<Animator>());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             Record record = cache.Get<Record>();
             Input input = cache.Get<Input>();
 
@@ -34,8 +34,6 @@ namespace Creazen.Wizard.Combat {
             animator.SetTrigger("attack");
 
             input.attackType.OnStart(cache);
-
-            return true;
         }
 
         public override void TriggerEnter2D(ActionCache cache, Collider2D other) {
@@ -44,12 +42,12 @@ namespace Creazen.Wizard.Combat {
             input.attackType.HandleTrigger(cache, other);
         }
 
-        public override void EndAction(ActionCache cache) {
+        public override void OnEndAction(ActionCache cache) {
             Record record = cache.Get<Record>();
             Input input = cache.Get<Input>();
         }
 
-        public override void Cancel(ActionCache cache) {
+        public override void OnCancel(ActionCache cache) {
             cache.Get<Record>().combo = 0;
             Input input = cache.Get<Input>();
         }

@@ -8,10 +8,8 @@ namespace Creazen.Wizard.Movement {
             cache.Add(cache.GameObject.GetComponent<Rigidbody2D>());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             cache.Get<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-
-            return true;
         }
     }
 }

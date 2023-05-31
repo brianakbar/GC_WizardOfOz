@@ -12,7 +12,7 @@ namespace Creazen.Wizard.Combat {
             cache.Add(cache.GameObject.GetComponent<Animator>());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             Animator animator = cache.Get<Animator>();
 
             animator.SetTrigger("dead");
@@ -24,8 +24,6 @@ namespace Creazen.Wizard.Combat {
             }
 
             cache.Scheduler.StartCoroutine(ProcessDeath(cache));
-
-            return true;
         }
 
         IEnumerator ProcessDeath(ActionCache cache) {

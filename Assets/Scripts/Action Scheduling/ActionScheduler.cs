@@ -103,10 +103,14 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         bool StartAction<T>(T action) where T : BaseAction {
-            if(Cancel() == false) return false;
+            if(action.CanStartBaseAction(cache[action])) {
+                if(Cancel() == false) return false;
 
-            currentAction = action;
-            return action.StartAction(cache[action]);
+                currentAction = action;
+                action.StartAction(cache[action]);
+                return true;
+            }
+            return false;
         }
     }
 }

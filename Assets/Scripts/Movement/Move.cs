@@ -16,17 +16,15 @@ namespace Creazen.Wizard.Movement {
             cache.Add(new Input());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             cache.Get<Rigidbody2D>().velocity = cache.Get<Input>().moveDirection * speed;
-
-            return true;
         }
 
         public override void Step(ActionCache cache) {
             cache.Get<Animator>().SetBool("hasSpeed", cache.Get<Rigidbody2D>().velocity != Vector2.zero);
         }
 
-        public override void Cancel(ActionCache cache) {
+        public override void OnCancel(ActionCache cache) {
             cache.Get<Rigidbody2D>().velocity = new Vector2(0, 0);
             cache.Get<Animator>().SetBool("hasSpeed", false);
         }

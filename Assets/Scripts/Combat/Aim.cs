@@ -17,15 +17,13 @@ namespace Creazen.Wizard.Combat {
             cache.Add(cache.GameObject.GetComponent<Animator>());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             Input input = cache.Get<Input>();
             Animator animator = cache.Get<Animator>();
 
             if(input.animation != null) {
                 animator.runtimeAnimatorController = animator.CreateOverrides("Aim", input.animation);
             }
-
-            return true;
         }
 
         public override void Step(ActionCache cache) {

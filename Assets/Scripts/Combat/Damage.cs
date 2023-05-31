@@ -15,7 +15,7 @@ namespace Creazen.Wizard.Combat {
             cache.Add(new Input());
         }
 
-        public override bool StartAction(ActionCache cache) {
+        public override void OnStartAction(ActionCache cache) {
             cache.Scheduler.StartCoroutine(ProcessDamage(cache));
 
             foreach(var scheduler in cache.GameObject.GetComponentsInChildren<ActionScheduler>()) {
@@ -23,8 +23,6 @@ namespace Creazen.Wizard.Combat {
 
                 scheduler.Cancel();
             }
-
-            return true;
         }
 
         IEnumerator ProcessDamage(ActionCache cache) {

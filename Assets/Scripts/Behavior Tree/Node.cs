@@ -6,6 +6,7 @@ namespace Creazen.Wizard.BehaviorTree {
 
     public abstract class Node : ScriptableObject {
         [HideInInspector] public GameObject gameObject;
+        [HideInInspector] public BehaviorTree behaviorTree;
         [HideInInspector] public State state;
         [HideInInspector] public bool started = false;
         [HideInInspector] public string guid;

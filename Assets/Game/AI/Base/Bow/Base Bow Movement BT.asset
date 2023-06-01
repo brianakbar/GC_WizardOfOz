@@ -121,7 +121,7 @@ MonoBehaviour:
   child: {fileID: -7741189036224248654}
   targetTag: Player
   conditions:
-  - distance: 7
+  - distance: 10
     comparison: 2
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
@@ -212,7 +212,7 @@ MonoBehaviour:
   child: {fileID: -5829448742200290930}
   targetTag: Player
   conditions:
-  - distance: 7
+  - distance: 10
     comparison: 0
   - distance: 1.2
     comparison: 2

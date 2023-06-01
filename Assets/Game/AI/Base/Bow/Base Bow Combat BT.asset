@@ -160,5 +160,5 @@ MonoBehaviour:
   child: {fileID: 6347762995304078736}
   targetTag: Player
   conditions:
-  - distance: 5
+  - distance: 6
     comparison: 0

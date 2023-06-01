@@ -9,6 +9,7 @@ namespace Creazen.Wizard.BehaviorTree {
         public GameObject gameObject;
         public RootNode rootNode;
         public State state = State.Running;
+        public Blackboard blackboard = new Blackboard();
         
         [SerializeField] List<Node> nodes = new List<Node>();
 
@@ -54,6 +55,7 @@ namespace Creazen.Wizard.BehaviorTree {
         public void Bind(GameObject gameObject) {
             Traverse(rootNode, (node) => {
                 node.gameObject = gameObject;
+                node.behaviorTree = this;
             });
         }
 

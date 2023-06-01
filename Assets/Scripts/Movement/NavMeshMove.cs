@@ -7,6 +7,9 @@ namespace Creazen.Wizard.Movement {
     public class NavMeshMove : BaseAction {
         [SerializeField] [Min(0)] float speed = 2f;
 
+        int retryCount = 0;
+        const int Retry = 10;
+
         public class Input {
             public Target target;
         }
@@ -24,6 +27,7 @@ namespace Creazen.Wizard.Movement {
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
             agent.isStopped = false;
             agent.speed = speed;
+            retryCount = 0;
         }
 
         public override void Step(ActionCache cache) {
@@ -35,6 +39,15 @@ namespace Creazen.Wizard.Movement {
 
             agent.SetDestination(target.GetTargetPosition(cache.GameObject));
 
+            if(agent.velocity.magnitude <= Mathf.Epsilon) {
+                if(++retryCount >= Retry) {
+                    cache.Scheduler.Finish();
+                }
+            }
+            else {
+                retryCount = 0;
+            }
+
             cache.Get<Animator>().SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }
 
@@ -45,9 +58,23 @@ namespace Creazen.Wizard.Movement {
             cache.Get<Animator>().SetBool("hasSpeed", false);
         }
 
-        bool IsApproximately(Vector2 a, Vector2 b) {
-            if(Mathf.Approximately(a.x, b.x) && Mathf.Approximately(a.y, b.y)) return true;
+        public override void OnEndAction(ActionCache cache) {
+            NavMeshAgent agent = cache.Get<NavMeshAgent>();
+            agent.isStopped = true;
+            agent.SetDestination(cache.GameObject.transform.position);
+            cache.Get<Animator>().SetBool("hasSpeed", false);
+        }
 
+        bool IsApproximately(Vector2 a, Vector2 b) {
+            if(Approximately(a.x, b.x, 0.1f) && Approximately(a.y, b.y, 0.1f)) return true;
+
+            return false;
+        }
+
+        bool Approximately(float a, float b, float maxDifference) {
+            if (a - maxDifference < b && b < a + maxDifference) {
+                return true;
+            }
             return false;
         }
     }

@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8123890012914730159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 3276f36c-2dc7-4daf-995c-e0b84f03c7cd
+  position: {x: 321.75677, y: 479}
+  description: 
+  duration: 3
+--- !u!114 &-7741189036224248654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 170b64a8-395b-48f2-9ac5-694f153bb9be
+  position: {x: 321.75677, y: 335.00003}
+  description: 
+  children:
+  - {fileID: -7630165281519119281}
+  - {fileID: -8123890012914730159}
+  - {fileID: 4496882515891273256}
+--- !u!114 &-7630165281519119281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d69873c2e93e51478282ea8f9e81fde, type: 3}
+  m_Name: ChangeAimNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b10cb072-624d-474c-bf9c-1cc939c6d103
+  position: {x: 112.99206, y: 479}
+  description: 
+  to: {fileID: 11400000, guid: 6bb20a173c272d44bbe43b8a4618e537, type: 2}
+--- !u!114 &-5829448742200290930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: ed1fe251-9bb1-4ef0-bae4-513e264c17de
+  position: {x: -260, y: 335}
+  description: 
+  children:
+  - {fileID: 7091503436263733583}
+  - {fileID: 7690724589553104312}
+--- !u!114 &-5198981211028692928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
+  m_Name: RepeaterNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
+  position: {x: -0.000026464462, y: -84.793175}
+  description: 
+  child: {fileID: -2780744664772156347}
+--- !u!114 &-5165892185212731518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 1b7d6ea2-019f-485e-bda2-bc96fa2450f1
+  position: {x: 321.75677, y: 198.00002}
+  description: 
+  child: {fileID: -7741189036224248654}
+  targetTag: Player
+  conditions:
+  - distance: 10
+    comparison: 2
+--- !u!114 &-3004838220682929487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8fcd611a6c8414496bacaf76ab253a, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
+  position: {x: 0.000022888184, y: -217.67325}
+  description: 
+  child: {fileID: -5198981211028692928}
+--- !u!114 &-2780744664772156347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f700307eb79b934ba64cd0b344e1aef, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 9ceb7da5-c4dd-4d14-8c6c-d25a9d5b19df
+  position: {x: -0.00001013279, y: 58.119354}
+  description: 
+  children:
+  - {fileID: 3206312269770637818}
+  - {fileID: -5165892185212731518}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
+  m_Name: Base Bow Movement BT Original
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  rootNode: {fileID: -3004838220682929487}
+  state: 0
+  nodes:
+  - {fileID: -3004838220682929487}
+  - {fileID: -5198981211028692928}
+  - {fileID: 7690724589553104312}
+  - {fileID: 3206312269770637818}
+  - {fileID: -2780744664772156347}
+  - {fileID: -5165892185212731518}
+  - {fileID: 4496882515891273256}
+  - {fileID: -7741189036224248654}
+  - {fileID: -8123890012914730159}
+  - {fileID: -5829448742200290930}
+  - {fileID: 7091503436263733583}
+  - {fileID: -7630165281519119281}
+--- !u!114 &3206312269770637818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
+  position: {x: -260, y: 198}
+  description: 
+  child: {fileID: -5829448742200290930}
+  targetTag: Player
+  conditions:
+  - distance: 10
+    comparison: 0
+  - distance: 1.2
+    comparison: 2
+--- !u!114 &4496882515891273256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dba4102110a4c4a8a8ec1f9280fd67, type: 3}
+  m_Name: ReturnNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 310767cf-f0e7-444f-9c46-6f0faf925151
+  position: {x: 527.30725, y: 478.99997}
+  description: 
+--- !u!114 &7091503436263733583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d69873c2e93e51478282ea8f9e81fde, type: 3}
+  m_Name: ChangeAimNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 7e33adfc-af1a-4bc3-adc9-f9b6de6c9689
+  position: {x: -364, y: 479}
+  description: 
+  to: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+--- !u!114 &7690724589553104312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79118b90f14238444ab2658fc8acf124, type: 3}
+  m_Name: ChaseTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
+  position: {x: -145, y: 479}
+  description: 
+  target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}

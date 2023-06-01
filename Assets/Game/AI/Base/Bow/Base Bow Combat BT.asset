@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AttackNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: b5fbd02a-aa3f-4054-96c0-a916acbac43b
@@ -31,12 +32,14 @@ MonoBehaviour:
   m_Name: WaitNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 27b46dea-15cc-4480-b496-3d2483c0fb84
-  position: {x: 280.68692, y: 442.00003}
+  position: {x: 240.00249, y: 442.00003}
   description: 
-  duration: 0.5
+  minDuration: 1
+  maxDuration: 1.5
 --- !u!114 &-5852081567598214142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,6 +53,7 @@ MonoBehaviour:
   m_Name: RepeaterNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 3afaf57f-a432-4b70-8288-9d7b334e78ce
@@ -71,6 +75,8 @@ MonoBehaviour:
   gameObject: {fileID: 0}
   rootNode: {fileID: 4101628192398183491}
   state: 0
+  blackboard:
+    state: Default
   nodes:
   - {fileID: 4101628192398183491}
   - {fileID: -5852081567598214142}
@@ -92,12 +98,14 @@ MonoBehaviour:
   m_Name: WaitNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 05d9abd7-96aa-43ba-9641-2b2c37a57ec9
   position: {x: -200.38289, y: 442.00006}
   description: 
-  duration: 0.5
+  minDuration: 1
+  maxDuration: 1.5
 --- !u!114 &4101628192398183491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +119,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 07d29e74-9bda-4880-b878-eea16e870540
@@ -130,6 +139,7 @@ MonoBehaviour:
   m_Name: SequencerNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 85cf29ec-04ae-428d-9727-1ad501c8d890
@@ -152,6 +162,7 @@ MonoBehaviour:
   m_Name: DistanceToTargetNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
   state: 0
   started: 0
   guid: 632513bc-6a86-47f6-98be-7b6050ac0320

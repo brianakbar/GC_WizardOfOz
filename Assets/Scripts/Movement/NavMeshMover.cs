@@ -7,6 +7,7 @@ namespace Creazen.Wizard.Movement {
         [SerializeField] ActionScheduler movementScheduler;
         
         Vector3Target originalPosition;
+        public Vector3 OriginalPosition { get => originalPosition.GetTargetPosition(gameObject); }
 
         void Awake() {
             originalPosition = ScriptableObject.CreateInstance<Vector3Target>();

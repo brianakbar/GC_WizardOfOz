@@ -16,7 +16,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3276f36c-2dc7-4daf-995c-e0b84f03c7cd
-  position: {x: 54.159016, y: 478.9999}
+  position: {x: 321.75677, y: 479}
   description: 
   duration: 3
 --- !u!114 &-7741189036224248654
@@ -35,11 +35,52 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 170b64a8-395b-48f2-9ac5-694f153bb9be
-  position: {x: 150.00002, y: 334.99994}
+  position: {x: 321.75677, y: 335.00003}
   description: 
   children:
+  - {fileID: -7630165281519119281}
   - {fileID: -8123890012914730159}
   - {fileID: 4496882515891273256}
+--- !u!114 &-7630165281519119281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d69873c2e93e51478282ea8f9e81fde, type: 3}
+  m_Name: ChangeAimNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b10cb072-624d-474c-bf9c-1cc939c6d103
+  position: {x: 112.99206, y: 479}
+  description: 
+  to: {fileID: 11400000, guid: 6bb20a173c272d44bbe43b8a4618e537, type: 2}
+--- !u!114 &-5829448742200290930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: ed1fe251-9bb1-4ef0-bae4-513e264c17de
+  position: {x: -260, y: 335}
+  description: 
+  children:
+  - {fileID: 7091503436263733583}
+  - {fileID: 7690724589553104312}
 --- !u!114 &-5198981211028692928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +116,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1b7d6ea2-019f-485e-bda2-bc96fa2450f1
-  position: {x: 150, y: 198.00002}
+  position: {x: 321.75677, y: 198.00002}
   description: 
   child: {fileID: -7741189036224248654}
   targetTag: Player
@@ -147,6 +188,9 @@ MonoBehaviour:
   - {fileID: 4496882515891273256}
   - {fileID: -7741189036224248654}
   - {fileID: -8123890012914730159}
+  - {fileID: -5829448742200290930}
+  - {fileID: 7091503436263733583}
+  - {fileID: -7630165281519119281}
 --- !u!114 &3206312269770637818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,9 +207,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: -123.97219, y: 198}
+  position: {x: -260, y: 198}
   description: 
-  child: {fileID: 7690724589553104312}
+  child: {fileID: -5829448742200290930}
   targetTag: Player
   conditions:
   - distance: 7
@@ -188,9 +232,27 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 310767cf-f0e7-444f-9c46-6f0faf925151
-  position: {x: 252.95457, y: 479.04535}
+  position: {x: 527.30725, y: 478.99997}
   description: 
-  target: {fileID: 0}
+--- !u!114 &7091503436263733583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d69873c2e93e51478282ea8f9e81fde, type: 3}
+  m_Name: ChangeAimNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 7e33adfc-af1a-4bc3-adc9-f9b6de6c9689
+  position: {x: -364, y: 479}
+  description: 
+  to: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
 --- !u!114 &7690724589553104312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +269,6 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
-  position: {x: -124, y: 335.2798}
+  position: {x: -145, y: 479}
   description: 
   target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}

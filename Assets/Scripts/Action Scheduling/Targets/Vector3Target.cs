@@ -9,7 +9,7 @@ namespace Creazen.Wizard.ActionScheduling.Targets {
             position = newPosition;
         }
 
-        public override Vector3 GetTargetPosition() {
+        public override Vector3 GetTargetPosition(GameObject user) {
             if(position == null) return default;
             return position;
         }

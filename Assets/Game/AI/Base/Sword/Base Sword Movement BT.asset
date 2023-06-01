@@ -35,9 +35,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6c819802-1ce9-42e8-93f7-17e80da66ea8
-  position: {x: 254.57982, y: 469.99997}
+  position: {x: 409.97507, y: 470}
   description: 
-  target: {fileID: 0}
 --- !u!114 &-3601751931738686057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +53,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4420cfa9-a27e-441a-aa21-8e039e120fff
-  position: {x: 149.99994, y: 329}
+  position: {x: 274.99997, y: 329}
   description: 
   children:
   - {fileID: 4750503339097038094}
@@ -140,7 +139,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: -149.99997, y: 189.99998}
+  position: {x: -150, y: 189.99998}
   description: 
   child: {fileID: 7690724589553104312}
   targetTag: Player
@@ -165,7 +164,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fef8c4f5-0fb7-4172-a01a-dda43b835d52
-  position: {x: 48.579735, y: 469.99994}
+  position: {x: 125.330986, y: 467}
   description: 
   duration: 3
 --- !u!114 &7464027129029670344
@@ -184,7 +183,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 50c28201-8260-445f-a035-7a4f539caf47
-  position: {x: 150.00006, y: 189.99998}
+  position: {x: 274.99997, y: 190.00002}
   description: 
   child: {fileID: -3601751931738686057}
   targetTag: Player
@@ -207,6 +206,6 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
-  position: {x: -149.99997, y: 329}
+  position: {x: -150.00005, y: 329}
   description: 
   target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}

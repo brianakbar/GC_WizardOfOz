@@ -11,7 +11,7 @@ namespace Creazen.Wizard.ActionScheduling.Targets {
             target = GameObject.FindGameObjectWithTag(tag);
         }
 
-        public override Vector3 GetTargetPosition() {
+        public override Vector3 GetTargetPosition(GameObject user) {
             if(target == null) target = GameObject.FindGameObjectWithTag(tag);
             if(target == null) return default;
             return target.transform.position;

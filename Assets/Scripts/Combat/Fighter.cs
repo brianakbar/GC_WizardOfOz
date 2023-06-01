@@ -45,7 +45,11 @@ namespace Creazen.Wizard.Combat {
         }
 
         void Update() {
-            aimInput.targetPosition = target.GetTargetPosition();
+            aimInput.targetPosition = target.GetTargetPosition(gameObject);
+        }
+
+        public void ChangeAim(Target to) {
+            target = to;
         }
 
         public bool StartAttack(Action onFinish) {

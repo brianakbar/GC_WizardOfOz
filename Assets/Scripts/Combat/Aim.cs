@@ -33,6 +33,8 @@ namespace Creazen.Wizard.Combat {
 
         void SetLookDirection(ActionCache cache) {
             Vector3 mouseWorldPoint = cache.Get<Input>().targetPosition;
+            if(mouseWorldPoint == cache.GameObject.transform.position) return;
+
             float localScaleX = cache.Transform.position.x < mouseWorldPoint.x ? 1 : -1;
             cache.Transform.localScale = new Vector2(localScaleX, cache.Transform.localScale.y);
         }
@@ -40,6 +42,7 @@ namespace Creazen.Wizard.Combat {
         void SetHandDirection(ActionCache cache) {
             Input input = cache.Get<Input>();
             if(!input.rotateWeaponToTarget) return;
+            if(input.targetPosition == cache.GameObject.transform.position) return;
 
             var positionInLocal = input.rotateableHand.InverseTransformPoint(input.targetPosition);
             float angle = Mathf.Atan2(positionInLocal.y, positionInLocal.x) * Mathf.Rad2Deg;

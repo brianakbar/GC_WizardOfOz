@@ -29,11 +29,11 @@ namespace Creazen.Wizard.Movement {
         public override void Step(ActionCache cache) {
             Target target = cache.Get<Input>().target;
             NavMeshAgent agent = cache.Get<NavMeshAgent>();
-            if(IsApproximately(cache.Transform.position, target.GetTargetPosition())) {
+            if(IsApproximately(cache.Transform.position, target.GetTargetPosition(cache.GameObject))) {
                 cache.Scheduler.Finish();
             }
 
-            agent.SetDestination(target.GetTargetPosition());
+            agent.SetDestination(target.GetTargetPosition(cache.GameObject));
 
             cache.Get<Animator>().SetBool("hasSpeed", agent.velocity.magnitude > Mathf.Epsilon);
         }

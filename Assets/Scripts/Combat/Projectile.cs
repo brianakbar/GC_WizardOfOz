@@ -18,12 +18,12 @@ namespace Creazen.Wizard.Combat {
             this.damageType = damageType;
             this.attacker = attacker;
 
-            var targetLocalPosition = transform.InverseTransformPoint(target.GetTargetPosition());
+            var targetLocalPosition = transform.InverseTransformPoint(target.GetTargetPosition(attacker));
             float angle = Mathf.Atan2(targetLocalPosition.y, targetLocalPosition.x) * Mathf.Rad2Deg;
 
             transform.Rotate(0, 0, angle);
 
-            body.velocity = (target.GetTargetPosition() - transform.position).normalized * speed;
+            body.velocity = (target.GetTargetPosition(attacker) - transform.position).normalized * speed;
             Destroy(gameObject, lifetime);
         }
 

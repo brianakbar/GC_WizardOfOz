@@ -37,6 +37,10 @@ namespace Creazen.Wizard.ActionScheduling {
             currentAction.Step(cache[currentAction]);
         }
 
+        void OnDestroy() {
+            StopAllCoroutines();
+        }
+
         public void OnTriggerEnter2D(Collider2D other) {
             if(currentAction == null) {
                 return;

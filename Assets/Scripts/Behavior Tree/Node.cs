@@ -30,6 +30,8 @@ namespace Creazen.Wizard.BehaviorTree {
         }
 
         public void Abort(State state) {
+            if(this.state != State.Running) return;
+            
             Traverse((node) => {
                 node.started = false;
                 node.state = state;

@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7896995611080246479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da72ecc122e017c45ac3a4b6695497f1, type: 3}
+  m_Name: RepeatUntilRunningNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 77f6d9d0-3303-438a-938a-2f19058b45df
+  position: {x: -618.00006, y: 628}
+  description: 
+  child: {fileID: 8814932054776562254}
 --- !u!114 &-5275334556698691405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +81,28 @@ MonoBehaviour:
   position: {x: 747.00006, y: 512.67993}
   description: 
   to: Default
+--- !u!114 &-3464185732011284590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e1e7a88ea48044f9b57366b12543d5, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 70073086-739e-432a-b3e4-a02db8de82a6
+  position: {x: -364.00003, y: 133.00006}
+  description: 
+  children:
+  - {fileID: -748210623240856075}
+  - {fileID: 2889309737804961895}
 --- !u!114 &-3004838220682929487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +165,28 @@ MonoBehaviour:
   position: {x: 225.00002, y: 612.67993}
   description: 
   to: Alert
+--- !u!114 &-1228837613235600889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f700307eb79b934ba64cd0b344e1aef, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 73a6fb7f-db23-4f7d-9018-290b7b9a285a
+  position: {x: -514, y: 383}
+  description: 
+  children:
+  - {fileID: -679225545136206121}
+  - {fileID: 2623874130265351352}
 --- !u!114 &-1200002410459688449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,9 +204,55 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2f612bd1-90b3-435f-bed5-9df3394ccc42
-  position: {x: -277, y: 233.00003}
+  position: {x: -277.0001, y: 383.00003}
   description: 
   to: Combat
+--- !u!114 &-748210623240856075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4d57d2ecc7d0f47a451d07468ddee1, type: 3}
+  m_Name: AttackedNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b46c36f1-869e-4ece-b113-d293801082a1
+  position: {x: -513.99994, y: 283.00006}
+  description: 
+  child: {fileID: -1228837613235600889}
+--- !u!114 &-679225545136206121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 93e27a27-511f-441e-b558-b99c8e512359
+  position: {x: -614.9999, y: 527.9999}
+  description: 
+  child: {fileID: -7896995611080246479}
+  targetTag: Player
+  conditions:
+  - distance: 15
+    comparison: 0
+  - distance: 6
+    comparison: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +288,13 @@ MonoBehaviour:
   - {fileID: 2889309737804961895}
   - {fileID: -1200002410459688449}
   - {fileID: 326134304710353979}
+  - {fileID: -748210623240856075}
+  - {fileID: -679225545136206121}
+  - {fileID: 2623874130265351352}
+  - {fileID: -3464185732011284590}
+  - {fileID: 8814932054776562254}
+  - {fileID: -1228837613235600889}
+  - {fileID: -7896995611080246479}
 --- !u!114 &326134304710353979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +315,7 @@ MonoBehaviour:
   position: {x: 0.000005722046, y: -17.000015}
   description: 
   children:
-  - {fileID: 2889309737804961895}
+  - {fileID: -3464185732011284590}
   - {fileID: -2780744664772156347}
 --- !u!114 &766162395049694538
 MonoBehaviour:
@@ -244,6 +361,26 @@ MonoBehaviour:
   description: 
   child: {fileID: 766162395049694538}
   stateName: Alert
+--- !u!114 &2623874130265351352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86a0cd9401216f45bb837846ab14775, type: 3}
+  m_Name: ChangeStateNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 53655f83-30d9-417a-a456-27e16e1047d0
+  position: {x: -406.43738, y: 528}
+  description: 
+  to: Combat
 --- !u!114 &2889309737804961895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +398,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d708eb2d-fde9-41f9-80a2-d755b196f630
-  position: {x: -276.64206, y: 132.99998}
+  position: {x: -277.0001, y: 283.00006}
   description: 
   child: {fileID: -1200002410459688449}
   targetTag: Player
@@ -285,7 +422,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: -74.999985, y: 512.67993}
+  position: {x: -74.99992, y: 512.99994}
   description: 
   child: {fileID: 7690724589553104312}
   targetTag: Player
@@ -399,3 +536,23 @@ MonoBehaviour:
   guid: 60b1cd71-ed4e-48f2-ace6-8c9130e18978
   position: {x: 597, y: 512.67993}
   description: 
+--- !u!114 &8814932054776562254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79118b90f14238444ab2658fc8acf124, type: 3}
+  m_Name: ChaseTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 584f465d-a253-4de8-9a7f-de4f34030cd0
+  position: {x: -615.0001, y: 728}
+  description: 
+  target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}

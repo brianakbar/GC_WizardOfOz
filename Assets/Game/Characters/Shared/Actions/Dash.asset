@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   canBeCancelled: 1
-  cooldownDuration: 0.4
-  speed: {x: 16, y: 8}
+  cooldownDuration: 0.7
+  speed: {x: 14, y: 10}
   duration: 0.1

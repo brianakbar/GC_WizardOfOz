@@ -13,7 +13,7 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Action {
             if(mover == null) mover = gameObject.GetComponent<NavMeshMover>();
             if(mover.IsMoving()) return State.Running;
 
-            mover.StartMoving(target);
+            if(!mover.StartMoving(target)) return State.Failure;
             return State.Running;
         }
 

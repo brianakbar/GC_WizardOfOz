@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2876348101861999218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 911a93f1-8bf5-41ff-9ccb-5420f2411faa
+  position: {x: -0.000008583069, y: 132.50473}
+  description: 
+  minDuration: 5
+  maxDuration: 5
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
+  m_Name: Necromancer Movement BT
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  rootNode: {fileID: 9180076222116446788}
+  state: 0
+  blackboard:
+    state: Default
+  nodes:
+  - {fileID: 9180076222116446788}
+  - {fileID: -2876348101861999218}
+--- !u!114 &9180076222116446788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8fcd611a6c8414496bacaf76ab253a, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: c7a07881-dcf9-44a5-a1ab-79a709362df1
+  position: {x: 0, y: 0}
+  description: 
+  child: {fileID: -2876348101861999218}

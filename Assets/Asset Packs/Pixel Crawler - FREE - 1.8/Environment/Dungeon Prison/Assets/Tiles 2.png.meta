@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: 52c5dba655fbdcf43b5ef652ec185692
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tiles 2_41
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 368
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65105b2bf781e964d91f6b6191524f6c
+      internalID: -386620951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tiles 2_172: -473709987
+      Tiles 2_104: -1139917275
+      Tiles 2_291: -2060383845
+      Tiles 2_36: 991849114
+      Tiles 2_214: 1517390411
+      Tiles 2_221: 564887010
+      Tiles 2_23: 1889964899
+      Tiles 2_267: -2077107623
+      Tiles 2_254: 1293043185
+      Tiles 2_246: -1208349398
+      Tiles 2_169: 1430350135
+      Tiles 2_146: 1717997726
+      Tiles 2_262: -1408560716
+      Tiles 2_52: -784857607
+      Tiles 2_251: 266793793
+      Tiles 2_80: 1073331642
+      Tiles 2_253: -1613381603
+      Tiles 2_268: 338732792
+      Tiles 2_117: 1751822453
+      Tiles 2_37: 1332060109
+      Tiles 2_206: 879436030
+      Tiles 2_244: -1372252108
+      Tiles 2_222: 1812102139
+      Tiles 2_112: 1014348573
+      Tiles 2_238: 1882350609
+      Tiles 2_3: -863965172
+      Tiles 2_83: -1447275472
+      Tiles 2_196: -1151740018
+      Tiles 2_102: 754874236
+      Tiles 2_123: -1994513642
+      Tiles 2_0: 1496780139
+      Tiles 2_39: -1873496567
+      Tiles 2_137: 1939202925
+      Tiles 2_59: 1956758470
+      Tiles 2_85: -1826859989
+      Tiles 2_136: -1198036802
+      Tiles 2_247: 394162274
+      Tiles 2_203: 978324839
+      Tiles 2_260: -2076234489
+      Tiles 2_177: 1860632239
+      Tiles 2_98: -946409221
+      Tiles 2_105: 437041827
+      Tiles 2_17: 363996150
+      Tiles 2_131: -505188200
+      Tiles 2_176: -312698368
+      Tiles 2_157: -1287866236
+      Tiles 2_118: 5551853
+      Tiles 2_289: 1117446833
+      Tiles 2_211: -2007868796
+      Tiles 2_217: 1918449868
+      Tiles 2_163: -595620042
+      Tiles 2_54: 720541729
+      Tiles 2_197: -1480368553
+      Tiles 2_204: 322994589
+      Tiles 2_91: -1638153034
+      Tiles 2_175: -904427074
+      Tiles 2_220: -735599007
+      Tiles 2_57: -566032329
+      Tiles 2_279: -1069894051
+      Tiles 2_178: -306459196
+      Tiles 2_134: -1474405071
+      Tiles 2_32: -617253499
+      Tiles 2_191: 1948648082
+      Tiles 2_189: -1591764980
+      Tiles 2_183: 846591390
+      Tiles 2_1: -1315933687
+      Tiles 2_250: -2086594382
+      Tiles 2_120: -1054516356
+      Tiles 2_165: -1901760227
+      Tiles 2_48: 1774096511
+      Tiles 2_144: -441491633
+      Tiles 2_164: -666483424
+      Tiles 2_193: -1783835490
+      Tiles 2_132: 619797609
+      Tiles 2_43: -419313746
+      Tiles 2_113: -760722389
+      Tiles 2_179: -1068068921
+      Tiles 2_285: -1999657182
+      Tiles 2_210: -1196091897
+      Tiles 2_115: -1455889156
+      Tiles 2_286: -1698651059
+      Tiles 2_24: 1595105333
+      Tiles 2_44: -1180396874
+      Tiles 2_6: 1791127107
+      Tiles 2_122: 1865341598
+      Tiles 2_27: 1499290089
+      Tiles 2_139: 87188578
+      Tiles 2_235: -1509564071
+      Tiles 2_92: -402023872
+      Tiles 2_199: 443775177
+      Tiles 2_166: -1859113143
+      Tiles 2_108: 2000169838
+      Tiles 2_155: -2124444910
+      Tiles 2_278: 753699164
+      Tiles 2_2: 1546133640
+      Tiles 2_15: 747013484
+      Tiles 2_60: -1569353528
+      Tiles 2_283: -235157125
+      Tiles 2_133: 674308703
+      Tiles 2_99: -1945348954
+      Tiles 2_89: 1687750476
+      Tiles 2_90: 2076540044
+      Tiles 2_69: 130312432
+      Tiles 2_195: -888393202
+      Tiles 2_8: 94362550
+      Tiles 2_5: 1586436396
+      Tiles 2_265: -332752402
+      Tiles 2_186: -1705301397
+      Tiles 2_79: 395829059
+      Tiles 2_272: 390277721
+      Tiles 2_95: 1528641402
+      Tiles 2_167: -1075011251
+      Tiles 2_216: -457421418
+      Tiles 2_208: 593172017
+      Tiles 2_161: 1792926742
+      Tiles 2_34: -761198097
+      Tiles 2_121: -1081930349
+      Tiles 2_72: 82114969
+      Tiles 2_153: 1424880478
+      Tiles 2_162: 1989325577
+      Tiles 2_124: 66295915
+      Tiles 2_20: -1178884057
+      Tiles 2_212: 1174046382
+      Tiles 2_240: -129385502
+      Tiles 2_256: -1032931878
+      Tiles 2_277: 432537922
+      Tiles 2_45: -1177789388
+      Tiles 2_226: -238833191
+      Tiles 2_26: -322568564
+      Tiles 2_293: -1300570745
+      Tiles 2_245: 1953143937
+      Tiles 2_50: 335712726
+      Tiles 2_100: 2017836190
+      Tiles 2_181: 1679214154
+      Tiles 2_230: -946038293
+      Tiles 2_280: -500312327
+      Tiles 2_151: -101661770
+      Tiles 2_234: -940773079
+      Tiles 2_84: -597631283
+      Tiles 2_219: -1783035934
+      Tiles 2_16: -470153144
+      Tiles 2_229: 1098863498
+      Tiles 2_158: -1039905173
+      Tiles 2_143: 321095329
+      Tiles 2_200: -690314262
+      Tiles 2_88: 903046950
+      Tiles 2_94: 1090310508
+      Tiles 2_22: -144897925
+      Tiles 2_78: 1133046914
+      Tiles 2_73: -1174373104
+      Tiles 2_135: 971544996
+      Tiles 2_63: -1737222822
+      Tiles 2_82: -717436913
+      Tiles 2_35: 208427549
+      Tiles 2_233: 1358825809
+      Tiles 2_109: -355367966
+      Tiles 2_263: -1167836749
+      Tiles 2_81: -1043617822
+      Tiles 2_215: -908528564
+      Tiles 2_202: 2121160219
+      Tiles 2_67: -595587558
+      Tiles 2_33: 1973426497
+      Tiles 2_42: -1833187353
+      Tiles 2_276: 1579938319
+      Tiles 2_171: 1730036965
+      Tiles 2_174: 1633338842
+      Tiles 2_25: 1289461545
+      Tiles 2_209: 296526016
+      Tiles 2_29: -2072681147
+      Tiles 2_46: -636792376
+      Tiles 2_97: -820391706
+      Tiles 2_12: 678591565
+      Tiles 2_62: 665697752
+      Tiles 2_173: -599696118
+      Tiles 2_180: 1349959890
+      Tiles 2_248: 1114105255
+      Tiles 2_225: -492254624
+      Tiles 2_241: 1138901311
+      Tiles 2_66: 738222677
+      Tiles 2_261: 621760590
+      Tiles 2_58: 1036348728
+      Tiles 2_76: 985745687
+      Tiles 2_198: -1161869088
+      Tiles 2_9: -370674071
+      Tiles 2_192: 1398178047
+      Tiles 2_223: 1641842191
+      Tiles 2_47: -114063805
+      Tiles 2_127: 1624499344
+      Tiles 2_269: -960713306
+      Tiles 2_61: -799834849
+      Tiles 2_28: 1940849974
+      Tiles 2_290: 1013553386
+      Tiles 2_128: -1516304964
+      Tiles 2_255: 489143066
+      Tiles 2_18: 948529445
+      Tiles 2_74: -1756253747
+      Tiles 2_41: -386620951
+      Tiles 2_87: 1089980358
+      Tiles 2_224: 1797076504
+      Tiles 2_70: 1012118404
+      Tiles 2_129: -1767382856
+      Tiles 2_287: -1593094447
+      Tiles 2_75: 488266188
+      Tiles 2_236: -1588703436
+      Tiles 2_259: -131911526
+      Tiles 2_141: 1905747561
+      Tiles 2_201: -446988298
+      Tiles 2_274: 1407738373
+      Tiles 2_258: 914407744
+      Tiles 2_142: -1805720360
+      Tiles 2_156: 86445572
+      Tiles 2_213: -1151601200
+      Tiles 2_288: -783802455
+      Tiles 2_114: -948336467
+      Tiles 2_284: 530299437
+      Tiles 2_116: 976995636
+      Tiles 2_103: 133074187
+      Tiles 2_147: 361613826
+      Tiles 2_68: 1187321747
+      Tiles 2_55: 634261268
+      Tiles 2_231: -408342691
+      Tiles 2_49: -819945520
+      Tiles 2_239: 1033261569
+      Tiles 2_160: 838288760
+      Tiles 2_205: -935148705
+      Tiles 2_170: 2000781082
+      Tiles 2_282: -251846973
+      Tiles 2_207: 1901022627
+      Tiles 2_249: 1962916791
+      Tiles 2_125: 1327185118
+      Tiles 2_101: -2078621371
+      Tiles 2_106: 838699745
+      Tiles 2_64: -1322199286
+      Tiles 2_126: -1321796722
+      Tiles 2_107: 304331021
+      Tiles 2_10: -542440980
+      Tiles 2_184: 1150541902
+      Tiles 2_152: 858104325
+      Tiles 2_19: -896618560
+      Tiles 2_140: 529296303
+      Tiles 2_185: 1360574753
+      Tiles 2_194: 829722566
+      Tiles 2_51: -719925373
+      Tiles 2_182: 1650857048
+      Tiles 2_232: -1086617311
+      Tiles 2_273: 161709297
+      Tiles 2_270: 1861360212
+      Tiles 2_65: 900124731
+      Tiles 2_218: -1572678728
+      Tiles 2_237: -1152673796
+      Tiles 2_159: -1106647699
+      Tiles 2_13: 484019979
+      Tiles 2_53: -239344946
+      Tiles 2_264: -1002067758
+      Tiles 2_119: 1274156396
+      Tiles 2_31: -1715073872
+      Tiles 2_40: -1556468184
+      Tiles 2_111: -2136536252
+      Tiles 2_4: -1133172672
+      Tiles 2_138: 1317903129
+      Tiles 2_266: 1618933141
+      Tiles 2_228: 1997513910
+      Tiles 2_168: -142511608
+      Tiles 2_77: -1234333353
+      Tiles 2_150: -521104873
+      Tiles 2_154: -791694223
+      Tiles 2_130: -2110919085
+      Tiles 2_148: -580286479
+      Tiles 2_30: -1914614722
+      Tiles 2_257: -378593234
+      Tiles 2_7: 599754075
+      Tiles 2_56: 917216330
+      Tiles 2_190: 1454201987
+      Tiles 2_149: -556159484
+      Tiles 2_38: 1316171329
+      Tiles 2_271: 333248596
+      Tiles 2_96: 303086926
+      Tiles 2_93: 99801247
+      Tiles 2_281: -989514276
+      Tiles 2_11: 1886729240
+      Tiles 2_71: -1219716051
+      Tiles 2_145: 1537057242
+      Tiles 2_252: 1778264574
+      Tiles 2_14: -1625208430
+      Tiles 2_86: 2136243719
+      Tiles 2_110: -280578470
+      Tiles 2_227: 1922399539
+      Tiles 2_242: -1537242260
+      Tiles 2_243: -2081201943
+      Tiles 2_187: -861845055
+      Tiles 2_275: -404633654
+      Tiles 2_21: 809449045
+      Tiles 2_188: 1841837121
+      Tiles 2_292: 78908656
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

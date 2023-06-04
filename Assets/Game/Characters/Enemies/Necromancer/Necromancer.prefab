@@ -11,10 +11,34 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 74a616a080c00b8459c469ccd4901237, type: 2}
+    - target: {fileID: 1316532932089137593, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: m_Size.x
+      value: 0.61126584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316532932089137593, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5856304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316532932089137593, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.015219539
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316532932089137593, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.19155979
+      objectReference: {fileID: 0}
     - target: {fileID: 2694531372335292643, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: defaultWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 013116f9db665be40a1fae758e4385e0, type: 2}
+    - target: {fileID: 3286488205215539513, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: startingHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286488205215539513, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: healthChangeChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 4db42191fb6849b43940c848ba821839, type: 2}
     - target: {fileID: 3286488205215539513, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: onHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

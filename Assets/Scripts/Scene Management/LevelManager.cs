@@ -17,6 +17,11 @@ namespace Creazen.Wizard.SceneManagement {
             fader = GameObject.FindGameObjectWithTag(faderTag).GetComponent<Transition>();
         }
 
+        public void StartNewGame() {
+            currentLevel = 0;
+            StartCoroutine(LoadScene(0));
+        }
+
         public void LoadNextLevel() {
             if(SceneManager.GetActiveScene().buildIndex != 1) {
                 currentLevel = 0;     

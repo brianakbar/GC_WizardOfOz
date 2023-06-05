@@ -178,23 +178,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567280117875517068, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2567280117875517068, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11000012
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164010787331759895, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4998553334240500077, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
       propertyPath: m_Name
       value: Game Core
       objectReference: {fileID: 0}
+    - target: {fileID: 6121021752380245269, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
+      propertyPath: orthographic size
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6121021752380245270, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6121021752380245270, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11000012
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d65a3765b75c1564fa4a41f64f3880a0, type: 3}

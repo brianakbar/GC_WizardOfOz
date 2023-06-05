@@ -32,6 +32,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 013116f9db665be40a1fae758e4385e0, type: 2}
     - target: {fileID: 3286488205215539513, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: deathChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ac34081bebf6b04bbd2a9d8ac239703, type: 2}
+    - target: {fileID: 3286488205215539513, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: startingHealth
       value: 20
       objectReference: {fileID: 0}

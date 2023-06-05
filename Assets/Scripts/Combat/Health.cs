@@ -1,6 +1,7 @@
 namespace Creazen.Wizard.Combat {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Event;
     using Creazen.Wizard.Event.Combat;
     using UnityEngine;
     using UnityEngine.Events;
@@ -13,6 +14,7 @@ namespace Creazen.Wizard.Combat {
 
         [Header("Channels")]
         [SerializeField] HealthChangeEventChannel healthChangeChannel;
+        [SerializeField] VoidEventChannel deathChannel;
 
         float currentHealth;
 
@@ -53,6 +55,10 @@ namespace Creazen.Wizard.Combat {
             float healthFraction = GetFraction();
             onHit?.Invoke(healthFraction);
             healthChangeChannel?.RaiseEvent(healthFraction);
+
+            if(GetCurrentHealth() <= 0) {
+                deathChannel?.RaiseEvent();
+            }
         }
 
         void StopDamageAnimation() {

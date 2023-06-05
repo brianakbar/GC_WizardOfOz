@@ -7,6 +7,7 @@ namespace Creazen.Wizard.Combat {
     public class Death : BaseAction {
         [SerializeField] ParticleSystem deathParticle;
         [SerializeField] Vector3 particleSpawnPosition;
+        [SerializeField] float waitBeforeDestroy = 0f;
 
         public override void Initialize(ActionCache cache) {
             cache.Add(cache.GameObject.GetComponent<Animator>());
@@ -27,15 +28,19 @@ namespace Creazen.Wizard.Combat {
         }
 
         IEnumerator ProcessDeath(ActionCache cache) {
-            ParticleSystem instance = Instantiate(
-                deathParticle, 
-                cache.Transform.position + particleSpawnPosition,
-                Quaternion.identity, 
-                cache.Transform
-            );
+            if(deathParticle != null) {
+                ParticleSystem instance = Instantiate(
+                    deathParticle, 
+                    cache.Transform.position + particleSpawnPosition,
+                    Quaternion.identity, 
+                    cache.Transform
+                );
 
-            yield return new WaitUntil(() => instance.isPlaying);
-            yield return new WaitWhile(() => instance.isPlaying);
+                yield return new WaitUntil(() => instance.isPlaying);
+                yield return new WaitWhile(() => instance.isPlaying);
+            }
+            
+            yield return new WaitForSeconds(waitBeforeDestroy);
 
             Destroy(cache.GameObject);
         }

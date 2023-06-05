@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: actions.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f45a34b729e88684a9cb482eace97200, type: 2}
     m_RemovedComponents:
     - {fileID: 4389595650254683860, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
     - {fileID: 8123284798764182254, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}

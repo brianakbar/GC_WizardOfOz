@@ -49,8 +49,8 @@ namespace Creazen.Wizard.Combat {
             var input = scheduler.GetCache<Damage>().Get<Damage.Input>();
             input.attacker = attacker;
             input.damageType = type;
-            scheduler.StartAction<Damage>(StopDamageAnimation);
             animator.SetBool("isDamaged", true);
+            scheduler.StartAction<Damage>(StopDamageAnimation);
 
             float healthFraction = GetFraction();
             onHit?.Invoke(healthFraction);
@@ -62,6 +62,7 @@ namespace Creazen.Wizard.Combat {
         }
 
         void StopDamageAnimation() {
+            Debug.Log("Finish Health");
             animator.SetBool("isDamaged", false);
         }
     }

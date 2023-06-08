@@ -58,9 +58,12 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         public bool StartAction<T>(Action onFinish = null, Action onCancel = null) where T : BaseAction {
-            this.onFinish = onFinish;
-            this.onCancel = onCancel;
-            return StartAction<T>();
+            if(StartAction<T>()) {
+                this.onFinish = onFinish;
+                this.onCancel = onCancel;
+                return true;
+            }
+            return false;
         }
 
         public bool StartAction<T>() where T : BaseAction {

@@ -1662,6 +1662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 5600111584664071002, guid: e4eb0c09bc8738d4bb4f05a61df07e3a, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a587c818fed6ed4b9c7820fb8c130e9, type: 3}
     - target: {fileID: 5961181988247932447, guid: e4eb0c09bc8738d4bb4f05a61df07e3a, type: 3}
       propertyPath: m_RootOrder
       value: 0

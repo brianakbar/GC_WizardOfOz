@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 1340680702}
   - component: {fileID: 1340680704}
   - component: {fileID: 1340680703}
+  - component: {fileID: 3887659572080373750}
   m_Layer: 0
   m_Name: Camera Change Trigger
   m_TagString: Untagged
@@ -362,6 +363,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3887659572080373750}
+        m_TargetAssemblyTypeName: Creazen.Wizard.Audio.PlayClip, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3887659572080373750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340680701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4460a5502189b9148afba305e8a0fec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtStart: 0
+  clip: {fileID: 8300000, guid: 3592eee299d94cc439e0a6657aca3bb7, type: 3}
+  isOneShot: 0
+  audioPlayChannel: {fileID: 11400000, guid: 68cf22b9612d73e4da4f169060ecd05e, type: 2}
 --- !u!1 &1002319619160106187
 GameObject:
   m_ObjectHideFlags: 0
@@ -15092,6 +15121,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1419571015980768079, guid: f1edd76f7cb74b64b9661b841aaeb671, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: df4b54381f7e4984dbafda355c5c617b, type: 3}
     - target: {fileID: 2242122769300254518, guid: f1edd76f7cb74b64b9661b841aaeb671, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.51
@@ -15248,6 +15281,10 @@ PrefabInstance:
     - target: {fileID: 6636673665721519279, guid: a3bf7c4b6a25e1a47ac5b9f30b6cf8c1, type: 3}
       propertyPath: m_Name
       value: Necromancer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665296396703885172, guid: a3bf7c4b6a25e1a47ac5b9f30b6cf8c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 7434281148284410974, guid: a3bf7c4b6a25e1a47ac5b9f30b6cf8c1, type: 3}
       propertyPath: m_RootOrder

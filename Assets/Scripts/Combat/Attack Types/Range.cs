@@ -6,14 +6,22 @@ namespace Creazen.Wizard.Combat.AttackTypes {
     public class Range : AttackType, ISpawnProjectile {
         [SerializeField] Projectile projectile;
         [SerializeField] DamageType damageType;
+        [SerializeField] Target spawnTarget;
+        [SerializeField] Vector3 spawnOffset;
+        [SerializeField] Target target;
 
         void ISpawnProjectile.OnSpawnProjectile(ActionCache cache) {
             if(cache == null) return;
             if(cache.GameObject == null) return;
 
-            Target target = cache.GameObject.GetComponent<Fighter>().AimTarget;
+            Vector3 spawnPosition = spawnTarget?.GetTargetPosition(cache.GameObject) ?? default;
+            if(spawnTarget == null) {
+                spawnPosition = cache.GameObject.GetComponentInChildren<Hand>().transform.position;
+            }
+            spawnPosition += spawnOffset;
+            if(target == null) target = cache.GameObject.GetComponent<Fighter>().AimTarget;
             Projectile instance = Instantiate(projectile, 
-                cache.GameObject.GetComponentInChildren<Hand>().transform.position, 
+                spawnPosition, 
                 Quaternion.identity);
             instance.Launch(cache.GameObject, target, damageType);
         }

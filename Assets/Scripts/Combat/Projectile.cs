@@ -5,6 +5,8 @@ namespace Creazen.Wizard.Combat {
     public class Projectile : MonoBehaviour {
         [SerializeField] float speed;
         [SerializeField] float lifetime;
+        [SerializeField] bool moveForward = false;
+        [SerializeField] float waitTimeAfterHit = 0f;
 
         DamageType damageType;
         GameObject attacker;
@@ -18,12 +20,22 @@ namespace Creazen.Wizard.Combat {
             this.damageType = damageType;
             this.attacker = attacker;
 
-            var targetLocalPosition = transform.InverseTransformPoint(target.GetTargetPosition(attacker));
-            float angle = Mathf.Atan2(targetLocalPosition.y, targetLocalPosition.x) * Mathf.Rad2Deg;
+            if(moveForward) {
+                transform.localScale = new Vector3(
+                    transform.localScale.x * Mathf.Sign(attacker.transform.localScale.x),
+                    transform.localScale.y,
+                    transform.localScale.z
+                );
+                body.velocity = new Vector2(transform.localScale.x, 0) * speed;
+            }
+            else {
+                var targetLocalPosition = transform.InverseTransformPoint(target.GetTargetPosition(attacker));
+                float angle = Mathf.Atan2(targetLocalPosition.y, targetLocalPosition.x) * Mathf.Rad2Deg;
 
-            transform.Rotate(0, 0, angle);
+                transform.Rotate(0, 0, angle);
+                body.velocity = (target.GetTargetPosition(attacker) - transform.position).normalized * speed;
+            }
 
-            body.velocity = (target.GetTargetPosition(attacker) - transform.position).normalized * speed;
             Destroy(gameObject, lifetime);
         }
 
@@ -34,7 +46,12 @@ namespace Creazen.Wizard.Combat {
             if(other.TryGetComponent<Health>(out Health health)) {
                 health.DealDamage(gameObject, damageType);
             }
-            Destroy(gameObject);
+            if(TryGetComponent<Animator>(out Animator animator)) {
+                animator.SetTrigger("hit");
+                body.velocity = Vector2.zero;
+            }
+            GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject, waitTimeAfterHit);
         }
     }
 }

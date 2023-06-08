@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_ChildCameras.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1527616881082034776, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92
+      objectReference: {fileID: 0}
     - target: {fileID: 3285596422526511057, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5000148

@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.Combat {
+    using System.Collections.Generic;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
 
@@ -43,15 +44,25 @@ namespace Creazen.Wizard.Combat {
             foreach(Collider2D attackerColl in attacker.GetComponentsInChildren<Collider2D>()) {
                 if(other == attackerColl) return;
             }
-            if(other.TryGetComponent<Health>(out Health health)) {
-                health.DealDamage(gameObject, damageType);
-            }
+
+            if(TryDealDamage(other) == false) return;
+
             if(TryGetComponent<Animator>(out Animator animator)) {
                 animator.SetTrigger("hit");
                 body.velocity = Vector2.zero;
             }
             GetComponent<BoxCollider2D>().enabled = false;
             Destroy(gameObject, waitTimeAfterHit);
+        }
+
+        bool? TryDealDamage(Collider2D other) {
+            if(!attacker.TryGetComponent<Character>(out Character attackerCharacter)) return null;
+            if(!other.TryGetComponent<Character>(out Character character)) return null;
+            if(!other.TryGetComponent<Health>(out Health health)) return null;
+            if(attackerCharacter.IsFriendly(character)) return false;
+
+            health.DealDamage(gameObject, damageType);
+            return true;
         }
     }
 }

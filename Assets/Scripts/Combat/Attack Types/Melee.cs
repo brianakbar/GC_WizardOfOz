@@ -18,9 +18,12 @@ namespace Creazen.Wizard.Combat.AttackTypes {
         }
 
         public override void HandleTrigger(ActionCache cache, Collider2D other) {
-            if(other.TryGetComponent<Health>(out Health health)) {
-                health.DealDamage(cache.GameObject, damageType);
-            }
+            if(!cache.GameObject.TryGetComponent<Character>(out Character attackerCharacter)) return;
+            if(!other.TryGetComponent<Character>(out Character character)) return;
+            if(!other.TryGetComponent<Health>(out Health health)) return;
+            if(attackerCharacter.IsFriendly(character)) return;
+
+            health.DealDamage(cache.GameObject, damageType);
         }
     }
 }

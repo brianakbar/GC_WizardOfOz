@@ -33,10 +33,12 @@ namespace Creazen.Wizard.Combat {
         }
 
         IEnumerator ProcessDeath(ActionCache cache) {
-            audioPlayChannel.RaiseEvent(new AudioSetting() {
-                Clip = sfx,
-                IsOneShot = true
-            });
+            if(sfx && audioPlayChannel) {
+                audioPlayChannel.RaiseEvent(new AudioSetting() {
+                    Clip = sfx,
+                    IsOneShot = true
+                });
+            }
 
             if(deathParticle != null) {
                 ParticleSystem instance = Instantiate(

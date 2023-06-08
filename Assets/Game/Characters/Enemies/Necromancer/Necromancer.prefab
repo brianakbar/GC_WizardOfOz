@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 156013014984796835, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 74a616a080c00b8459c469ccd4901237, type: 2}
+      objectReference: {fileID: 9100000, guid: 69795eeca1f8276479574a7bb7bc0c77, type: 2}
     - target: {fileID: 1316532932089137593, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: m_Size.x
       value: 0.61126584
@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.19155979
       objectReference: {fileID: 0}
+    - target: {fileID: 2694531372335292643, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
     - target: {fileID: 2694531372335292643, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: defaultWeapon
       value: 
@@ -99,10 +103,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6990113580688906323, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: type
+      value: 
+      objectReference: {fileID: 11400000, guid: 58ef90c0be29d254295fbbc684455d05, type: 2}
     - target: {fileID: 7347448086758890772, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: actions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e592fb1dd4b3c0f45823aa76dd459ec4, type: 2}
     - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: actions.Array.data[4]
       value: 

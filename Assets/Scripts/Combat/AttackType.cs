@@ -1,4 +1,5 @@
 namespace Creazen.Wizard.Combat {
+    using System.Collections.Generic;
     using Creazen.Wizard.ActionScheduling;
     using UnityEngine;
     

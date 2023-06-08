@@ -32,10 +32,10 @@ namespace Creazen.Wizard.Combat {
         }
 
         void SetLookDirection(ActionCache cache) {
-            Vector3 mouseWorldPoint = cache.Get<Input>().targetPosition;
-            if(mouseWorldPoint == cache.GameObject.transform.position) return;
+            Vector3 targetPosition = cache.Get<Input>().targetPosition;
+            if(targetPosition == cache.GameObject.transform.position) return;
 
-            float localScaleX = cache.Transform.position.x < mouseWorldPoint.x ? 1 : -1;
+            float localScaleX = cache.Transform.position.x < targetPosition.x ? 1 : -1;
             cache.Transform.localScale = new Vector2(localScaleX, cache.Transform.localScale.y);
         }
 

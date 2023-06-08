@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2876348101861999218
+--- !u!114 &-1616195747074344454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,18 +9,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
   behaviorTree: {fileID: 0}
   state: 0
   started: 0
-  guid: 911a93f1-8bf5-41ff-9ccb-5420f2411faa
-  position: {x: -0.000008583069, y: 132.50473}
+  guid: 7e838b93-5f32-443c-a76b-ab4338f90f6f
+  position: {x: -0.000011920929, y: 259.0454}
   description: 
-  minDuration: 5
-  maxDuration: 5
+  child: {fileID: 4936568700567839868}
+  targetTag: Player
+  conditions:
+  - distance: 8
+    comparison: 0
+--- !u!114 &-1571518505657540718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
+  m_Name: RepeaterNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 59fc9b1c-9830-4aa9-b66a-6479e999cd0c
+  position: {x: -0.000011920929, y: 131.04543}
+  description: 
+  child: {fileID: -1616195747074344454}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,7 +63,30 @@ MonoBehaviour:
     state: Default
   nodes:
   - {fileID: 9180076222116446788}
-  - {fileID: -2876348101861999218}
+  - {fileID: -1616195747074344454}
+  - {fileID: 4936568700567839868}
+  - {fileID: -1571518505657540718}
+--- !u!114 &4936568700567839868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d02a6c698310f4c81397afe9242b8b, type: 3}
+  m_Name: MoveBackNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: b782b807-e3b1-4b0a-89ca-8b37a57a8abd
+  position: {x: -0.000011920929, y: 396.0454}
+  description: 
+  moveFrom: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+  interval: 0.5
 --- !u!114 &9180076222116446788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +104,6 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c7a07881-dcf9-44a5-a1ab-79a709362df1
-  position: {x: 0, y: 0}
+  position: {x: -0.000011920929, y: 0.00000333786}
   description: 
-  child: {fileID: -2876348101861999218}
+  child: {fileID: -1571518505657540718}

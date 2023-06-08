@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Explosion Knockback
   m_EditorClassIdentifier: 
   damage: 5
+  sfx: {fileID: 0}
   speed: 0
   time: 0.1
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

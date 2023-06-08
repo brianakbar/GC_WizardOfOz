@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Melee Attack
   m_EditorClassIdentifier: 
   animation: {fileID: 7400000, guid: 8805f6e3ed66d404b9131d37f4366911, type: 2}
-  damage: 1
   cooldownAfterFinish: 0
   cooldownAfterCancelled: 0.2
+  sfx: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
   damageType: {fileID: 11400000, guid: c3596d0fb34f6744db6eca8c55505e62, type: 2}
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

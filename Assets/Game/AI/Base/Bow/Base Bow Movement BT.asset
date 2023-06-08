@@ -37,10 +37,34 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6bdd86a1-6a00-4351-8d92-9879ac926b5e
-  position: {x: 1141.1838, y: 274.99997}
+  position: {x: 1288.52, y: 275}
   description: 
   child: {fileID: -2879760400960160659}
   stateName: Default
+--- !u!114 &-7298190161663561128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 104bfb01-b9fc-4b45-98da-1a1672528f7d
+  position: {x: -151.99994, y: 513}
+  description: 
+  child: {fileID: 7259521097734989546}
+  targetTag: Player
+  conditions:
+  - distance: 5
+    comparison: 0
 --- !u!114 &-5275334556698691405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +82,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fcf9a0d8-d076-438e-9128-54cb366abb29
-  position: {x: 75.000046, y: 274.67993}
+  position: {x: 72.99986, y: 274.99997}
   description: 
   child: {fileID: 4035451500821120108}
   stateName: Combat
@@ -79,7 +103,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
-  position: {x: -0.00001835823, y: -116.999985}
+  position: {x: 222.99997, y: -111.126724}
   description: 
   child: {fileID: 326134304710353979}
 --- !u!114 &-4627490676547465759
@@ -99,7 +123,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d060cdb0-c4c5-4859-a921-c9c47073d330
-  position: {x: 410.00012, y: 513}
+  position: {x: 557.52, y: 513}
   description: 
   to: {fileID: 11400000, guid: 6bb20a173c272d44bbe43b8a4618e537, type: 2}
 --- !u!114 &-4567220852954580368
@@ -119,7 +143,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d9757ca8-3a11-4a6a-825c-3eecbc6a6044
-  position: {x: -75.00013, y: 613}
+  position: {x: 72.99993, y: 613.0001}
   description: 
   children:
   - {fileID: -3372531339976127095}
@@ -141,7 +165,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 87c5f157-e13e-4727-b205-779b8a1b5437
-  position: {x: 860.18384, y: 512.99994}
+  position: {x: 1007.52, y: 513}
   description: 
   to: Default
 --- !u!114 &-3464185732011284590
@@ -183,7 +207,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 98fbbbba-b267-430a-badc-452018b2b8d0
-  position: {x: -150.00002, y: 757}
+  position: {x: -2.4799805, y: 757}
   description: 
   to: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
 --- !u!114 &-3004838220682929487
@@ -203,7 +227,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
-  position: {x: 0.000022888184, y: -217.67325}
+  position: {x: 222.99997, y: -212.12671}
   description: 
   child: {fileID: -5198981211028692928}
 --- !u!114 &-2879760400960160659
@@ -223,7 +247,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2a92577b-7a3f-4440-86e7-73c4d27651b5
-  position: {x: 1141.1838, y: 375}
+  position: {x: 1288.52, y: 375}
   description: 
   children:
   - {fileID: 713858108352034764}
@@ -245,7 +269,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9ceb7da5-c4dd-4d14-8c6c-d25a9d5b19df
-  position: {x: 634.9999, y: 133}
+  position: {x: 782.52, y: 133}
   description: 
   children:
   - {fileID: -5275334556698691405}
@@ -268,7 +292,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 88802e2e-c23a-41e2-afa8-128de09bbe80
-  position: {x: 225.00002, y: 612.67993}
+  position: {x: 334.52188, y: 613}
   description: 
   to: Alert
 --- !u!114 &-1228837613235600889
@@ -357,7 +381,7 @@ MonoBehaviour:
   conditions:
   - distance: 20
     comparison: 0
-  - distance: 6
+  - distance: 9
     comparison: 2
 --- !u!114 &11400000
 MonoBehaviour:
@@ -408,6 +432,8 @@ MonoBehaviour:
   - {fileID: -4567220852954580368}
   - {fileID: -3372531339976127095}
   - {fileID: -4627490676547465759}
+  - {fileID: -7298190161663561128}
+  - {fileID: 7259521097734989546}
 --- !u!114 &326134304710353979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +451,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bde4fda0-f30a-40bd-9004-61e6884ddcbe
-  position: {x: 0.000005722046, y: -17.000015}
+  position: {x: 222.99997, y: -11.126696}
   description: 
   children:
   - {fileID: -3464185732011284590}
@@ -447,7 +473,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3106e45a-363f-4027-83e3-c7c510e9142f
-  position: {x: 1243.1838, y: 512.99994}
+  position: {x: 1390.52, y: 513}
   description: 
   radius: 2
 --- !u!114 &713858108352034764
@@ -467,7 +493,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 790c2e10-5ea7-4773-ad02-3eceadd75045
-  position: {x: 1045.1838, y: 512.99994}
+  position: {x: 1192.52, y: 513}
   description: 
   minDuration: 2
   maxDuration: 5
@@ -488,7 +514,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ce1fdb99-cb2a-4ec8-b9b3-53c7c76f7cda
-  position: {x: 634.99994, y: 375}
+  position: {x: 782.52, y: 375}
   description: 
   children:
   - {fileID: -4627490676547465759}
@@ -512,7 +538,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 27d87c2e-d98f-4713-9960-befe6ce6669d
-  position: {x: 634.99994, y: 275}
+  position: {x: 782.52, y: 275}
   description: 
   child: {fileID: 766162395049694538}
   stateName: Alert
@@ -558,7 +584,7 @@ MonoBehaviour:
   child: {fileID: -1200002410459688449}
   targetTag: Player
   conditions:
-  - distance: 6
+  - distance: 7
     comparison: 0
 --- !u!114 &3206312269770637818
 MonoBehaviour:
@@ -577,14 +603,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
-  position: {x: -74.99992, y: 512.99994}
+  position: {x: 72.52002, y: 513}
   description: 
   child: {fileID: -4567220852954580368}
   targetTag: Player
   conditions:
-  - distance: 4
+  - distance: 6
     comparison: 2
-  - distance: 9
+  - distance: 11
     comparison: 0
 --- !u!114 &4035451500821120108
 MonoBehaviour:
@@ -603,9 +629,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2767d722-b67e-4e71-8cca-bf7e8bb986c2
-  position: {x: 75.000046, y: 374.68}
+  position: {x: 72.99986, y: 375}
   description: 
   children:
+  - {fileID: -7298190161663561128}
   - {fileID: 3206312269770637818}
   - {fileID: 7464027129029670344}
 --- !u!114 &4750503339097038094
@@ -625,10 +652,31 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fef8c4f5-0fb7-4172-a01a-dda43b835d52
-  position: {x: 560.18384, y: 512.99994}
+  position: {x: 707.52, y: 513}
   description: 
   minDuration: 3
   maxDuration: 4
+--- !u!114 &7259521097734989546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d02a6c698310f4c81397afe9242b8b, type: 3}
+  m_Name: MoveBackNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 7c2b13af-b1de-42c8-be48-8ff49cbedb37
+  position: {x: -152.00008, y: 613.0001}
+  description: 
+  moveFrom: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+  interval: 1
 --- !u!114 &7464027129029670344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,12 +694,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 50c28201-8260-445f-a035-7a4f539caf47
-  position: {x: 225.00002, y: 512.67993}
+  position: {x: 334.52188, y: 513}
   description: 
   child: {fileID: -2729505611251354696}
   targetTag: Player
   conditions:
-  - distance: 9
+  - distance: 11
     comparison: 2
 --- !u!114 &7690724589553104312
 MonoBehaviour:
@@ -670,7 +718,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
-  position: {x: 0.0000076293945, y: 757}
+  position: {x: 147.52002, y: 757}
   description: 
   target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
 --- !u!114 &7714319387949254564
@@ -690,7 +738,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 60b1cd71-ed4e-48f2-ace6-8c9130e18978
-  position: {x: 710.18384, y: 512.99994}
+  position: {x: 857.52, y: 513}
   description: 
 --- !u!114 &8814932054776562254
 MonoBehaviour:

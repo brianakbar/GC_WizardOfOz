@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Knockback
   m_EditorClassIdentifier: 
   damage: 2
+  sfx: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
   speed: 0.5
   time: 0.1
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

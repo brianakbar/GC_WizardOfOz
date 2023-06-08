@@ -5,6 +5,7 @@ namespace Creazen.Wizard.Combat {
     
     public abstract class DamageType : ScriptableObject {
         [SerializeField] protected float damage = 1f;
+        [SerializeField] protected AudioClip sfx;
 
         public float Damage { get => damage; }
 

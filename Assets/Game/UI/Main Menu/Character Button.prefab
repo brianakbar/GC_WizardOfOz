@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7370591906256747936, guid: 91749cc5e0bb87e459de89fd366afd6e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7425449329694765402, guid: 91749cc5e0bb87e459de89fd366afd6e, type: 3}
       propertyPath: m_Name
       value: Character Button

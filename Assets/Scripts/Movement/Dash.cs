@@ -1,12 +1,17 @@
 namespace Creazen.Wizard.Movement {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Event.Audio;
     using UnityEngine;
 
     [CreateAssetMenu(fileName = "New Dash Action", menuName = "Action/Movement/Dash")]
     public class Dash : BaseAction {
         [SerializeField] [Min(0)] Vector2 speed = new Vector2(2f, 1f);
         [SerializeField] [Min(0)] float duration = 0.2f;
+        [SerializeField] AudioClip sfx;
+
+        [Header("Channels")]
+        [SerializeField] AudioPlayEventChannel audioPlayChannel;
 
         public class Input {
             public Vector2 moveDirection = Vector2.right;
@@ -19,6 +24,10 @@ namespace Creazen.Wizard.Movement {
 
         public override void OnStartAction(ActionCache cache) {
             StartCoroutine(cache, ProcessDash(cache));
+            audioPlayChannel.RaiseEvent(new AudioSetting() {
+                Clip = sfx,
+                IsOneShot = true
+            });
         }
 
         public override void OnCancel(ActionCache cache) {

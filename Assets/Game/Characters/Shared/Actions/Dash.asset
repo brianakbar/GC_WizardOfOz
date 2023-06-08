@@ -16,3 +16,5 @@ MonoBehaviour:
   cooldownDuration: 0.7
   speed: {x: 14, y: 10}
   duration: 0.1
+  sfx: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

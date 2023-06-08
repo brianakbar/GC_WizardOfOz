@@ -13,9 +13,4 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   canBeCancelled: 1
-  animation: {fileID: 7400000, guid: 38fa50db4a0842d438583fd965768109, type: 2}
-  damage: 1
-  knockbackSpeed: 2
-  knockbackTime: 0.1
-  cooldownAfterFinish: 0
-  cooldownAfterCancelled: 0.2
+  cooldownDuration: 0

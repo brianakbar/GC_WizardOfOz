@@ -15,5 +15,10 @@ MonoBehaviour:
   animation: {fileID: 7400000, guid: 6efa6db721f19fb448d529dc144bc278, type: 2}
   cooldownAfterFinish: 0
   cooldownAfterCancelled: 0.2
+  sfx: {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
   projectile: {fileID: 2248777498345403002, guid: ccf5f41aa3ff1594ca0470011ed08b99, type: 3}
   damageType: {fileID: 11400000, guid: f59e6c4213abd874483b5f52d69de312, type: 2}
+  spawnTarget: {fileID: 0}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

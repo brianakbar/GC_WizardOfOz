@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Death
   m_EditorClassIdentifier: 
   canBeCancelled: 0
+  cooldownDuration: 0
   deathParticle: {fileID: 8689221400115028379, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}
   particleSpawnPosition: {x: 0, y: -0.38, z: 0}
+  waitBeforeDestroy: 0
+  sfx: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

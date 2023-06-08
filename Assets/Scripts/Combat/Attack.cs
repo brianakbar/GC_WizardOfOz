@@ -6,8 +6,6 @@ namespace Creazen.Wizard.Combat {
 
     [CreateAssetMenu(fileName = "New Attack Action", menuName = "Action/Combat/Attack")]
     public class Attack : BaseAction, ISpawnProjectile {
-        [SerializeField] AnimationClip animation;
-
         public class Input {
             public AttackType attackType;
         }

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Fireball Knockback
   m_EditorClassIdentifier: 
   damage: 3
+  sfx: {fileID: 0}
   speed: 1
   time: 0.1
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

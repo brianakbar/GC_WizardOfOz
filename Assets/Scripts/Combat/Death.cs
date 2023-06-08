@@ -1,6 +1,7 @@
 namespace Creazen.Wizard.Combat {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Event.Audio;
     using UnityEngine;
     
     [CreateAssetMenu(fileName = "New Death Action", menuName = "Action/Combat/Death")]
@@ -8,6 +9,10 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] ParticleSystem deathParticle;
         [SerializeField] Vector3 particleSpawnPosition;
         [SerializeField] float waitBeforeDestroy = 0f;
+        [SerializeField] AudioClip sfx;
+
+        [Header("Channels")]
+        [SerializeField] AudioPlayEventChannel audioPlayChannel;
 
         public override void Initialize(ActionCache cache) {
             cache.Add(cache.GameObject.GetComponent<Animator>());
@@ -28,6 +33,11 @@ namespace Creazen.Wizard.Combat {
         }
 
         IEnumerator ProcessDeath(ActionCache cache) {
+            audioPlayChannel.RaiseEvent(new AudioSetting() {
+                Clip = sfx,
+                IsOneShot = true
+            });
+
             if(deathParticle != null) {
                 ParticleSystem instance = Instantiate(
                     deathParticle, 

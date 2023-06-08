@@ -580,7 +580,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 50c28201-8260-445f-a035-7a4f539caf47
-  position: {x: 225.00002, y: 512.67993}
+  position: {x: 224.99998, y: 513}
   description: 
   child: {fileID: -2729505611251354696}
   targetTag: Player

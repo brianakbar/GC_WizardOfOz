@@ -20,6 +20,6 @@ MonoBehaviour:
   isAimingTarget: 0
   aimAnimation: {fileID: 0}
   combos:
-  - {fileID: 11400000, guid: 4dedab875cd277849bb89ef67738fb4b, type: 2}
   - {fileID: 11400000, guid: c5452598dc258394293517055fcffb01, type: 2}
+  - {fileID: 11400000, guid: 4dedab875cd277849bb89ef67738fb4b, type: 2}
   - {fileID: 11400000, guid: 219e6edf4f6f0334ab53cca5664e076c, type: 2}

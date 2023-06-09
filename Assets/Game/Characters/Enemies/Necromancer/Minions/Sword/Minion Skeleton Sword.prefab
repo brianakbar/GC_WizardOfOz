@@ -102,6 +102,10 @@ PrefabInstance:
       propertyPath: m_MaskInteraction
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2459789631298174085, guid: 00c0d96f42cfd164e98aa831625c8a2c, type: 3}
+      propertyPath: onInvokeDeathChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ac34081bebf6b04bbd2a9d8ac239703, type: 2}
     - target: {fileID: 3387093396814519639, guid: 00c0d96f42cfd164e98aa831625c8a2c, type: 3}
       propertyPath: behaviorTree
       value: 

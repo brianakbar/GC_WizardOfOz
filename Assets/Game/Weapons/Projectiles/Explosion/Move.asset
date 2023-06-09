@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed200e03264dbbd4f847d7c235ae7bed, type: 3}
-  m_Name: Necromancer Death
+  m_Script: {fileID: 11500000, guid: 463c05935e61baa41a360903ffe25967, type: 3}
+  m_Name: Move
   m_EditorClassIdentifier: 
-  canBeCancelled: 0
+  canBeCancelled: 1
   cooldownDuration: 0
-  cancelOtherActionsWhenStarted: 1
-  deathParticle: {fileID: 0}
-  particleSpawnPosition: {x: 0, y: -0.38, z: 0}
-  waitBeforeDestroy: 2
-  sfx: {fileID: 0}
-  audioPlayChannel: {fileID: 0}
+  cancelOtherActionsWhenStarted: 0
+  speed: 2

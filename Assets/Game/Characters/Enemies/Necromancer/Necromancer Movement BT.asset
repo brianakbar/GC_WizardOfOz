@@ -112,7 +112,7 @@ MonoBehaviour:
   targetTag: Player
   conditions:
   - by: 4
-    distance: 6
+    distance: 4
     comparison: 0
   - by: 4
     distance: 2

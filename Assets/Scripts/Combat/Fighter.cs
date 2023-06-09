@@ -63,7 +63,7 @@ namespace Creazen.Wizard.Combat {
             if(!canAttack) return false;
             //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
             attackInput.attackType = currentWeapon.GetCombo(index);
-            bool isSuccess = combatScheduler.StartAction<Attack>();
+            bool isSuccess = combatScheduler.StartAction<Attack>(FinishAttack, FinishAttack);
 
             if(isSuccess) canAttack = false;
             return isSuccess;
@@ -91,11 +91,14 @@ namespace Creazen.Wizard.Combat {
             canAttack = true;
         }
 
+        void FinishAttack() {
+            canAttack = true;
+            if(onFinishAttack != null) onFinishAttack();
+        }
+
         //Animation Event
         void OnFinishAttack() {
             combatScheduler.Finish();
-            canAttack = true;
-            if(onFinishAttack != null) onFinishAttack();
         }
 
         void OnSpawnProjectile() {

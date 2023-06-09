@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2500775801693268973}
   - component: {fileID: 2248777498345403002}
   - component: {fileID: 5641792652939058766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   lifetime: 1.5
+  moveForward: 0
+  waitTimeAfterHit: 0
 --- !u!50 &5641792652939058766
 Rigidbody2D:
   serializedVersion: 4

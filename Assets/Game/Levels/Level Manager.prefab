@@ -47,6 +47,6 @@ MonoBehaviour:
   faderTag: Fader
   levels:
   - {fileID: 6504693159179822360, guid: 83c118125177725459c799fd518dd413, type: 3}
+  - {fileID: 8456951431380232994, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}
   - {fileID: 4591680732484250645, guid: 96c5501a1231ce142b879d23f4adfd8f, type: 3}
   - {fileID: 8245823941469179456, guid: 60a0699764ce91e4c826a8cfba2f795d, type: 3}
-  - {fileID: 8456951431380232994, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}

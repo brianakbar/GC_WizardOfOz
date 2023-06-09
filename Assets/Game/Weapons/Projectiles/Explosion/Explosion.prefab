@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2193448961187748052}
   - component: {fileID: 2500775801693268973}
   - component: {fileID: 2248777498345403002}
+  - component: {fileID: 7959587466055849582}
   - component: {fileID: 5641792652939058766}
   - component: {fileID: 3571224893942355958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +50,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02145803, y: -0.3296985}
+  m_Offset: {x: 0.02145803, y: -0.49168506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -60,7 +61,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1646361, y: 0.54877174}
+  m_Size: {x: 1.1646361, y: 0.76802105}
   m_EdgeRadius: 0
 --- !u!114 &2248777498345403002
 MonoBehaviour:
@@ -78,6 +79,22 @@ MonoBehaviour:
   lifetime: 0.5
   moveForward: 1
   waitTimeAfterHit: 1
+--- !u!114 &7959587466055849582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6653527819051698081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4460a5502189b9148afba305e8a0fec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAtStart: 1
+  clip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  isOneShot: 1
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}
 --- !u!50 &5641792652939058766
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9048810544452168844}
   - component: {fileID: 963965956068810933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755791862474539206}
   - component: {fileID: 8505137813049290247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

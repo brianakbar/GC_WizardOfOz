@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8997571957532821380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc61a8e86891f1745b9ce0fab8ee6e96, type: 3}
+  m_Name: RandomChanceNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: acdbbb28-676e-408f-bfe1-fe6defad34fc
+  position: {x: -246.99998, y: 660}
+  description: 
+  child: {fileID: -895341363462744296}
+  chance: 0.6
 --- !u!114 &-7587759111366931170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,7 +38,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f2bdc61b-89a4-476c-908c-c0f18a90fc3e
-  position: {x: -0.000029563904, y: 379.6999}
+  position: {x: 0.00004386902, y: 256.90488}
   description: 
   children:
   - {fileID: 373448496439927955}
@@ -40,34 +61,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 31f6abb7-715a-4126-8986-6c414a2f7069
-  position: {x: 247.15561, y: 683.31305}
+  position: {x: 247.00009, y: 559.9049}
   description: 
   index: 1
---- !u!114 &-1600209108787540420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
-  m_Name: DistanceToTargetNode
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  behaviorTree: {fileID: 0}
-  state: 0
-  started: 0
-  guid: d5a90c7a-25e3-4b53-96d6-3b26f598a7bc
-  position: {x: 0, y: 247.72087}
-  description: 
-  child: {fileID: -7587759111366931170}
-  targetTag: Player
-  conditions:
-  - by: 4
-    distance: 10
-    comparison: 0
 --- !u!114 &-895341363462744296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +81,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 37a66dc5-ce23-410e-a94b-5e7b165d3287
-  position: {x: 97.15549, y: 923.31305}
+  position: {x: -247.00003, y: 760}
   description: 
   index: 2
 --- !u!114 &11400000
@@ -111,15 +107,13 @@ MonoBehaviour:
   - {fileID: -7587759111366931170}
   - {fileID: 3652715662085400955}
   - {fileID: 8057641888645649061}
-  - {fileID: -1600209108787540420}
   - {fileID: 2170354808794819048}
-  - {fileID: 4317576199563918027}
   - {fileID: 1166505559106201401}
-  - {fileID: 3386659156119542397}
   - {fileID: -895341363462744296}
   - {fileID: 788899147465469456}
   - {fileID: 636058928690769587}
   - {fileID: -4952565745806389791}
+  - {fileID: -8997571957532821380}
 --- !u!114 &373448496439927955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,10 +131,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 135ecab4-dd8a-4cd5-803b-1098923204e4
-  position: {x: -215.96591, y: 532.9999}
+  position: {x: -215.99994, y: 409.90488}
   description: 
-  minDuration: 2
-  maxDuration: 4
+  minDuration: 1
+  maxDuration: 3
 --- !u!114 &636058928690769587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +152,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6844cf3e-e908-4184-8623-b8ce75205f01
-  position: {x: 0.15551758, y: 683.31305}
+  position: {x: -246.80931, y: 560}
   description: 
-  child: {fileID: 4317576199563918027}
+  child: {fileID: -8997571957532821380}
   conditions:
   - tag: Enemy
     count: 4
@@ -182,10 +176,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ef525377-a281-4687-a2ae-cbf12271fc1c
-  position: {x: 208.15561, y: 533.31305}
+  position: {x: 207.99997, y: 409.90488}
   description: 
-  minDuration: 3
-  maxDuration: 4
+  minDuration: 1
+  maxDuration: 3
 --- !u!114 &1166505559106201401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,13 +197,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: cd1191a4-c5e0-4fc7-b189-b3eba2da1817
-  position: {x: -263.84445, y: 683.31305}
+  position: {x: 1.0002136, y: 560}
   description: 
   child: {fileID: 3652715662085400955}
   targetTag: Player
   conditions:
   - by: 1
-    distance: 2
+    distance: 1
     comparison: 0
 --- !u!114 &2170354808794819048
 MonoBehaviour:
@@ -228,32 +222,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f6bc10b7-643b-47f0-9908-a24be15cef70
-  position: {x: 1.1555481, y: 533.31305}
+  position: {x: 1.0000516, y: 409.90488}
   description: 
   children:
-  - {fileID: 1166505559106201401}
   - {fileID: 636058928690769587}
+  - {fileID: 1166505559106201401}
   - {fileID: -4952565745806389791}
---- !u!114 &3386659156119542397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afe4e223d075cc43b0c5238b0d09a61, type: 3}
-  m_Name: AttackNode
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  behaviorTree: {fileID: 0}
-  state: 0
-  started: 0
-  guid: 9460ce38-1de7-492d-8ccc-3cae89a28885
-  position: {x: -91.84449, y: 923.31305}
-  description: 
-  index: 1
 --- !u!114 &3652715662085400955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,31 +245,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4cb261fd-f8b0-4354-827c-ac31a7a12abc
-  position: {x: -263.84445, y: 783.31305}
+  position: {x: 1.0002136, y: 659.99994}
   description: 
   index: 0
---- !u!114 &4317576199563918027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97904e984518d2d4889b5d2a55d99eb1, type: 3}
-  m_Name: RandomNode
-  m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  behaviorTree: {fileID: 0}
-  state: 0
-  started: 0
-  guid: 07cfc183-78e6-4d6f-8950-67ddf426f3a5
-  position: {x: 0.15551758, y: 783.31305}
-  description: 
-  children:
-  - {fileID: 3386659156119542397}
-  - {fileID: -895341363462744296}
 --- !u!114 &8057641888645649061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +267,7 @@ MonoBehaviour:
   guid: 84481bf6-3935-4130-b9ea-4be1fb22baf2
   position: {x: -0.000061035156, y: 112.136284}
   description: 
-  child: {fileID: -1600209108787540420}
+  child: {fileID: -7587759111366931170}
 --- !u!114 &9180076222116446788
 MonoBehaviour:
   m_ObjectHideFlags: 0

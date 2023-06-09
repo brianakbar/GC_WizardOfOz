@@ -22,13 +22,7 @@ namespace Creazen.Wizard.Combat {
             Animator animator = cache.Get<Animator>();
 
             animator.SetTrigger("dead");
-
-            foreach(var scheduler in cache.GameObject.GetComponentsInChildren<ActionScheduler>()) {
-                if(scheduler == cache.Scheduler) continue;
-
-                scheduler.Cancel();
-            }
-
+            
             cache.Scheduler.StartCoroutine(ProcessDeath(cache));
         }
 

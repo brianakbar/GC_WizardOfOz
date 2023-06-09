@@ -7,6 +7,11 @@ namespace Creazen.Wizard.ActionScheduling.Targets {
 
         GameObject target;
 
+        public GameObject Target { get {
+            if(target == null) target = GameObject.FindGameObjectWithTag(tag);
+            return target;
+        }}
+
         void Awake() {
             target = GameObject.FindGameObjectWithTag(tag);
         }

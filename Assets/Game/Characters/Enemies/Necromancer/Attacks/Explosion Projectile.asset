@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a0cf32247e1814e915833a577dad4e, type: 3}
+  m_Name: Explosion Projectile
+  m_EditorClassIdentifier: 
+  animation: {fileID: 7400000, guid: 0452064a39a63a84fb8fddcf1d50f89f, type: 2}
+  cooldownAfterFinish: 0
+  cooldownAfterCancelled: 0.2
+  sfx: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  projectile: {fileID: 2248777498345403002, guid: 441c5f48c9a04e14e9b24b1ced628b46, type: 3}
+  damageType: {fileID: 11400000, guid: 7c51bdd75759f3d47a670ad2aa460041, type: 2}
+  spawnTarget: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+  spawnOffset: {x: 0, y: 0.9, z: 0}
+  target: {fileID: 11400000, guid: 6bb20a173c272d44bbe43b8a4618e537, type: 2}
+  audioPlayChannel: {fileID: 11400000, guid: 899610142c8e6c246becd8c95876f115, type: 2}

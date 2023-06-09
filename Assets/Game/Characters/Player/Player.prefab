@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2d106f432cc44459186f497a7cc3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onInvokeDisableChannel: {fileID: 11400000, guid: 9ac34081bebf6b04bbd2a9d8ac239703, type: 2}
 --- !u!114 &3928384934257463367
 MonoBehaviour:
   m_ObjectHideFlags: 0

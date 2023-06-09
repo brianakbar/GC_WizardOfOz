@@ -1,5 +1,6 @@
 namespace Creazen.Wizard.Control {
     using Creazen.Wizard.Combat;
+    using Creazen.Wizard.Event;
     using Creazen.Wizard.Movement;
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -9,10 +10,25 @@ namespace Creazen.Wizard.Control {
         Fighter fighter;
 
         Vector2 moveDirection = Vector2.zero;
+        
+        [Header("Listening on channels")]
+        [SerializeField] VoidEventChannel onInvokeDisableChannel;
 
         void Awake() {
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();
+        }
+
+        void OnEnable() {
+            if(onInvokeDisableChannel) {
+                onInvokeDisableChannel.onEventRaised += Disable;
+            }
+        }
+
+        void OnDisable() {
+            if(onInvokeDisableChannel) {
+                onInvokeDisableChannel.onEventRaised -= Disable;
+            }
         }
 
         void OnMove(InputValue value) {
@@ -35,6 +51,13 @@ namespace Creazen.Wizard.Control {
 
         void OnAttack(InputValue value) {
             fighter.StartAttack(0);
+        }
+
+        void Disable() {
+            enabled = false;
+            if(TryGetComponent<PlayerInput>(out PlayerInput playerInput)) {
+                playerInput.enabled = false;
+            }
         }
     }
 }

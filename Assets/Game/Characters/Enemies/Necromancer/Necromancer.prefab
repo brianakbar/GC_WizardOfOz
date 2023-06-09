@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 7347448086758890772, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: actions.Array.size
       value: 6

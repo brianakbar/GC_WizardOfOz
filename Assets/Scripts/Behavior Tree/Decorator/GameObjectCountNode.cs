@@ -34,8 +34,7 @@ namespace Creazen.Wizard.BehaviorTree.Decorator {
 
         protected override State OnUpdate() {
             if(IsConditionSatisfied()) {
-                child.Update();
-                return State.Running;
+                return child.Update();
             }
             return State.Failure;
         }

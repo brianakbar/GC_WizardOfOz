@@ -12,6 +12,9 @@ namespace Creazen.Wizard.Combat {
         [SerializeField] ParticleSystem deathParticle;
         public UnityEvent<float> onHit;
 
+        [Header("Listening on Channels")]
+        [SerializeField] VoidEventChannel onInvokeDeathChannel;
+
         [Header("Channels")]
         [SerializeField] HealthChangeEventChannel healthChangeChannel;
         [SerializeField] VoidEventChannel deathChannel;
@@ -23,6 +26,18 @@ namespace Creazen.Wizard.Combat {
         void Awake() {
             animator = GetComponent<Animator>();
             currentHealth = startingHealth;
+        }
+
+        void OnEnable() {
+            if(onInvokeDeathChannel) {
+                onInvokeDeathChannel.onEventRaised += Kill;
+            }
+        }
+
+        void OnDisable() {
+            if(onInvokeDeathChannel) {
+                onInvokeDeathChannel.onEventRaised -= Kill;
+            }
         }
 
         void Update() {
@@ -63,6 +78,10 @@ namespace Creazen.Wizard.Combat {
 
         void StopDamageAnimation() {
             animator.SetBool("isDamaged", false);
+        }
+
+        void Kill() {
+            currentHealth = 0;
         }
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeCancelled: 0
   cooldownDuration: 0
+  cancelOtherActionsWhenStarted: 1
   deathParticle: {fileID: 8689221400115028379, guid: 7c112250bd1449044a51e0b0741e4464, type: 3}
   particleSpawnPosition: {x: 0, y: -0.38, z: 0}
   waitBeforeDestroy: 0

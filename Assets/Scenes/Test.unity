@@ -150,10 +150,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.4
       objectReference: {fileID: 0}
-    - target: {fileID: 7570102429640944286, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.46810186
-      objectReference: {fileID: 0}
     - target: {fileID: 8456951431380232994, guid: 2542bc7a283055a4286d56cd2f8b506b, type: 3}
       propertyPath: m_Name
       value: Boss Chamber

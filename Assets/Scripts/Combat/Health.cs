@@ -1,6 +1,7 @@
 namespace Creazen.Wizard.Combat {
     using System.Collections;
     using Creazen.Wizard.ActionScheduling;
+    using Creazen.Wizard.Core;
     using Creazen.Wizard.Event;
     using Creazen.Wizard.Event.Combat;
     using UnityEngine;
@@ -22,10 +23,22 @@ namespace Creazen.Wizard.Combat {
         float currentHealth;
 
         Animator animator;
+        SessionStore sessionStore;
 
         void Awake() {
             animator = GetComponent<Animator>();
+            sessionStore = FindObjectOfType<SessionStore>();
             currentHealth = startingHealth;
+        }
+
+        void Start() {
+            if(tag != "Player") return;
+            if(sessionStore == null) return;
+            if(!sessionStore.HasKey("playerHealth")) return;
+
+            float playerHealth = sessionStore.Load<float>("playerHealth");
+            currentHealth = playerHealth;
+            healthChangeChannel?.RaiseEvent(GetFraction());
         }
 
         void OnEnable() {
@@ -73,6 +86,10 @@ namespace Creazen.Wizard.Combat {
 
             if(GetCurrentHealth() <= 0) {
                 deathChannel?.RaiseEvent();
+            }
+
+            if(tag == "Player") {
+                sessionStore.Save("playerHealth", currentHealth);
             }
         }
 

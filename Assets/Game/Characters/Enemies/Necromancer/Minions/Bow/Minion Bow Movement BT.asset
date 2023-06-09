@@ -1,0 +1,269 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7298190161663561128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 104bfb01-b9fc-4b45-98da-1a1672528f7d
+  position: {x: 257.00003, y: 280.99997}
+  description: 
+  child: {fileID: 7259521097734989546}
+  targetTag: Player
+  conditions:
+  - by: 4
+    distance: 5
+    comparison: 0
+--- !u!114 &-6077067506804909152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 33de40e5-031f-4ee3-a115-dba50c1afb40
+  position: {x: 222.99995, y: -111}
+  description: 
+  children:
+  - {fileID: 7939101860376160526}
+  - {fileID: -5198981211028692928}
+--- !u!114 &-5198981211028692928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38894bea8abcd0c49b0ea7a43191d2d3, type: 3}
+  m_Name: RepeaterNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: eeb08708-40c3-4dd0-92c1-d10b3f953f0e
+  position: {x: 372.99997, y: 38.00002}
+  description: 
+  child: {fileID: 4035451500821120108}
+--- !u!114 &-4567220852954580368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: d9757ca8-3a11-4a6a-825c-3eecbc6a6044
+  position: {x: 481.99997, y: 381}
+  description: 
+  children:
+  - {fileID: -3372531339976127095}
+  - {fileID: 7690724589553104312}
+--- !u!114 &-3372531339976127095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d69873c2e93e51478282ea8f9e81fde, type: 3}
+  m_Name: ChangeAimNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 98fbbbba-b267-430a-badc-452018b2b8d0
+  position: {x: 406.99997, y: 524.99994}
+  description: 
+  to: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+--- !u!114 &-3004838220682929487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8fcd611a6c8414496bacaf76ab253a, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 4a69a9d7-b8cf-4f0d-bc12-ca6657e11fc2
+  position: {x: 222.99997, y: -212.12671}
+  description: 
+  child: {fileID: -6077067506804909152}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e9941d44b060242b9bc46acc207b66, type: 3}
+  m_Name: Minion Bow Movement BT
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  rootNode: {fileID: -3004838220682929487}
+  state: 0
+  blackboard:
+    state: Default
+  nodes:
+  - {fileID: -3004838220682929487}
+  - {fileID: -5198981211028692928}
+  - {fileID: 7690724589553104312}
+  - {fileID: 3206312269770637818}
+  - {fileID: 4035451500821120108}
+  - {fileID: -4567220852954580368}
+  - {fileID: -3372531339976127095}
+  - {fileID: -7298190161663561128}
+  - {fileID: 7259521097734989546}
+  - {fileID: -6077067506804909152}
+  - {fileID: 7939101860376160526}
+--- !u!114 &3206312269770637818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 5234581b-8c0d-41c6-b7e6-855b4380396c
+  position: {x: 481.99997, y: 280.99997}
+  description: 
+  child: {fileID: -4567220852954580368}
+  targetTag: Player
+  conditions:
+  - by: 4
+    distance: 6
+    comparison: 2
+--- !u!114 &4035451500821120108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f700307eb79b934ba64cd0b344e1aef, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 2767d722-b67e-4e71-8cca-bf7e8bb986c2
+  position: {x: 372.99997, y: 138}
+  description: 
+  children:
+  - {fileID: -7298190161663561128}
+  - {fileID: 3206312269770637818}
+--- !u!114 &7259521097734989546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d02a6c698310f4c81397afe9242b8b, type: 3}
+  m_Name: MoveBackNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 7c2b13af-b1de-42c8-be48-8ff49cbedb37
+  position: {x: 257.00003, y: 381}
+  description: 
+  moveFrom: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+  interval: 1
+--- !u!114 &7690724589553104312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79118b90f14238444ab2658fc8acf124, type: 3}
+  m_Name: ChaseTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 287238a3-28eb-4305-af7a-7b8d9629fe2f
+  position: {x: 557, y: 524.99994}
+  description: 
+  target: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
+--- !u!114 &7939101860376160526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 349e51ac-d1f4-467f-a5ba-ddb704259567
+  position: {x: 73.00001, y: 38.000072}
+  description: 
+  minDuration: 1
+  maxDuration: 1

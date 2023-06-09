@@ -31,6 +31,8 @@ namespace Creazen.Wizard.ActionScheduling.Targets {
         }
 
         public Bounds GetBounds() {
+            if(target == null) target = GameObject.FindGameObjectWithTag(tag)?.GetComponent<Collider2D>();
+            
             return target.bounds;
         }
     }

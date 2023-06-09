@@ -11,11 +11,20 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Decorator {
 
         [System.Serializable]
         class ComparisonCondition {
+            [SerializeField] By by = By.Vector3;
             [SerializeField] float distance = 5f;
             [SerializeField] Comparison comparison;
 
+            enum By {
+                X,
+                Y,
+                Z,
+                Vector2,
+                Vector3
+            }
+
             public bool IsInRange(GameObject gameObject, Transform target) {
-                float distanceToTarget = Vector3.Distance(gameObject.transform.position, target.position);
+                float distanceToTarget = Distance(gameObject.transform, target);
                 if(comparison == Comparison.LessThan) {
                     return distanceToTarget < distance;
                 }
@@ -26,6 +35,22 @@ namespace Creazen.Wizard.Movement.BehaviorTree.Decorator {
                     return distanceToTarget > distance;
                 }
                 return false;
+            }
+
+            float Distance(Transform from, Transform to) {
+                if(by == By.Vector2) {
+                    return Vector2.Distance(from.position, to.position);
+                }
+                if(by == By.X) {
+                    return Mathf.Abs(from.position.x - to.position.x);
+                }
+                if(by == By.Y) {
+                    return Mathf.Abs(from.position.y - to.position.y);
+                }
+                if(by == By.Z) {
+                    return Mathf.Abs(from.position.z - to.position.z);
+                }
+                return Vector3.Distance(from.position, to.position);
             }
         }
 

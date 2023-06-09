@@ -1,7 +1,10 @@
 namespace Creazen.Wizard.Combat.BehaviorTree.Action {
     using Creazen.Wizard.BehaviorTree;
+    using UnityEngine;
 
     public class AttackNode : ActionNode {
+        [SerializeField] int index = 0;
+
         Fighter fighter;
 
         bool? finishedAttack = null;
@@ -18,7 +21,7 @@ namespace Creazen.Wizard.Combat.BehaviorTree.Action {
             }
             if(finishedAttack == false) return State.Running;
 
-            if(!fighter.StartAttack(() => finishedAttack = true)) return State.Failure;
+            if(!fighter.StartAttack(index, () => finishedAttack = true)) return State.Failure;
 
             finishedAttack = false;
             return State.Running;

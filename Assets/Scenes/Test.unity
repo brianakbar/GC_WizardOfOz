@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Base Bow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2400226845208681188, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
 --- !u!1001 &1026819966
@@ -316,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Base Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 2400226845208681188, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
 --- !u!1001 &1854113501
@@ -372,6 +380,10 @@ PrefabInstance:
     - target: {fileID: 2400226845208681188, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
       propertyPath: m_Name
       value: Skeleton Base Bow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2400226845208681188, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}

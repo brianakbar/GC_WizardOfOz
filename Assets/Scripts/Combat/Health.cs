@@ -62,7 +62,6 @@ namespace Creazen.Wizard.Combat {
         }
 
         void StopDamageAnimation() {
-            Debug.Log("Finish Health");
             animator.SetBool("isDamaged", false);
         }
     }

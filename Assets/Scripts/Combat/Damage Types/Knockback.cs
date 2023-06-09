@@ -4,7 +4,7 @@ namespace Creazen.Wizard.Combat.DamageTypes {
     using Creazen.Wizard.Event.Audio;
     using UnityEngine;
     
-    [CreateAssetMenu(fileName = "New Melee", menuName = "Combat/Damage/Type/Knockback", order = 0)]
+    [CreateAssetMenu(fileName = "New Knockback", menuName = "Combat/Damage/Type/Knockback", order = 0)]
     public class Knockback : DamageType {
         [SerializeField] float speed = 0.5f;
         [SerializeField] float time = 0.1f;

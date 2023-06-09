@@ -15,9 +15,10 @@ MonoBehaviour:
   animation: {fileID: 7400000, guid: 3c8da3fd03b80914fa2ab456737f5459, type: 2}
   cooldownAfterFinish: 0
   cooldownAfterCancelled: 0.2
+  sfx: {fileID: 0}
   gameObjects:
   - {fileID: 2400226845208681188, guid: cf565e5f8fb7ee84d9f0c65244fd6ae6, type: 3}
   - {fileID: 7660199810765832360, guid: 00c0d96f42cfd164e98aa831625c8a2c, type: 3}
   summonRadius: 1.5
   number: 2
-  summonTarget: {fileID: 11400000, guid: b6c04565f9645684d87cf40af6c12449, type: 2}
+  summonTarget: {fileID: 11400000, guid: 4a743fe5777ddd947998a1b16597f219, type: 2}

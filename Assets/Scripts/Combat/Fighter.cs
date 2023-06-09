@@ -52,17 +52,17 @@ namespace Creazen.Wizard.Combat {
             target = to;
         }
 
-        public bool StartAttack(Action onFinish) {
-            if(!StartAttack()) return false;
+        public bool StartAttack(int index = 0, Action onFinish = null) {
+            if(!StartAttack(index)) return false;
 
             onFinishAttack = onFinish;
             return true;
         }
 
-        public bool StartAttack() {
+        public bool StartAttack(int index = 0) {
             if(!canAttack) return false;
             //Attack attack = currentWeapon.GetCombo(attackLink.Combo);
-            attackInput.attackType = currentWeapon.GetCombo(0);
+            attackInput.attackType = currentWeapon.GetCombo(index);
             bool isSuccess = combatScheduler.StartAction<Attack>();
 
             if(isSuccess) canAttack = false;

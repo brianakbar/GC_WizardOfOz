@@ -34,7 +34,7 @@ namespace Creazen.Wizard.Control {
         }
 
         void OnAttack(InputValue value) {
-            fighter.StartAttack();
+            fighter.StartAttack(0);
         }
     }
 }

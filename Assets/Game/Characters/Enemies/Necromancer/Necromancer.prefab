@@ -112,13 +112,25 @@ PrefabInstance:
       value: Necromancer
       objectReference: {fileID: 0}
     - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: actions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: actions.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: e592fb1dd4b3c0f45823aa76dd459ec4, type: 2}
     - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: actions.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad6cdedce7501544980eed30029b3b2d, type: 2}
+    - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
       propertyPath: actions.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: f45a34b729e88684a9cb482eace97200, type: 2}
+    - target: {fileID: 8577030347113943529, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
+      propertyPath: actions.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a9634282328f5848a8642fa4c141edd, type: 2}
     m_RemovedComponents:
     - {fileID: 4389595650254683860, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}
     - {fileID: 8123284798764182254, guid: 57d3810a7229ead438749d03cd0e3c59, type: 3}

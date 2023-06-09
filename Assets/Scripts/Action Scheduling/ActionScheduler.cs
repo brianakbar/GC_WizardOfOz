@@ -75,6 +75,10 @@ namespace Creazen.Wizard.ActionScheduling {
             return false;
         }
 
+        public bool IsPerforming<T>() where T : BaseAction {
+            return CurrentAction?.GetType() == typeof(T);
+        }
+
         public void Finish() {
             currentAction?.EndAction(cache[currentAction]);
             if(!StartDefaultAction()) {

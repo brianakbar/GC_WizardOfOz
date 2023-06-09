@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Creazen.Wizard.BehaviorTree.Composite {
     public class SelectorNode : CompositeNode {
         int current = 0;

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96cb7c0d3d0ca9b4a8501499af787020, type: 3}
-  m_Name: Damage
+  m_Script: {fileID: 11500000, guid: 44cb83fbbb72e3d4288a27c449b882b3, type: 3}
+  m_Name: Boundary
   m_EditorClassIdentifier: 
-  canBeCancelled: 0
-  cooldownDuration: 0
-  cancelOtherActionsWhenStarted: 1
+  tag: Boundary

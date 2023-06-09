@@ -1,5 +1,94 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8340519728039147874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f700307eb79b934ba64cd0b344e1aef, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: ba41c9c9-cb63-453a-ad02-61d51319b99c
+  position: {x: -0.0000076293945, y: 262.96216}
+  description: 
+  children:
+  - {fileID: 7944013308933561234}
+  - {fileID: -4217885701230020884}
+  - {fileID: -1616195747074344454}
+--- !u!114 &-7339905429718391811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923334bc773e0438b998b5f23371a2, type: 3}
+  m_Name: TeleportNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 34c89cf5-181b-493b-81cd-23c2f85d720b
+  position: {x: -229, y: 520}
+  description: 
+  target: {fileID: 11400000, guid: 4a743fe5777ddd947998a1b16597f219, type: 2}
+--- !u!114 &-4217885701230020884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b320591f0a8af94fbb42f9d0b6793a9, type: 3}
+  m_Name: DistanceToTargetNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 6f1334fc-d3cf-4649-bdf8-b622078da010
+  position: {x: 0.0000076293945, y: 419.99997}
+  description: 
+  child: {fileID: -1342190338595074755}
+  targetTag: Player
+  conditions:
+  - by: 4
+    distance: 2
+    comparison: 0
+--- !u!114 &-1747539366237301073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7a0cba2cd440749afc247344f27fc1, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 79ebceae-8298-456c-b1f7-6008d7c09f80
+  position: {x: -110.00001, y: 700}
+  description: 
+  minDuration: 0.5
+  maxDuration: 1.5
 --- !u!114 &-1616195747074344454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,13 +106,17 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7e838b93-5f32-443c-a76b-ab4338f90f6f
-  position: {x: -0.000011920929, y: 259.0454}
+  position: {x: 232.99994, y: 419.99997}
   description: 
   child: {fileID: 4936568700567839868}
   targetTag: Player
   conditions:
-  - distance: 8
+  - by: 4
+    distance: 6
     comparison: 0
+  - by: 4
+    distance: 2
+    comparison: 2
 --- !u!114 &-1571518505657540718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,7 +136,29 @@ MonoBehaviour:
   guid: 59fc9b1c-9830-4aa9-b66a-6479e999cd0c
   position: {x: -0.000011920929, y: 131.04543}
   description: 
-  child: {fileID: -1616195747074344454}
+  child: {fileID: -8340519728039147874}
+--- !u!114 &-1342190338595074755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283ad1d1523dc0047813264ddd29f972, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 27bc1ba2-e1bd-4aec-a510-a241111f54da
+  position: {x: 0.0000076293945, y: 520}
+  description: 
+  children:
+  - {fileID: -1747539366237301073}
+  - {fileID: 4357858673766353998}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +181,33 @@ MonoBehaviour:
   - {fileID: -1616195747074344454}
   - {fileID: 4936568700567839868}
   - {fileID: -1571518505657540718}
+  - {fileID: -8340519728039147874}
+  - {fileID: -4217885701230020884}
+  - {fileID: 4357858673766353998}
+  - {fileID: -1342190338595074755}
+  - {fileID: -1747539366237301073}
+  - {fileID: 7944013308933561234}
+  - {fileID: -7339905429718391811}
+--- !u!114 &4357858673766353998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923334bc773e0438b998b5f23371a2, type: 3}
+  m_Name: TeleportNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: f04044d0-c27d-4928-a4b4-05fb2e7ab986
+  position: {x: 133.99992, y: 700}
+  description: 
+  target: {fileID: 11400000, guid: 4a743fe5777ddd947998a1b16597f219, type: 2}
 --- !u!114 &4936568700567839868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +225,32 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b782b807-e3b1-4b0a-89ca-8b37a57a8abd
-  position: {x: -0.000011920929, y: 396.0454}
+  position: {x: 232.99994, y: 520}
   description: 
   moveFrom: {fileID: 11400000, guid: 01b4dba43cc09bf44bcd4aff4bc87c2f, type: 2}
   interval: 0.5
+--- !u!114 &7944013308933561234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c069ad65094f4d24d9710056ec7b81b5, type: 3}
+  m_Name: IsInBoundaryNode
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 0}
+  behaviorTree: {fileID: 0}
+  state: 0
+  started: 0
+  guid: 27d83ef2-ba50-4f5d-8297-360b2d4bb9f9
+  position: {x: -229, y: 419.99997}
+  description: 
+  child: {fileID: -7339905429718391811}
+  target: {fileID: 11400000, guid: 4a743fe5777ddd947998a1b16597f219, type: 2}
+  negate: 1
 --- !u!114 &9180076222116446788
 MonoBehaviour:
   m_ObjectHideFlags: 0

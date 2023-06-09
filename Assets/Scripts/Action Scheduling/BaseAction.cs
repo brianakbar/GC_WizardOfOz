@@ -5,6 +5,7 @@ namespace Creazen.Wizard.ActionScheduling {
     public abstract class BaseAction : ScriptableObject {
         [SerializeField] bool canBeCancelled = true;
         [SerializeField] protected float cooldownDuration = 0f;
+        [SerializeField] bool cancelOtherActionsWhenStarted = false;
 
         public bool CanBeCancelled { get => canBeCancelled; }
 
@@ -56,6 +57,9 @@ namespace Creazen.Wizard.ActionScheduling {
         }
 
         public void StartAction(ActionCache cache) {
+            if(cancelOtherActionsWhenStarted) {
+                CancelOtherActions(cache);
+            }
             OnStartAction(cache);
         }
 
@@ -67,6 +71,14 @@ namespace Creazen.Wizard.ActionScheduling {
         public void Cancel(ActionCache cache) {
             OnCancel(cache);
             StartCooldown(cache, cooldownDuration);
+        }
+
+        void CancelOtherActions(ActionCache cache) {
+            foreach(var scheduler in cache.GameObject.GetComponentsInChildren<ActionScheduler>()) {
+                if(scheduler == cache.Scheduler) continue;
+
+                scheduler.Cancel();
+            }
         }
 
         public virtual void Initialize(ActionCache cache) {}

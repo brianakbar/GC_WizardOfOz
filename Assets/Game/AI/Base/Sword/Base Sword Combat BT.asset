@@ -17,8 +17,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b5fbd02a-aa3f-4054-96c0-a916acbac43b
-  position: {x: 12.0000305, y: 404}
+  position: {x: 12.000023, y: 403.9999}
   description: 
+  index: 0
 --- !u!114 &-6046125539641894319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,8 +148,8 @@ MonoBehaviour:
   description: 
   children:
   - {fileID: 2140551244686124072}
-  - {fileID: -6416616177738205357}
   - {fileID: -6046125539641894319}
+  - {fileID: -6416616177738205357}
 --- !u!114 &7304683154646998741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,5 +172,6 @@ MonoBehaviour:
   child: {fileID: 6347762995304078736}
   targetTag: Player
   conditions:
-  - distance: 2
+  - by: 4
+    distance: 2
     comparison: 0

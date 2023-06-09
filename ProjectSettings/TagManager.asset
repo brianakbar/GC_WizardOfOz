@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fader
   - Feet
+  - Boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX
